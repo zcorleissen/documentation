@@ -1,4 +1,4 @@
-Mailgun Documentation
+ObjectRocket Documentation
 =====================
 
 This Github repository represents ObjectRocket's documentation site, located at http://docs.objectrocket.com. The site is based on the [Sphinx](http://sphinx-doc.org/) documentation generator for Python.
