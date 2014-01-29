@@ -12,14 +12,18 @@ This guide is designed to help understand how to get up and running on the Objec
 Get an ObjectRocket account
 ----------------
 
-Obtaining an ObjectRocket account is as simple as just [signing up here](https://app.objectrocket.com/sign_up1)
+Obtaining an ObjectRocket account is as simple as just signing up `here`_.
+
+.. _here: https://app.objectrocket.com/sign_up1
 
 Add billing information
 ----------------
 
 Before an instance can be created, the account must be updated with current credit card information. Visa, MasterCard, American Express, Diners Club, JCB are all acceptable forms of payment. Billing occurs on instance creation, and monthly thereafter.
 
-To add a card after sign up, go to the [account page](http://app.sjc.objectrocket.com/billing), and enter a credit card.
+To add a card after sign up, go to the `account page`_, and enter a credit card.
+
+.. _account page: https://app.objectrocket.com/billing
 
 Create an instance
 ----------------
@@ -55,4 +59,4 @@ In order to open an ACL for this one host, you would enter 1.1.1.1/32 for the IP
 Congrats!
 ----------------
 
-You are all set to start using your ObjectRocket instance. See how to connect via MongoDB native drivers, or via the ObjectRocket API.  If you have any questions, concerns or comments please reach out at [support@objectrocket.com](mailto:support.objectrocket.com)
+You are all set to start using your ObjectRocket instance. See how to connect via MongoDB native drivers, or via the ObjectRocket API.  If you have any questions, concerns or comments please reach out at support@objectrocket.com.
