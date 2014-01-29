@@ -19,7 +19,7 @@ Add billing information
 
 Before an instance can be created, the account must be updated with current credit card information. Visa, MasterCard, American Express, Diners Club, JCB are all acceptable forms of payment. Billing occurs on instance creation, and monthly thereafter.
 
-To add a card after sign up, go to the [account page](http://app0.sjc.objectrocket.com:8081/billing), and enter a credit card.
+To add a card after sign up, go to the [account page](http://app.sjc.objectrocket.com/billing), and enter a credit card.
 
 Create an instance
 ----------------
