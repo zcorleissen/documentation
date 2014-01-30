@@ -40,89 +40,89 @@ For example, in python:
 
 .. code-block:: python
 
-import pprint
-import pymongo, pymongo.objectid
-import sys
+    import pprint
+    import pymongo, pymongo.objectid
+    import sys
 
-## Connect string
-## Server: "w-mongos0.objectrocket.com:99929",
-## Database: "users"
-## Write concern: 1 (acknowledge writes)
-db = 'mongodb://testuser:mytestpassword@w-mongos0.objectrocket.com:99929/users?w=1'
+    ## Connect string
+    ## Server: "w-mongos0.objectrocket.com:99929",
+    ## Database: "users"
+    ## Write concern: 1 (acknowledge writes)
+    db = 'mongodb://testuser:mytestpassword@w-mongos0.objectrocket.com:99929/users?w=1'
 
-## Connect to MongoDB, create a handle for the "users" database
-try:
-    connection = pymongo.Connection(db)
-    db = connection['users']
-except Exception, ex:
-    print "Couldn't connect, exception is: %s" % ex
-    sys.exit(1)
+    ## Connect to MongoDB, create a handle for the "users" database
+    try:
+        connection = pymongo.Connection(db)
+        db = connection['users']
+    except Exception, ex:
+        print "Couldn't connect, exception is: %s" % ex
+        sys.exit(1)
 
-## Define a simple document
-doc = {'login': 'bob',
-       'password': 'secret'}
+    ## Define a simple document
+    doc = {'login': 'bob',
+           'password': 'secret'}
 
-## Insert this document into the "accounts" collection
-try:
-  db.accounts.insert(doc)
-except Exception, ex:
-  print "Unable to insert, exception is: %s" % ex
+    ## Insert this document into the "accounts" collection
+    try:
+      db.accounts.insert(doc)
+    except Exception, ex:
+      print "Unable to insert, exception is: %s" % ex
 
-## Update the user's password
-db.accounts.update({'login': 'bob'},
-                   {"$set": {'password': 'notsosecret'}})
+    ## Update the user's password
+    db.accounts.update({'login': 'bob'},
+                       {"$set": {'password': 'notsosecret'}})
 
-## Find our user and store the returned document to variable "a"
-user = db.accounts.find_one({'login': 'bob'})
+    ## Find our user and store the returned document to variable "a"
+    user = db.accounts.find_one({'login': 'bob'})
 
-## Pretty-print JSON document returned from MongoDB
-pprint.pprint(user)
+    ## Pretty-print JSON document returned from MongoDB
+    pprint.pprint(user)
 
-## Remove our user's document by _id
-db.accounts.remove({"_id": pymongo.objectid.ObjectId(user['_id'])})
+    ## Remove our user's document by _id
+    db.accounts.remove({"_id": pymongo.objectid.ObjectId(user['_id'])})
 
 Or in node.js:
 
 .. code-block:: node.js
 
-var Server = require('mongodb').Server;
-var Db = require('mongodb').Db;
+    var Server = require('mongodb').Server;
+    var Db = require('mongodb').Db;
 
-new Db('users',
-new Server("w-mongos0.objectrocket.com", 99929, {auto_reconnect:true}), {safe:true}).open(function(err, db) {
-    if (err) throw err;
+    new Db('users',
+    new Server("w-mongos0.objectrocket.com", 99929, {auto_reconnect:true}), {safe:true}).open(function(err, db) {
+        if (err) throw err;
 
-    db.authenticate('testuser', 'mytestpassword', function(autherr, result) {
-      if (autherr) throw autherr;
+        db.authenticate('testuser', 'mytestpassword', function(autherr, result) {
+          if (autherr) throw autherr;
 
-      db.collection('accounts', function(colerr, collection) {
-          if (colerr) throw colerr;
+          db.collection('accounts', function(colerr, collection) {
+              if (colerr) throw colerr;
 
-          // Define a simple JSON document
-          var doc = {'login': 'bob', 'password': 'secret'}
+              // Define a simple JSON document
+              var doc = {'login': 'bob', 'password': 'secret'}
 
-          // Insert our document
-          collection.insert(doc, {}, function(){});
+              // Insert our document
+              collection.insert(doc, {}, function(){});
 
-          // Change our password
-          collection.update({'login': 'bob'},
-                            {'$set': {'password': 'notsosecret'}},
-                            function(){});
+              // Change our password
+              collection.update({'login': 'bob'},
+                                {'$set': {'password': 'notsosecret'}},
+                                function(){});
 
-          // Retrieve our document
-          collection.findOne({}, function(finderr, docs) {
-            if (finderr) {
-              console.log(finderr);
-            } else {
-              return console.log(docs);
-            };
+              // Retrieve our document
+              collection.findOne({}, function(finderr, docs) {
+                if (finderr) {
+                  console.log(finderr);
+                } else {
+                  return console.log(docs);
+                };
+              });
+
           });
 
-      });
+        });
 
     });
-
-});
 
 Data Migration
 --------------
