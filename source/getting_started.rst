@@ -12,21 +12,21 @@ There are just a few steps to getting up and running:
 Create an ObjectRocket account
 ----------------
 
-Obtaining an ObjectRocket account is as simple as just signing up `here`_.
+Obtaining an ObjectRocket account is as simple as just signing up `here`_ and completing 3 steps.
 
 .. _here: https://app.objectrocket.com/sign_up1
 
 Step 1 of 3: Add account information
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Enter your account information, all fields are required.  ObjectRocket utilizes a single login for an entity. So choose a good login that fits for your group.  For instance, some customers use ops@mycompany.com or similar.
+Enter your account information, all fields are required.  ObjectRocket utilizes a single login for an entity. So choose a good login that fits for your group.  For instance, some customers use devops@mycompany.com or similar.
 
 Once complete, click 'next'.
 
-Step 2: Select an plan
+Step 2 or 3: Select an plan
 ~~~~~~~~~~~~~~~~~~~~~~
 
-An plan is the unit of MongoDB storage you consume. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
+An plan is the unit of MongoDB storage required. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
 
 - Select a name for your instance.  This can be any logical name.  Any alpha numeric string is valid.
 
@@ -37,29 +37,31 @@ An plan is the unit of MongoDB storage you consume. A plan and a single shard ar
 .. _here: http://www.objectrocket.com/pricing
 
 
-Step 3: Add billing information
+Step 3 of 3: Add billing information
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Billing information needs to be added for the account. Visa, MasterCard, American Express, Diners Club, JCB are all acceptable forms of payment. Billing occurs on instance creation, and monthly thereafter.  A free trial may be available and if so billing would occur at the end of the trial period.
 
-To add a card after sign up, go to the `account page`_, and enter a credit card.
+Select the 'enter credit card' button and enter your CC information.  This may take a few seconds.
 
-.. _account page: https://app.objectrocket.com/billing
+Once validated, a dialog will give you confirmation of the instance you want to create. Select 'next' to create the instance and be redirected to the web UI and your list of instances.
 
 You are almost done!
 ----------------
 
-There are just a couple more things to complete once your instance is created. You will need to create an initial database with an initial database user, as well as open the firewall by adding ACL's to the web UI.
+There are just a couple more things to complete once your instance is created. ObjectRocket disallows access by default, so you will need to create an initial database with an initial database user, as well as open the firewall by adding ACL's to the web UI.
 
 Create a database
 ~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket grants access utilizing a combination of native MongoDB authentication and an ACL. The first step is to create a database, and give it a username and password credentials so you can get connected. Head to the instances page then click on the instance you would like to add a database to. Use the Add Database button on the databases page to add a database. Simply name the database, and add an initial username and password. You can always add more users later, just add one for now.
+ObjectRocket grants access utilizing a combination of native MongoDB authentication and an ACL. The first step is to create a database, and give it a username and password credentials so you can get connected. Head to the `instances`_ page then click on the instance you would like to add a database to. Use the Add Database button on the databases page to add a database. Simply name the database, and add an initial username and password. You can always add more users later, just add one for now.
+
+.. _instances: https://app.objectrocket.com/instances
 
 Add a ACL
 ~~~~~~~~~~~~~~~~~~~~~~
 
-An ACL allows access from an outside network into the ObjectRocket system. It's based on an CIDR type IP address mask. ObjectRocket makes it easy to manage your ACL lists. Head to the instances page then click on the instance you would like to add a ACL to. Select the ACL tab, and the add ACL button. ACL's are granted to an instance, so they allow access to every database in that instance. Enter the IP address of your client, and a brief description. The description just helps you keep track of what rules you have already created easily. If you don't know the address of your client, appserver, or webserver you can get it as shown below from the command line:
+An ACL allows access from an outside network into the ObjectRocket system. It's based on an CIDR type IP address mask. ObjectRocket makes it easy to manage your ACL lists. Head to the `instances`_ page then click on the instance you would like to add a ACL to. Select the ACL tab, and the add ACL button. ACL's are granted to an instance, so they allow access to every database in that instance. Enter the IP address of your client, and a brief description. The description just helps you keep track of what rules you have already created easily. If you don't know the address of your client, appserver, or webserver you can get it's address using this technique:
 
 .. code-block:: bash
 
@@ -74,7 +76,11 @@ An ACL allows access from an outside network into the ObjectRocket system. It's 
 
 In order to open an ACL for this one host, you would enter 1.1.1.1/32 for the IP address. Once you hit submit it may take a few minutes for the ACL to take effect so be patient.
 
+.. _instances: https://app.objectrocket.com/instances
+
 Congrats!
 ----------------
 
-You are all set to start using your ObjectRocket instance. See how to connect via MongoDB native drivers, or via the ObjectRocket API.  If you have any questions, concerns or comments please reach out at support@objectrocket.com.
+You are all set to start using your ObjectRocket instance.  Your connect string details are listed on the instances page.
+
+If you have any questions, concerns or comments please reach out at support@objectrocket.com.
