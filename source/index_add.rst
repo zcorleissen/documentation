@@ -1,6 +1,3 @@
-API Overview
-================
-
 Overview
 ----------------
 Use this API to add an index for a field. 
