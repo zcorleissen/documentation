@@ -1,13 +1,15 @@
 Data Access and Connectivity
-=======================
+============================
 
 Overview
-----------------
+--------
 
 Each ObjectRocket instance has it's own unique connect string as shown on the `instances`_ page.  Connect strings are shown for standard and SSL based connections.  For sharded instance plans, the connect string maps to a ObjectRocket load balancer, and thus specifying a array of MongoS server strings is not required for high availability.  Applications can simply know about the very simple single connect string and availability and scalability is handled on the ObjectRocket service.
 
+.. _instances: https://app.objectrocket.com/instances
+
 Shell Access
-----------------
+------------
 
 Shell access is just like any other MongoDB system.  Use the connect string as an argument to the mongo shell.  Pass the database, user, and password for authentication.
 
@@ -32,7 +34,7 @@ or another example:
     >db.users.findOne({ login: 'bob'});
 
 Native Drivers
-----------------
+--------------
 
 ObjectRocket supports ALL native MongoDB driver access.  Simply use the connect string in the application.
 
@@ -83,7 +85,7 @@ For example, in python:
 
 Or in node.js:
 
-.. code-block:: node.js
+.. code-block:: javascript
 
     var Server = require('mongodb').Server;
     var Db = require('mongodb').Db;
