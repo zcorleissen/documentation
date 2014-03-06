@@ -22,6 +22,10 @@ Contents:
    settings_guide
    sharding_and_scaling
 
+.. toctree::
+   :hidden:
+
+   404
 
 Indices and tables
 ==================
