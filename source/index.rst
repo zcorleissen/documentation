@@ -14,6 +14,7 @@ Contents:
 
    getting_started
    overview_and_concepts
+   access_and_connectivity
    native_drivers
    api/overview
    *
