@@ -12,8 +12,11 @@ Contents:
    :maxdepth: 2
    :glob:
 
-   *
+   getting_started
+   overview_and_concepts
+   native_drivers
    api/overview
+   *
 
 
 Indices and tables
