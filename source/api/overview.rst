@@ -23,7 +23,7 @@ observability and management of the instance.
 
 Any client that supports an HTTP interface should work well with the
 ObjectRocket API. Examples of how to use the API exist for
-python, node.js, java, and php.
+:doc:`python`, :doc:`nodejs`, :doc:`java`, and :doc:`php`.
 
 The API expects a POST with a document, and an API KEY. The document can be
 the document to write to the database and optionally, can be a query object
