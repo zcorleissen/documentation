@@ -21,6 +21,7 @@ Contents:
    features
    settings_guide
    sharding_and_scaling
+   tools
 
 .. toctree::
    :hidden:
