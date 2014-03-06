@@ -27,20 +27,24 @@ Choosing the proper shard key is critical to performance and scalability.  Mongo
 
 .. _here: http://docs.mongodb.com/selecting+good+shard+keys
 
-Automated shard key definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Automated shard key definition with RocketScale AutoKey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket also has the unique ability to automate the process of creating shard keys (in MongoDB 2.4+ only).  This is done via an agent that watches each and every ObjectRocket instance, and when the criteria is met for adding keys, the agent defines hash keys on _id for each collection that doesn't already have a shard key defined.  This setting gives true 'set and forget' sharding capabilites.  The potential downside is a hashed shard key on _id may not be optimal.
+ObjectRocket has the capability to automate the process of creating shard keys (MongoDB 2.4+ only) via a feature named RocketScale AutoKey. Autokey is an agent that watches each and every ObjectRocket instance, and when the criteria is met for adding keys, the agent defines hash keys on _id for each collection that doesn't already have a shard key defined.  This setting gives true 'set and forget' sharding capabilites.  The potential downside is a hashed shard key on _id may not be optimal.
 
-In order to enable this feature all of the following must be true:
+In order to enable this AutoKey:
 
-- auto_hash_shard_key on the settings tab is set to ON
-- instances has > 256MB of data in it.
+- auto_hash_shard_key on the settings tab must be set to ON
 
-Or the following must be true:
+AutoKey will then check all collections peridically and add shard keys if following are true:
 
-- auto_hash_shard_key on the settings page is set to ON
-- a shard is added via Rocketscale or manually.
+- The collection has > 256MB of data in it.
+- The collection doesn't already have a shard key.
+
+AutoKey will automatically add keys immediately if the following is true:
+
+- A shard is added via Rocketscale.
+- The user adds a shard by selecting the add shard button.
 
 Scaling (adding a shard)
 ------------------------
