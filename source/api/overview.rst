@@ -743,3 +743,86 @@ Set slow operation threshold for profiling:
        },
        "rc": 0
    }
+
+Get ACL
+^^^^^^^
+
+Get current ACLs for an instance.
+
+:Resource: acl
+:URI: /acl/get
+:API Key: POST required
+:doc: POST not required
+:return key: data
+:return value: Informational message
+
+
+Example
+~~~~~~~
+
+.. code-block:: bash
+
+  $>curl --data 'api_key=1234' 'https://api.objectrocket.com/acl/get'
+  {
+      "data": [
+          {
+              "cidr_mask": "1.2.3.4/32",
+              "description": "Development Server in VA"
+          },
+          {
+              "cidr_mask": "5.6.7.8/24",
+              "description": "QA Lab in San Jose"
+          }
+      ],
+      "rc": 0
+  }
+
+
+Add ACL
+^^^^^^^
+
+Add a new ACL for an instance.
+
+:Resource: acl
+:URI: /acl/add
+:API Key: POST required
+:doc: POST valid document with query parameter document
+:return key: data
+:return value: Informational message
+
+
+Example
+~~~~~~~
+
+.. code-block:: bash
+
+  $>curl --data 'api_key=1234&doc={"cidr_mask": "1.2.3.4/32", "description": "Development Server in VA"}' 'https://api.objectrocket.com/acl/add'
+  {
+      "data": "ACL added successfully",
+      "rc": 0
+  }
+
+
+Delete ACL
+^^^^^^^^^^
+
+Delete an ACL for an instance.
+
+:Resource: acl
+:URI: /acl/delete
+:API Key: POST required
+:doc: POST valid document with query parameter document
+:return key: data
+:return value: Informational message
+
+
+Example
+~~~~~~~
+
+.. code-block:: bash
+
+  $>curl --data 'api_key=1234&doc={"cidr_mask": "1.2.3.4/32"}' 'https://api.objectrocket.com/acl/delete'
+  {
+      "data": "ACL removed successfully",
+      "rc": 0
+  }
