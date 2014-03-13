@@ -16,21 +16,25 @@ Keys must be defined for how data will be split among the shards.  There are two
 Manual shard key definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shard keys may be defined in the web UI.  This is done for existing collections on a collection by collection basis by navigating to the instance, database, and collection to be sharded and selecting the 'shard key' tab.  Click the 'add shard key' button to define the key.
+Defining shard keys manually is performed via the ObjectRocket web UI.  This is done for existing collections on a collection by collection basis by navigating to the instance, database, and collection to be sharded and selecting the 'shard key' tab.  Click the 'add shard key' button to define the key.
 
 For new collections by navigating to the instance then database, and then selecting the 'add collection' button a dialog will prompt for the collection name, and it's shard key.
 
-Shard key selection
+Shard key definition
 -------------------
 
 Choosing the proper shard key is critical to performance and scalability.  MongoDB inc has written a good primer `here`_.
 
 .. _here: http://docs.mongodb.com/selecting+good+shard+keys
 
-Automated shard key definition with RocketScale AutoKey
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Automated shard key definition with AutoKey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket has the capability to automate the process of creating shard keys (MongoDB 2.4+ only) via a feature named RocketScale AutoKey. Autokey is an agent that watches each and every ObjectRocket instance, and when the criteria is met for adding keys, the agent defines hash keys on _id for each collection that doesn't already have a shard key defined.  This setting gives true 'set and forget' sharding capabilites.  The potential downside is a hashed shard key on _id may not be optimal.
+ObjectRocket has the capability to automate the process of creating shard keys (visible in MongoDB 2.4+ only) via a feature named AutoKey. Autokey is an agent that watches each and every ObjectRocket instance, and when the criteria is met for adding keys, the agent creates the shard key.
+
+
+
+This setting gives true 'set and forget' sharding capabilites.  The potential downside is a hashed shard key on _id may not be optimal.
 
 In order to enable this AutoKey:
 
