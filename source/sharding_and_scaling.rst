@@ -1,9 +1,9 @@
 Sharding and Scaling Guide
 ==========================
 
-ObjectRocket implements standard MongoDB sharding (for plans that are sharded), but hides the complexity of all the components into an easy to use cloud based service.  The stardard components are all automatically provisioned.  The MongoDB balancer is used to keep data between shards at an even level.  For more information about the MongoDB sharding architecture check out `this guide`_.
+ObjectRocket implements standard MongoDB sharding (for plans that are sharded), but hides the complexity of all the components into an easy to use cloud based service.  The standard components are all automatically provisioned.  The MongoDB balancer is used to keep data between shards at an even level.  For more information about the MongoDB sharding architecture check out `this guide`_.
 
-.. _this guide: http://docs.mongodb.com/sharding
+.. _this guide: http://docs.mongodb.org/manual/core/sharding-introduction/
 
 Shard keys
 ----------
@@ -25,7 +25,7 @@ Shard key definition
 
 Choosing the proper shard key is critical to performance and scalability.  MongoDB inc has written a good primer `here`_.
 
-.. _here: http://docs.mongodb.com/selecting+good+shard+keys
+.. _here: http://docs.mongodb.org/manual/tutorial/choose-a-shard-key/
 
 Automated shard key definition with AutoKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,7 +40,7 @@ In order to enable this AutoKey:
 
 - auto_hash_shard_key on the settings tab must be set to ON
 
-AutoKey will then check all collections peridically and add shard keys if following are true:
+AutoKey will then check all collections periodically and add shard keys if following are true:
 
 - The collection has > 256MB of data in it.
 - The collection doesn't already have a shard key.
@@ -59,18 +59,18 @@ Shards can seamlessly be added to an instance at any time.  To add a shard click
 
 .. _cluster page: https://app.objectrocket.com/cluster
 
-Additionally, if auto_add_shard_threshold is nonzero and not null, Rocketscale may automatically add a shard.
+Additionally, if auto_add_shard_threshold is nonzero and not null, RocketScale may automatically add a shard.
 
 RocketScale
 -----------
 
-Rocketscale is an agent unique to ObjectRocket that scales sharded instances in an automated fashion as the instance grows.  Rocketscale watches each instance, and when auto_add_shard_threshold on the settings page is exceeded it adds a shard to the instance.
+RocketScale is an agent unique to ObjectRocket that scales sharded instances in an automated fashion as the instance grows.  RocketScale watches each instance, and when auto_add_shard_threshold on the settings page is exceeded it adds a shard to the instance.
 
 The auto_add_shard_threshold is based on total % of storage consumed on the cluster.  The current storage usage is viewable on the `instances`_ page.  For instance, if the plan is 20GB, and there are currently 2 shards for a total available storage space of 40GB, and Rocketscale is set to 50(%), then when the storage usage reaches 20GB a shard will be added.
 
 .. _instances: https://app.objectrocket.com/instances
 
-Rocketscale may be turned off by setting it to 0 (zero) or removing any value from the setting (null) on the settings page.
+RocketScale may be turned off by setting it to 0 (zero) or removing any value from the setting (null) on the settings page.
 
 Balancer
 --------

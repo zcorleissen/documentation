@@ -106,7 +106,7 @@ your collections you can grow your data in chunks according to your plan
 size. If you haven't defined shard keys then the maximum disk space you
 can consume is equal to the size of one plan. It's very important to define
 shard keys on the ObjectRocket system. Here is a
-`good guide <http://docs.mongodb.org/manual/core/sharding-internals/#sharding-internals-shard-keys>`_
+`good guide <http://docs.mongodb.org/manual/core/sharding-shard-key/>`_
 about choosing shard keys.
 
 
