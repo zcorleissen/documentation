@@ -18,11 +18,14 @@ Options
   option does nothing if the stepdown window isn't both on and defined.
 * Stepdown Window: Enables or disables the stepdown window.
 * Start and Stop: The stepdown daemon will step down your instance **once**
-  within the days your specified.
+  within the defined stepdown window.
 * Run Weekly: When enabled, the stepdown daemon will run once every week,
   starting in the window you've specified. The stepdown daemon adds a week to
   the start and stop portions of the window after it performs a stepdown
   operation against your instance.
+* Auto Compression: When enabled, this instance will be compressed once during
+  the defined stepdown window. If Run Weekly is also enabled, then compression
+  will be run once weekly during the recurring stepdown window until disabled.
 
 
 Replica Set Instances
