@@ -38,7 +38,7 @@ This setting gives true 'set and forget' sharding capabilites.  The potential do
 
 In order to enable this AutoKey:
 
-- auto_hash_shard_key on the settings tab must be set to ON
+- 'AutoKey' on the settings tab must be set to ON
 
 AutoKey will then check all collections periodically and add shard keys if following are true:
 
