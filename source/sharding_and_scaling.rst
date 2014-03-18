@@ -34,7 +34,7 @@ ObjectRocket has the capability to automate the process of creating shard keys (
 
 
 
-This setting gives true 'set and forget' sharding capabilites.  The potential downside is a hashed shard key on _id may not be optimal.
+This setting gives true 'set and forget' sharding capabilities.  The potential downside is a hashed shard key on _id may not be optimal.
 
 In order to enable this AutoKey:
 
