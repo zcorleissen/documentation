@@ -22,7 +22,7 @@ Contents:
    settings_guide
    sharding_and_scaling
    tools
-   external_integrations
+   external_integration
 
 .. toctree::
    :hidden:
