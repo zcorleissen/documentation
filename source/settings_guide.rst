@@ -23,9 +23,8 @@ Options
   starting in the window you've specified. The stepdown daemon adds a week to
   the start and stop portions of the window after it performs a stepdown
   operation against your instance.
-* Auto Compression: When enabled, this instance will be compressed once during
-  the defined stepdown window. If Run Weekly is also enabled, then compression
-  will be run once weekly during the recurring stepdown window until disabled.
+* Weekly Compaction: When enabled, this instance will be compacted once per
+  week during the defined stepdown window.
 
 
 Replica Set Instances
