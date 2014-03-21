@@ -36,13 +36,16 @@ To disable New Relic integration completely:
 
 |
 
-AWS ACL Synchronization
+ACLSync
 -------------------------
-The ObjectRocket platform can automatically retrieve your AWS EC2 public and Elastic IP addresses, and create an ACL for each of those IPs on each of your instances. This feature is currently limited to retrieving IP addresses from a single AWS region.
+The ObjectRocket platform can automatically retrieve IP addresses from your environment, and create an ACL for each of those IPs on each of your instances. This feature is currently limited to retrieving IP addresses from a single AWS region.
 
 
-Enabling  ACL Synchronization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enabling ACLSync
+^^^^^^^^^^^^^^^^
+
+AWS
+~~~~
 
 To enable AWS ACL Synchronization:
 
@@ -50,7 +53,7 @@ To enable AWS ACL Synchronization:
     * At the top right of the ObjectRocket UI, click on the person icon with your login
     * From the dropdown, select 'Manage External Integration'
 * Add AWS credential information.
-    * Select the AWS region from which to retrieve IP addresses.
+    * In the 'AWS' section, Select the AWS region from which to retrieve IP addresses.
     * Enter a valid AWS Access Key ID.
     * Enter the AWS Secret Key that corresponds to the Access Key ID.
     * Click the button labeled 'Set AWS Access Keys'.
@@ -58,8 +61,11 @@ To enable AWS ACL Synchronization:
 By default, ACLs with automatically be created for all instances.
 
 
-Disabling  ACL Synchronization
+Disabling ACLSync
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AWS
+~~~~
 
 To disable automatic ACL creation for a particular instance:
 
@@ -71,7 +77,7 @@ To disable automatic ACL creation completely:
 * Browse to the `external integration`_ page.
     * At the top right of the ObjectRocket UI, click on the person icon with your login
     * From the dropdown, select 'Manage External Integration'
-    * Click the button labeled 'Delete AWS Access Keys'.
+    * Under 'ACLSync', in the 'AWS' section, click the button labeled 'Delete AWS Access Keys'.
 
 .. _external integration: https://app.objectrocket.com/external
 .. _accounts: https://rpm.newrelic.com/accounts
