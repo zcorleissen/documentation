@@ -2,6 +2,32 @@ Features
 ========
 
 
+Instance Compaction
+-------------------
+
+ObjectRocket provides tools for compacting instances on a per request basis,
+as well as weekly compaction. To request compaction for one of your instances,
+navigate to the ``/instances`` page and click the ``Compact`` button in the
+upper right corner of the instance panel.
+
+
+Weekly Compaction
+^^^^^^^^^^^^^^^^^
+
+To enable weekly compaction, see the settings documentation for
+`Weekly Compaction <http://docs.objectrocket.com/settings_guide.html#options>`_
+
+
+Caveats
+^^^^^^^
+
+Compaction will not be requested for an instance under the following
+circumstances:
+
+* The instance is currently undergoing compaction.
+* The instance plan is 100GB or greater. In this case, contact support.
+
+
 Copying a Remote Database
 -------------------------
 
