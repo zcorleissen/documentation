@@ -58,7 +58,7 @@ To enable AWS ACL Synchronization:
     * Enter the AWS Secret Key that corresponds to the Access Key ID.
     * Click the button labeled 'Set AWS Access Keys'.
 
-By default, ACLs with automatically be created for all instances.
+By default, ACLs will automatically be created for all instances.
 
 
 Disabling ACLSync
