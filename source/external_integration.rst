@@ -54,9 +54,9 @@ To enable AWS ACL Synchronization:
     * From the dropdown, select 'Manage External Integration'
 * Add AWS credential information.
     * In the 'AWS' section, Select the AWS region from which to retrieve IP addresses.
-    * Enter a valid AWS Access Key ID.
-    * Enter the AWS Secret Key that corresponds to the Access Key ID.
-    * Click the button labeled 'Set AWS Access Keys'.
+    * Enter a valid Access Key ID.
+    * Enter the Secret Access Key that corresponds to the Access Key ID.
+    * Click the button labeled 'Set AWS Access Key'.
 
 By default, ACLs will automatically be created for all instances.
 
@@ -70,14 +70,14 @@ AWS
 To disable automatic ACL creation for a particular instance:
 
 * Browse to the settings page for that instance
-* Set the button labeled 'AWS ACL Synchronization' to off.
+* Set the button labeled 'ACLSync' to off.
 
 To disable automatic ACL creation completely:
 
 * Browse to the `external integration`_ page.
     * At the top right of the ObjectRocket UI, click on the person icon with your login
     * From the dropdown, select 'Manage External Integration'
-    * Under 'ACLSync', in the 'AWS' section, click the button labeled 'Delete AWS Access Keys'.
+    * Under 'ACLSync', in the 'AWS' section, click the button labeled 'Delete AWS Access Key'.
 
 .. _external integration: https://app.objectrocket.com/external
 .. _accounts: https://rpm.newrelic.com/accounts
