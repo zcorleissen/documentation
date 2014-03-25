@@ -1,10 +1,16 @@
 Onboarding Checklist
 ======================================
 
+Overview
+--------
+
 This guide is intended to enumerate the questions that need to be answered in order size out and quote a plan size for new custom instance on the ObjectRocket platform.  The following questions need to be answered:
 
+Checklist
+---------
+
 MongoDB
-~~~~~~~
+^^^^^^^
 
 - What is the MongoDB version of the existing instance?
 - Where is the existing instance hosted?
@@ -34,7 +40,6 @@ Storage Space
 .. code-block:: javascript
 
     rs.status();
-
 
 Sharding
 ^^^^^^^^
