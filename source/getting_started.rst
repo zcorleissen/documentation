@@ -21,10 +21,10 @@ Enter your account information, all fields are required.  ObjectRocket utilizes 
 
 Once complete, click 'next'.
 
-Step 2 of 3: Select an plan
+Step 2 of 3: Select a plan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An plan is the unit of MongoDB storage required. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
+A plan is the unit of MongoDB storage required. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
 
 - Select a name for your instance.  This can be any logical name.  Any alpha numeric string is valid.
 
