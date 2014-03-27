@@ -23,6 +23,7 @@ Contents:
    sharding_and_scaling
    tools
    external_integration
+   onboarding_checklist
 
 .. toctree::
    :hidden:
