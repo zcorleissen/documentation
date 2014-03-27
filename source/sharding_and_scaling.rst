@@ -21,7 +21,7 @@ Defining shard keys manually is performed via the ObjectRocket web UI.  This is 
 For new collections by navigating to the instance then database, and then selecting the 'add collection' button a dialog will prompt for the collection name, and it's shard key.
 
 Shard key definition
--------------------
+--------------------
 
 Choosing the proper shard key is critical to performance and scalability.  MongoDB inc has written a good primer `here`_.
 
