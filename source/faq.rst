@@ -87,6 +87,26 @@ you normally otherwise would:
 
 Also, feel free to contact `support <mailto:support@objectrocket.com>`_.
 
+How is space usage calculated?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Space utilization per instance is measured as follows::
+
+
+   "Total File Size" = sum( db.stats.fileSize + db.stats.nsfile ) for each DB including admin, local, and config
+
+
+fileSize includes data size, index size, extent size, some amount of file free
+space buffer. "Total File Size" is listed on the
+`instances page <https://app.objectrocket.com/instances>`_.
+
+ObjectRocket's
+`build of MongoDB <https://github.com/objectrocket/mongodb-2.2-objectrocket>`_
+utilizes a custom file allocator that helps to minimize empty free space ahead
+of actual data space so customers pay an absolute minimum. For more detail on
+MongoDB space usage see the
+`MongoDB docs <http://docs.mongodb.org/manual/faq/storage/>`_.
+
 
 Redundancy, Scalability, Performance
 ------------------------------------
@@ -140,7 +160,7 @@ This promotional offer is only available to NEW ObjectRocket customers. Only
 This promotional offer starts on Dec. 1, 2013 and ends Dec. 31st 2014. NEW
 customers that sign up for ObjectRocket services during the promotional period
 will receive a single 5GB shard free of charge for the FIRST 30 days upon sign
-up. After the end of this promotion, standard fees for ObjectRocket services
+up. After the end of the 30 days or if additional plans are added, standard fees for all ObjectRocket services
 will apply.
 
 Your account is not billed until the end of each 30-day service period,
@@ -158,15 +178,18 @@ pricing.
 How much does it cost?
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Please refer to the `pricing page <http://objectrocket.com/pricing>`_.
+Pricing varies per region.  Please refer to the following pricing pages:
 
+`US Pricing Page <https://www.objectrocket.com/pricing>`_.
+`London Pricing Page <https://www.objectrocket.com/pricing_lon>`_.
+`Hong Kong Pricing Page <https://www.objectrocket.com/pricing_hkg>`_.
+`Sydney Pricing Page <https://www.objectrocket.com/pricing_syd>`_.
 
 When will I be billed?
 ^^^^^^^^^^^^^^^^^^^^^^
 
-ObjectRocket bills for instance usage one month in advance. When a change to
-your set of instances occurs, your bill is automatically prorated for the
-increased or decreased amount. Changes can occur when you manually add
+ObjectRocket bills for instance subscription one month in advance. When a change to
+your set of instances occurs, an invoice is generated with the prorated increased or decreased amount. That invoice amount is added to your next billing cycle creating an bill for the prorated increase or decrease, plus next months subscription.  Changes can occur when you manually add
 instances or shards from our website, or automatically when RocketScale™
 adds shards to an instance.
 
@@ -182,27 +205,6 @@ What kinds of payment do you accept?
 
 We accept Visa, MasterCard, American Express, Diners Club, JCB.
 We also offer custom billing via invoice for Enterprise plans.
-
-
-How is space usage calculated?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Space utilization per instance is measured as follows::
-
-
-   "Total File Size" = sum( db.stats.fileSize + db.stats.nsfile ) for each DB including admin, local, and config
-
-
-fileSize includes data size, index size, extent size, some amount of file free
-space buffer. "Total File Size" is listed on the
-`instances page <https://app.objectrocket.com/instances>`_.
-
-ObjectRocket's
-`build of MongoDB <https://github.com/objectrocket/mongodb-2.2-objectrocket>`_
-utilizes a custom file allocator that helps to minimize empty free space ahead
-of actual data space so customers pay an absolute minimum. For more detail on
-MongoDB space usage see the
-`MongoDB docs <http://docs.mongodb.org/manual/faq/storage/>`_.
 
 
 Other Questions
