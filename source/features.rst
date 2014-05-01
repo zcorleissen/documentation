@@ -59,3 +59,25 @@ are true:
 * We cannot authenticate against your remote database.
 * There isn't enough free space available to store your remote database.
 * Your remote database is sharded through mongos.
+
+
+Add Instance User
+-----------------
+ObjectRocket provides the Add Instance User feature for adding a user to all
+existing databases belonging to the specified instance. This is useful when
+needing to add a particular user to a large number of already existing
+databases.
+
+For additional information on creating databases and database users,
+see :ref:`create-a-database`.
+
+Arguments
+^^^^^^^^^
+* Username: This is the name of the new user to be created.
+* Password: This will be the newly created user's password.
+
+Caveats
+^^^^^^^
+This feature will not automatically add the instance user to newly created
+databases. Either run the Add Instance User operation again, or add the user
+manually to the desired database(s).

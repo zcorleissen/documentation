@@ -46,6 +46,8 @@ You are almost done!
 
 There are just a couple more things to complete once your instance is created. ObjectRocket disallows access by default, so you will need to create an initial database with an initial database user, as well as open the firewall by adding ACL's to the web UI.
 
+.. _create-a-database:
+
 Create a database
 ------------------------------
 
