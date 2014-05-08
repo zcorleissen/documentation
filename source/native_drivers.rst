@@ -214,7 +214,7 @@ Code Example
 Additional Resources
 ^^^^^^^^^^^^^^^^^^^^
 
-As the C# Driver is officially supported by the folks over at 10Gen, 
+As the C# Driver is officially supported by the folks over at MongoDB Inc.,
 you'll find a wealth of additional documentation on its
 :mongo-ecosystem:`official page </drivers/csharp/>`.
 Some great places to get started digging deeper are:
