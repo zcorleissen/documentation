@@ -216,14 +216,15 @@ Additional Resources
 
 As the C# Driver is officially supported by the folks over at 10Gen, 
 you'll find a wealth of additional documentation on its
-`official page <http://docs.mongodb.org/ecosystem/drivers/csharp/>`_.
+:mongo-ecosystem:`official page </drivers/csharp/>`.
 Some great places to get started digging deeper are:
 
-`Getting Started Guide <http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-csharp-driver/>`_
+:mongo-ecosystem:`Getting Started Guide </tutorial/getting-started-with-csharp-driver>`
 
-`Official Driver API Documentation <http://api.mongodb.org/csharp/current/>`_
+:mongo-api:`Official Driver API Documentation </csharp/current>`
 
-`Serializing Documents With The Driver <http://docs.mongodb.org/ecosystem/tutorial/serialize-documents-with-the-csharp-driver/#serialize-documents-with-the-csharp-driver>`_
+:mongo-ecosystem:`Serializing Documents With The Driver
+</tutorial/serialize-documents-with-the-csharp-driver>`
 
 For complex questions that are not covered in the basic documentation,
 you may want to ask in the very active

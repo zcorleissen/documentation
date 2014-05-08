@@ -31,7 +31,7 @@ Replica Set Instances
 ^^^^^^^^^^^^^^^^^^^^^
 
 When scheduled, the stepdown daemon will run the
-`replSetStepDown <http://docs.mongodb.org/manual/reference/command/replSetStepDown/#dbcmd.replSetStepDown>`_
+:mongo-manual:`replSetStepDown </reference/command/replSetStepDown/#dbcmd.replSetStepDown>`
 command against your instance's replica set.
 
 
@@ -39,5 +39,5 @@ Sharded Instances
 ^^^^^^^^^^^^^^^^^
 
 When scheduled, the stepdown daemon will run the
-`replSetStepDown <http://docs.mongodb.org/manual/reference/command/replSetStepDown/#dbcmd.replSetStepDown>`_
+:mongo-manual:`replSetStepDown </reference/command/replSetStepDown/#dbcmd.replSetStepDown>`
 command against every shard in your instance.

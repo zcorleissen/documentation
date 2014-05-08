@@ -67,7 +67,5 @@ A plan is a unit of storage assigned to a shard. On creation of an instance, a p
 
 When a shard is added, it's added in the plan size. If the instance is a 5GB plan, then adding another shard will add another 5GB, bringing the total to 10GB of addressable space. When a new shard is added, the balancer will kick off and balance the data between the nodes and keep the workload roughly balanced (by disk space size).
 
-ObjectRocket is based on the native MongoDB sharding design. Thus shard keys must be defined. If a shard key is not defined, then ObjectRocket can't balance the data out, and adding shards won't help and the single shard could fill up. So defining shard keys is an essential component on ObjectRocket. In order to define a shard key, use the web interface to create a collection. The create collection function has a spot to define the key you want to shard on. `Here is a great guide on the topic`_.
-
-.. _Here is a great guide on the topic: http://docs.mongodb.org/manual/tutorial/choose-a-shard-key/  
-
+ObjectRocket is based on the native MongoDB sharding design. Thus shard keys must be defined. If a shard key is not defined, then ObjectRocket can't balance the data out, and adding shards won't help and the single shard could fill up. So defining shard keys is an essential component on ObjectRocket. In order to define a shard key, use the web interface to create a collection. The create collection function has a spot to define the key you want to shard on.
+:mongo-manual:`Here is a great guide on the topic </tutorial/choose-a-shard-key>`.
