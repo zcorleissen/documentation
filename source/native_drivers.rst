@@ -21,47 +21,42 @@ Python
 
 .. code-block:: python
 
-   import bson
    import pprint
-   import pymongo, pymongo.objectid
-   import sys   
+   import pymongo
+   import sys
 
-   ## Connect string 
-   ## Server: "localhost:27017", 
+   ## Connect string
+   ## Server: "localhost:27017",
    ## Database: "users"
-   ## Write concern: 1 (acknowledge writes)
-   db = 'mongodb://rocketuser:rocketpass@localhost:27017/users?w=1'   
+   db_uri = 'mongodb://rocketuser:rocketpass@localhost:27017/users'
 
    ## Connect to MongoDB, create a handle for the "users" database
    try:
-       connection = pymongo.Connection(db)
+       connection = pymongo.MongoClient(db_uri)
        db = connection['users']
-   except Exception, ex:
-       print "Couldn't connect, exception is: %s" % ex
-       sys.exit(1)   
+   except Exception as ex:
+       print("Couldn't connect, exception is: %s" % ex)
+       sys.exit(1)
 
    ## Define a simple document
-   doc = {'login': 'bob', 
-          'password': 'secret'}   
+   doc = {'login': 'bob',
+          'password': 'secret'}
 
    ## Insert this document into the "accounts" collection
-   try:
-     db.accounts.insert(doc)
-   except Exception, ex:
-     print "Unable to insert, exception is: %s" % ex   
+   db.accounts.insert(doc)
 
    ## Update the user's password
-   db.accounts.update({'login': 'bob'}, 
-                      {"$set": {'password': 'notsosecret'}})   
+   db.accounts.update({'login': 'bob'},
+                      {"$set": {'password': 'notsosecret'}})
 
    ## Find our user and store the returned document to variable "a"
-   user = db.accounts.find_one({'login': 'bob'})   
+   user = db.accounts.find_one({'login': 'bob'})
 
    ## Pretty-print JSON document returned from MongoDB
-   pprint.pprint(user)   
+   pprint.pprint(user)
 
    ## Remove our user's document by _id
-   db.accounts.remove({"_id": pymongo.objectid.ObjectId(user['_id'])})
+   db.accounts.remove({"_id": user['_id']})
 
 
 Node.js
