@@ -12,7 +12,7 @@ There are just a few steps to getting up and running:
 Create an ObjectRocket account
 ------------------------------
 
-Obtaining an ObjectRocket account is as simple as just `signing up here <https://app.objectrocket.com/sign_up1>`_ and completing 3 steps.
+Obtaining an ObjectRocket account is as simple as just `signing up here <https://app.objectrocket.com/sign_up>`_ and completing 3 steps.
 
 Step 1 of 3: Add account information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
