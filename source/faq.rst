@@ -104,8 +104,7 @@ ObjectRocket's
 `build of MongoDB <https://github.com/objectrocket/mongodb-2.2-objectrocket>`_
 utilizes a custom file allocator that helps to minimize empty free space ahead
 of actual data space so customers pay an absolute minimum. For more detail on
-MongoDB space usage see the
-`MongoDB docs <http://docs.mongodb.org/manual/faq/storage/>`_.
+MongoDB space usage see the :mongo-manual:`MongoDB docs </faq/storage>`.
 
 
 Redundancy, Scalability, Performance
@@ -126,7 +125,7 @@ your collections you can grow your data in chunks according to your plan
 size. If you haven't defined shard keys then the maximum disk space you
 can consume is equal to the size of one plan. It's very important to define
 shard keys on the ObjectRocket system. Here is a
-`good guide <http://docs.mongodb.org/manual/core/sharding-shard-key/>`_
+:mongo-manual:`good guide </core/sharding-shard-key>`
 about choosing shard keys.
 
 

@@ -1,9 +1,8 @@
 Sharding and Scaling Guide
 ==========================
 
-ObjectRocket implements standard MongoDB sharding (for plans that are sharded), but hides the complexity of all the components into an easy to use cloud based service.  The standard components are all automatically provisioned.  The MongoDB balancer is used to keep data between shards at an even level.  For more information about the MongoDB sharding architecture check out `this guide`_.
-
-.. _this guide: http://docs.mongodb.org/manual/core/sharding-introduction/
+ObjectRocket implements standard MongoDB sharding (for plans that are sharded), but hides the complexity of all the components into an easy to use cloud based service.  The standard components are all automatically provisioned.  The MongoDB balancer is used to keep data between shards at an even level.  For more information about the MongoDB sharding architecture check out
+:mongo-manual:`this guide </core/sharding-introduction>`.
 
 Shard keys
 ----------
@@ -23,9 +22,9 @@ For new collections by navigating to the instance then database, and then select
 Shard key definition
 --------------------
 
-Choosing the proper shard key is critical to performance and scalability.  MongoDB inc has written a good primer `here`_.
+Choosing the proper shard key is critical to performance and scalability.  MongoDB inc has written a good primer
+:mongo-manual:`here </tutorial/choose-a-shard-key>`.
 
-.. _here: http://docs.mongodb.org/manual/tutorial/choose-a-shard-key/
 
 Automated shard key definition with AutoKey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
