@@ -40,10 +40,10 @@ The offering is based on Redis 2.8.13 with Sentinel for high availability. All i
 What does the system architecture look like?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Our Redis environment utilizes 2 node clusters and 3-Sentinels. One Redis node is master, one node is a slave. 
+* Our Redis environment utilizes 2 node clusters and 3 Sentinels. One Redis node is master, one node is a slave. 
 * Every aspect of the stack has been optimized specifically for Redis.
 
-  * All services are containerized, which provides guaranteed resources (memory, CPU, disk I/O) and prevents “noisy-neighbor” problems and eliminates the performance bottlenecks of traditional hardware virtualization.
+  * All services are containerized, which provides guaranteed resources (memory, CPU, disk I/O), prevents “noisy-neighbor” problems, and eliminates the performance bottlenecks of traditional hardware virtualization.
   * The service runs on performance-optimized infrastructure to make Redis run as fast as possible.
 
 * AWS users will automatically use dedicated 10Gbit AWS Direct Connect circuits for very high throughput, low latency connectivity to ObjectRocket for Redis. 
@@ -51,7 +51,7 @@ What does the system architecture look like?
 What version of Redis is supported?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of 7/28/2014 ObjectRocket supports 2.8.13
+As of 7/28/2014 ObjectRocket supports Redis 2.8.13.
 
 What other features do you offer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
