@@ -24,6 +24,8 @@ Contents:
    tools
    external_integration
    onboarding_checklist
+   redis_faq
+   redis_migration
 
 .. toctree::
    :hidden:
