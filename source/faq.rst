@@ -153,7 +153,7 @@ Billing
 What are the details of the free promotional offer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This promotional offer is only available to NEW ObjectRocket customers. Only
+This promotional offer is only available to NEW ObjectRocket for MongoDB customers. Only
 5GB sharded instances qualify for this promotional offer.
 
 This promotional offer starts on Dec. 1, 2013 and ends Dec. 31st 2014. NEW
@@ -193,17 +193,13 @@ instances or shards from our website, or automatically when RocketScale™
 adds shards to an instance.
 
 If you reduce your usage but continue to use your account, we'll apply any
-credit toward your next bill. If you close your account entirely before the
-end of the billing cycle, please
-`contact support <mailto:support@objectrocket.com>`_ and we'll issue a refund
-for any credit immediately.
+credit toward your next bill.
 
 
 What kinds of payment do you accept?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We accept Visa, MasterCard, American Express, Diners Club, JCB.
-We also offer custom billing via invoice for Enterprise plans.
 
 
 Other Questions
