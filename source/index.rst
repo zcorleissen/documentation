@@ -1,8 +1,3 @@
-.. ObjectRocket documentation master file, created by
-   sphinx-quickstart on Mon Feb 17 14:34:57 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to ObjectRocket's documentation!
 ========================================
 
@@ -26,11 +21,6 @@ Contents:
    onboarding_checklist
    redis_faq
    redis_migration
-
-.. toctree::
-   :hidden:
-
-   404
 
 Indices and tables
 ==================
