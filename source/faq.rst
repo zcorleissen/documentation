@@ -156,8 +156,8 @@ What are the details of the free promotional offer?
 This promotional offer is only available to NEW ObjectRocket for MongoDB customers and/or NEW ObjectRocket for Redis customers. Only 1GB Mongo Replica Sets, 
 5GB sharded (single shard) Mongo instances, and 512MB Redis instances qualify for this promotional offer.
 
-This promotional offer starts on Dec. 1, 2013 and ends Dec. 31st 2014. Customers that sign up for the ObjectRocket for Mongo service for the FIRST time during the promotional period
-will have the option to receive either a single 1GB Mongo replica set or a single 5GB shard free of charge for the FIRST 30 days upon sign
+This promotional offer starts on Dec. 1, 2013 and ends Dec. 31st 2014. Customers that sign up for the ObjectRocket for MongoDB service for the FIRST time during the promotional period
+will have the option to receive either a single 1GB replica set or a single 5GB shard free of charge for the FIRST 30 days upon sign
 up. Customers that sign up for the ObjectRocket for Redis service for the FIRST time during the promotional period
 will receive a 512MB Redis Instance free of charge for the FIRST 30 days upon sign
 up. After the end of the 30 days or if additional plans are added, standard fees for ObjectRocket services
