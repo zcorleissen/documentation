@@ -153,9 +153,9 @@ Billing
 What are the details of the free promotional offer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This promotional offer is only available to NEW ObjectRocket for MongoDB customers and/or NEW ObjectRocket for Redis customers. Only 1GB Mongo Replica Sets, 5GB sharded (single shard) Mongo instances, and 500MB Redis instances qualify for this promotional offer.
+The promotional offer is only available to NEW ObjectRocket for MongoDB customers and/or NEW ObjectRocket for Redis customers. Only 1GB Mongo Replica Sets, 5GB sharded (single shard) Mongo instances, and 500MB Redis instances qualify for this promotional offer.
 
-This promotional offer starts on Sep. 18, 2014 and ends Sep. 30, 2014. Customers that sign up for the ObjectRocket for MongoDB service for the FIRST time during the promotional period will have the option to receive either a single 1GB replica set or a single 5GB shard free of charge for the FIRST 30 days upon sign up. Customers that sign up for the ObjectRocket for Redis service for the FIRST time during the promotional period will receive a 500MB Redis Instance free of charge for the FIRST 30 days upon sign up. After the end of the 30 days or if additional plans are added, standard fees for ObjectRocket services will apply.
+This promotional offer starts on Sep. 18, 2014 and ends Sep. 30, 2015. Customers that sign up for the ObjectRocket for MongoDB service for the FIRST time during the promotional period will have the option to receive either a single 1GB replica set or a single 5GB shard free of charge for the FIRST 30 days upon sign up. Customers that sign up for the ObjectRocket for Redis service for the FIRST time during the promotional period will receive a 500MB Redis Instance free of charge for the FIRST 30 days upon sign up. After the end of the 30 days or if additional plans are added, standard fees for ObjectRocket services will apply.
 
 Your account is not billed until the end of each 30-day service period, starting from the day you sign up. You can cancel at any time by `emailing support <mailto:support@objectrocket.com>`_. If the account remains open after the 30 day trial period, you will be billed standard fees for the ObjectRocket services. For more information see our `billing information <http://objectrocket.com/pricing>`_.
 
