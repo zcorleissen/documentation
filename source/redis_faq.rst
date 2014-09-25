@@ -51,7 +51,7 @@ What does the system architecture look like?
 What version of Redis is supported?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of 7/28/2014 ObjectRocket supports Redis 2.8.13.
+As of 7/28/2014 ObjectRocket supports Redis 2.8.13.  Contact support@objectrocket.com for help with other versions.
 
 What other features do you offer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,3 +71,10 @@ How does billing work?
 ^^^^^^^^^^^^^^^^^^^^^^
 Please refer to our main FAQ: http://docs.objectrocket.com/faq.html#billing
 
+How do I connect to my Redis instance?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Start the redis-cli with the hostname, port, and password
+
+.. code-block:: bash
+
+redis-cli -h my-host -p 1234 -a mypassword
