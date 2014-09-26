@@ -40,28 +40,28 @@ The offering is based on Redis 2.8.13 with Sentinel for high availability. All i
 What does the system architecture look like?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Our Redis environment utilizes 2 node clusters and 3 Sentinels. One Redis node is master, one node is a slave. 
+* Our Redis environment utilizes 2 node clusters and 3 Sentinels. One Redis node is master, one node is a slave.
 * Every aspect of the stack has been optimized specifically for Redis.
 
   * All services are containerized, which provides guaranteed resources (memory, CPU, disk I/O), prevents “noisy-neighbor” problems, and eliminates the performance bottlenecks of traditional hardware virtualization.
   * The service runs on performance-optimized infrastructure to make Redis run as fast as possible.
 
-* AWS users will automatically use dedicated 10Gbit AWS Direct Connect circuits for very high throughput, low latency connectivity to ObjectRocket for Redis. 
+* AWS users will automatically use dedicated 10Gbit AWS Direct Connect circuits for very high throughput, low latency connectivity to ObjectRocket for Redis.
 
 What version of Redis is supported?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of 7/28/2014 ObjectRocket supports Redis 2.8.13.
+As of 7/28/2014 ObjectRocket supports Redis 2.8.13.  Contact support@objectrocket.com for help with other versions.
 
 What other features do you offer?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ObjectRocket for Redis also features Public IP Access & ACLs; AWS Direct Connect and Configuration Edits. 
+ObjectRocket for Redis also features Public IP Access & ACLs; AWS Direct Connect and Configuration Edits.
 
 Do you support Redis Cluster?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No - it’s not stable for production today. 
+No - it’s not stable for production today.
 
 How much does ObjectRocket for Redis cost per month?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,3 +71,10 @@ How does billing work?
 ^^^^^^^^^^^^^^^^^^^^^^
 Please refer to our main FAQ: http://docs.objectrocket.com/faq.html#billing
 
+How do I connect to my Redis instance?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Start the redis-cli with the hostname, port, and password:
+
+.. code-block:: bash
+
+    redis-cli -h my-host -p 1234 -a mypassword
