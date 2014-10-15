@@ -8,7 +8,6 @@ ObjectRocket for Redis simplifies application development by offering pre-config
 
 Simple provisioning, configuration and administration capabilities make it easy for developers to integrate Redis into their application stack
 
-
 Is ObjectRocket for Redis highly available?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -21,6 +20,11 @@ All plans are sold as useable memory.
 500MB; 1GB; 2.5GB; 5GB; 10GB; 20GB; 50GB
 
 If you require a larger instance size then please contact us.
+
+Can I use a single OR Redis instance for multiple purposes (i.e. caching, session store, message queue)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes you can use a single instance for multiple purposes, as long as the app doesn't use the same key with different data.
 
 What kind of support should I expect from the ObjectRocket Support Team?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
