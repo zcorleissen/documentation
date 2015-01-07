@@ -5,4 +5,3 @@ Redis on ObjectRocket
    :maxdepth: 2
 
    redis_faq
-   redis_migration
