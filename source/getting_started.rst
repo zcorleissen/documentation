@@ -60,9 +60,9 @@ An ACL allows access from an outside network into the ObjectRocket system. It's 
 
 .. code-block:: bash
 
-    $>telnet v4address.com
+    $>telnet www4.v6address.com
     Trying 184.105.238.114...
-    Connected to v4address.com.
+    Connected to www4.v6address.com.
     Escape character is '^]'.
     This is the telnet autoresponder at v6address.com.
     You have connected over IPv4.
