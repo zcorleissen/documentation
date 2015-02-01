@@ -149,7 +149,7 @@ This mechanism is used in conjunction with the support team.  The process ensure
 Customer
 ~~~~~~~~
 
-Many customers have facilities in thier applications to have two systems running in parallel using various schemes.  These processes are unique to each customer.  ObjectRocket provides a new instance and the customer is generally responsible for ensuring the data migration is completed properly.
+Many customers have facilities in their applications to have two systems running in parallel using various schemes.  These processes are unique to each customer.  ObjectRocket provides a new instance and the customer is generally responsible for ensuring the data migration is completed properly.
 
 
 

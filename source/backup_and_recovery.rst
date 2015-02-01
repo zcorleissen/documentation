@@ -21,7 +21,7 @@ Customer Recovery Options
 Download a backup image
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Each backup is available for download. Customers need to email support@objectrocket.com and indicate the backup image to be restored. A list of the backup images is available in the ObjectRocket gui application under ‘backups’ for each database. The backup is then posted to Rackspace cloudfiles under the the customer API Key (or alternatively a ObjectRocket API Key). The customer can then restore the backup offsite.
+Each backup is available for download. Customers need to email support@objectrocket.com and indicate the backup image to be restored. A list of the backup images is available in the ObjectRocket GUI application under ‘backups’ for each database. The backup is then posted to Rackspace cloudfiles under the the customer API Key (or alternatively a ObjectRocket API Key). The customer can then restore the backup offsite.
 
 If a customer has a single shard, recovery on an external environment to ObjectRocket is as simple as starting a downloaded backup image, uncompressing/untarring the datafiles into a directory, and starting MongoDB with that location as the --dbpath argument.
 
