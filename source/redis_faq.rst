@@ -34,7 +34,7 @@ ObjectRocket for Redis is backed by Redis Specialists 24/7/365 to proactively mo
 Will you help migrate my data to an ObjectRocket for Redis instance?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will offer migration assistance to customers using the 20GB and larger plans. You can find instructions on how to migrate your data here.
+We currently offer migration assistance to customers moving to a 2GB or larger instance, and will have instructions to self migrate soon.
 
 What software is being used?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
