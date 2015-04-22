@@ -1,62 +1,57 @@
 Getting Started Guide
 =====================
 
-This guide is designed to help understand how to get up and running on the ObjectRocket system quickly and easily. There are just a few steps that need to be completed to be up and running with a brand new instance. This guide assumes using the ObjectRocket web interface.
+This guide is designed to get you up and running on the ObjectRocket system quickly and easily. There are just a few steps that need to be completed to launch a brand new instance:
 
-There are just a few steps to getting up and running:
+1. Create an Account
+2. Provide Billing Information
+3. Provision a Database
 
-1. Create an ObjectRocket account, instance, and enter billing info.
-2. Create a database
-3. Add a ACL
-
-Create an ObjectRocket account
+Create an ObjectRocket Account
 ------------------------------
 
-Obtaining an ObjectRocket account is as simple as just `signing up here <https://app.objectrocket.com/sign_up>`_ and completing 3 steps.
+Launching an ObjectRocket managed database is as simple as just `signing up here <https://app.objectrocket.com/sign_up>`_ and completing 3 steps.
 
-Step 1 of 3: Add account information
+Step 1 of 3: Create an Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enter your account information, all fields are required.  ObjectRocket utilizes a single login for an entity. So choose a good login that fits for your group.  For instance, some customers use devops@mycompany.com or similar.
+Enter your account information, all fields other than a phone number are required.  ObjectRocket utilizes a single email address as the login for each account. So choose a good one that fits for your group.  For example, some customers use devops@mycompany.com or similar.
 
-Once complete, click 'next'.
+Once complete, click 'Launch my account'.
 
-Step 2 of 3: Select a plan
+Step 2 of 3: Provide Billing Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A plan is the unit of MongoDB storage required. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
+Billing information needs to be added for the account. Visa, MasterCard, American Express, Diners Club, JCB are acceptable forms of payment. Billing occurs on instance creation, and monthly anniversary thereafter.  If a free trial is chosen billing only occurs at the end of the 30 day trial period or when an additional shard or instance is added to the account.  Simply delete the trial instance before 30 days and you will not be charged.  
 
-- Select a name for your instance.  This can be any logical name.  Any alpha numeric string is valid.
+Click on the ‘Add Credit Card' link or “Set Credit Card” button and enter your credit card information.  
 
-- Select a zone that suits your needs.  Zones are either Rackspace or AWS Direct Connect zones.
-
-- Select a plan that suits your needs.  Consider that as you grow you always add shards in your plan size. More details on plans and pricing are available `here <http://www.objectrocket.com/pricing>`_.
-
-Step 3 of 3: Add billing information
+Step 3 of 3: Provision a Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Billing information needs to be added for the account. Visa, MasterCard, American Express, Diners Club, JCB are all acceptable forms of payment. Billing occurs on instance creation, and monthly thereafter.  A free trial may be available and if so billing would occur at the end of the trial period.
+A plan is the unit of MongoDB or Redis storage required. A plan and a single MongoDB shard or Redis instance are analogous.  You can add more MongoDB shards and additional or larger Redis instances to your plan as your dataset grows.
 
-Select the 'enter credit card' button and enter your CC information.  This may take a few seconds.
-
-Once validated, a dialog will give you confirmation of the instance you want to create. Select 'next' to create the instance and be redirected to the web UI and your list of instances.
+- Select a name for your instance.  This can be any logical name.  Any alphanumeric string is valid.
+- Select a zone that suits your needs.  Zones are either Rackspace or AWS Direct Connect datacenters.
+- Select a plan that suits your needs.  Consider that as you grow you add MongoDB shards in your plan size and additional or larger Redis instances. More details on plans and pricing are available `here <http://www.objectrocket.com/pricing>`_.
+- Click on the “Create Instance” button.  Your instance is provisioned and listed as a resource.
 
 You are almost done!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are just a couple more things to complete once your instance is created. ObjectRocket disallows access by default, so you will need to create an initial database with an initial database user, as well as open the firewall by adding ACL's to the web UI.
+There are just a couple more things to complete once your instance is created. ObjectRocket disallows access by default, so you will need to create an initial database with an initial database user, as well as open the firewall by adding access control lists (ACLs) through the control panel.
 
 .. _create-a-database:
 
-Create a database
+Create a Database
 ------------------------------
 
-ObjectRocket grants access utilizing a combination of native MongoDB authentication and an ACL. The first step is to create a database, and give it a username and password credentials so you can get connected. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance you would like to add a database to. Use the Add Database button on the databases page to add a database. Simply name the database, and add an initial username and password. You can always add more users later, just add one for now.
+ObjectRocket grants access utilizing a combination of native MongoDB and Redis authentication and an access control list (ACL). The first step is to create a database, and give it a username and password credentials so you can get connected. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance to which you would like to add a database. Click the "Add Database" button. Name the database, add an initial username, and provide a password. You can always add more users later; just add one for now.
 
 Add an ACL
 ------------------------------
 
-An ACL allows access from an outside network into the ObjectRocket system. It's based on an CIDR type IP address mask. ObjectRocket makes it easy to manage your ACL lists. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance you would like to add a ACL to. Select the ACL tab, and the add ACL button. ACL's are granted to an instance, so they allow access to every database in that instance. Enter the IP address of your client, and a brief description. The description just helps you keep track of what rules you have already created easily. If you don't know the address of your client, appserver, or webserver you can get it's address using this technique:
+An ACL allows access from an outside network into the ObjectRocket system. It's based on an CIDR type IP address mask. ObjectRocket makes it easy to manage your ACL lists. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance you would like to which you would like to add an ACL to. Select the ACL tab, and the add ACL button. ACL's are granted to an instance, so they allow access to every database in that instance. Enter the IP address of your client, and a brief description. The description just helps you keep track of what rules you have already created easily. If you don't know the address of your client, appserver, or webserver you can get it's address using this technique:
 
 .. code-block:: bash
 
@@ -69,11 +64,11 @@ An ACL allows access from an outside network into the ObjectRocket system. It's 
     Your IP address is 1.1.1.1
     Connection closed by foreign host.
 
-In order to open an ACL for this one host, you would enter 1.1.1.1/32 for the IP address. Once you hit submit it may take a few minutes for the ACL to take effect so be patient.
+In order to open an ACL for this one host, you would enter 1.1.1.1/32 for the IP address. Once you hit submit it may take a few minutes for the ACL to take effect so please be patient.
 
-Congrats!
+Congratulations!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You are all set to start using your ObjectRocket instance.  Your connect string details are listed on the instances page.
+You are all set to start using your ObjectRocket instance.  Your connect string details are listed on the Instances page.
 
-If you have any questions, concerns or comments please reach out at support@objectrocket.com.
+If you have any questions, concerns or comments please reach our databases experts at support@objectrocket.com.
