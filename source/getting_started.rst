@@ -24,7 +24,7 @@ Step 2 of 3: Provide Billing Information
 
 Billing information needs to be added for the account. Visa, MasterCard, American Express, Diners Club, JCB are acceptable forms of payment. Billing occurs on instance creation, and monthly anniversary thereafter.  If a free trial is chosen billing occurs at the end of the 30-day trial period or when an additional shard or instance is added to the account.
 
-Click on the ‘add a credit card to your account' link and enter your credit card information.    
+Click on the ‘Add Credit Card' button and enter your credit card information.    
 
 Step 3 of 3: Provision a Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
