@@ -56,17 +56,18 @@ Step 6 of 6: Connect!
 
 Provided you've added an ACL and have a database with a user you can authenticate with, you can test basic connectivity from your terminal of choice with the Mongo shell:
 
->>> $ mongo --version
-MongoDB shell version: 2.6.5
+.. code-block:: bash
+
+$ mongo --version
+MongoDB shell version: 2.4.6
 
 $ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
-MongoDB shell version: 2.6.5
+MongoDB shell version: 2.4.6
 connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
 mongos> show collections
 example      0.000MB / 0.004MB
 system.indexes  0.000MB / 0.008MB
 system.users    0.000MB / 0.008MB
 mongos>
-
 
 If see something similar after running `show collections` you're connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
