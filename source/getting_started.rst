@@ -56,11 +56,8 @@ Step 6 of 6: Connect!
 
 Provided you've added an ACL and have a database with a user you can authenticate with, you can test basic connectivity from your terminal of choice with the Mongo shell:
 
->>>
-$ mongo --version
-MongoDB shell version: 2.4.6
+::
 
->>>
 $ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
 MongoDB shell version: 2.4.6
 connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
