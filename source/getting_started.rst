@@ -1,79 +1,73 @@
 Getting Started Guide
 =====================
 
-This guide is designed to help understand how to get up and running on the ObjectRocket system quickly and easily. There are just a few steps that need to be completed to be up and running with a brand new instance. This guide assumes using the ObjectRocket web interface.
+This guide is designed to help understand how to get up and running on the ObjectRocket platform quickly and easily. There are just a few steps necessary to be up and running with a brand new instance. This guide assumes you're using the ObjectRocket dashboard `here <https://app.objectrocket.com/>`_.
 
-There are just a few steps to getting up and running:
+Here are the high level steps:
 
-1. Create an ObjectRocket account, instance, and enter billing info.
-2. Create a database
-3. Add a ACL
+1. Create an ObjectRocket account
+2. Add billing info
+3. Create an instance
+4. Create a database
+5. Add an ACL
+6. Connect!
 
-Create an ObjectRocket account
-------------------------------
+Step 1 of 6: Create an account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Obtaining an ObjectRocket account is as simple as just `signing up here <https://app.objectrocket.com/sign_up>`_ and completing 3 steps.
+Obtaining an ObjectRocket account is as simple as `signing up here <https://app.objectrocket.com/sign_up>`_ and completing the forms listed. Enter your account information, all fields are required. ObjectRocket utilizes a single login for now, but we're working on adding functionality for sub-accounts. For now we recommend using a mailing list if you need access for multiple people, eg. devops@mycompany.com.
 
-Step 1 of 3: Add account information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once complete, click 'Launch my account'.
 
-Enter your account information, all fields are required.  ObjectRocket utilizes a single login for an entity. So choose a good login that fits for your group.  For instance, some customers use devops@mycompany.com or similar.
+Step 2 of 6: Add billing info
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once complete, click 'next'.
+Before you can create an instance, you'll need to add your billing information. You can do so from the default landing page by clicking 'add a credit card to your account', or by clicking your username on the upper right, clicking 'Billing Information', then clicking the 'Set Credit Card' button on the left side.
 
-Step 2 of 3: Select a plan
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 3 of 6: Create an instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A plan is the unit of MongoDB storage required. A plan and a single shard are synonyms.  You can add more shards to your plan as your dataset grows.
+- Click the 'Add Instance' button.
 
-- Select a name for your instance.  This can be any logical name.  Any alpha numeric string is valid.
+- Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a zone that suits your needs.  Zones are either Rackspace or AWS Direct Connect zones.
+Here's a breakdown of the differences between a Replica Set and a Sharded instance on our platform:
+
+In our sharded plans, an instance will consist of four redundant mongos servers, three config servers and N number of shards. A shard is comprised of a three member replica set (1 Primary + 2 Secondaries).  This is for data redundancy, fault tolerance, and provides us with the ability to do maintenances in a MongoDB best practice way. These plans also come with Rackspace ServiceNet connectivity with the same datacenter, SSL connection support, and AWS DirectConnect in our London, East-IAD3, and West datacenters. Our sharded plans can also utilize our RocketScale feature which will automatically add additional shards when space usage meets a threshold that you define. In order for this feature to be beneficial however, you must have collections that are sharded (must be at least 256MB+) with a valid shard key, or can use our AutoKey feature in conjunction to automatically add a hashed shard key to collections larger than 256M.
+
+<Need a viseo diagram for each instance type>
+
+Our replica set plans consist of three members, but consist of a PRIMARY + SECONDARY + ARBITER (non-data bearing). There are 1GB instances which can scale in place to 5GB at 19$/GB/Mo (US DC prices). We also have 5GB and larger replica set instances, which have a flat storage allocation and does not scale like the 1GBs. Replica set instances do not have Rackspace Service Net connectivity nor SSL connectivity. A major difference between our Replica Set instances are that the 1GB versions are intended for development only and are limited to a single database running on 2.4.6. 5GB+ replica set instances are not limited in the number of databases other than by storage space, nor by version, and by default run 2.4.10.
+
+- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, lebelled by airport codes in that region. A map can be found `here <http://objectrocket.com/features`_.
 
 - Select a plan that suits your needs.  Consider that as you grow you always add shards in your plan size. More details on plans and pricing are available `here <http://www.objectrocket.com/pricing>`_.
 
-Step 3 of 3: Add billing information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 4 of 6: Create a database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Billing information needs to be added for the account. Visa, MasterCard, American Express, Diners Club, JCB are all acceptable forms of payment. Billing occurs on instance creation, and monthly thereafter.  A free trial may be available and if so billing would occur at the end of the trial period.
+Once you've added an instance you should see it under the `Instances` heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: `Add Database` and `Copy Remote Database`. For now, click `Add Database`. This opens a popover with 3 fields, `Database Name`, `Username`, and `Password`. Simply fill in each and click the `Add Database` button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
 
-Select the 'enter credit card' button and enter your CC information.  This may take a few seconds.
+Step 5 of 6: Add an ACL
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Once validated, a dialog will give you confirmation of the instance you want to create. Select 'next' to create the instance and be redirected to the web UI and your list of instances.
+Back to the instance details page, under the heading `Security`, you have the option to `Add ACL`. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: `IP Address` and `Description`. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
-You are almost done!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 6 of 6: Connect!
+~~~~~~~~~~~~~~~~~~~~~~~
 
-There are just a couple more things to complete once your instance is created. ObjectRocket disallows access by default, so you will need to create an initial database with an initial database user, as well as open the firewall by adding ACL's to the web UI.
+Provided you've added an ACL and have a database with a user you can authenticate with, you can test basic connectivity from your terminal of choice with the Mongo shell:
 
-.. _create-a-database:
+$ mongo --version
+MongoDB shell version: 2.6.5
 
-Create a database
-------------------------------
+$ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
+MongoDB shell version: 2.6.5
+connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
+mongos> show collections
+example      0.000MB / 0.004MB
+system.indexes  0.000MB / 0.008MB
+system.users    0.000MB / 0.008MB
+mongos>
 
-ObjectRocket grants access utilizing a combination of native MongoDB authentication and an ACL. The first step is to create a database, and give it a username and password credentials so you can get connected. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance you would like to add a database to. Use the Add Database button on the databases page to add a database. Simply name the database, and add an initial username and password. You can always add more users later, just add one for now.
-
-Add an ACL
-------------------------------
-
-An ACL allows access from an outside network into the ObjectRocket system. It's based on an CIDR type IP address mask. ObjectRocket makes it easy to manage your ACL lists. Head to the `instances <https://app.objectrocket.com/instances>`_ page then click on the instance you would like to add a ACL to. Select the ACL tab, and the add ACL button. ACL's are granted to an instance, so they allow access to every database in that instance. Enter the IP address of your client, and a brief description. The description just helps you keep track of what rules you have already created easily. If you don't know the address of your client, appserver, or webserver you can get it's address using this technique:
-
-.. code-block:: bash
-
-    $>telnet www4.v6address.com
-    Trying 184.105.238.114...
-    Connected to www4.v6address.com.
-    Escape character is '^]'.
-    This is the telnet autoresponder at v6address.com.
-    You have connected over IPv4.
-    Your IP address is 1.1.1.1
-    Connection closed by foreign host.
-
-In order to open an ACL for this one host, you would enter 1.1.1.1/32 for the IP address. Once you hit submit it may take a few minutes for the ACL to take effect so be patient.
-
-Congrats!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You are all set to start using your ObjectRocket instance.  Your connect string details are listed on the instances page.
-
-If you have any questions, concerns or comments please reach out at support@objectrocket.com.
+If see something similar after running `show collections` you're connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com`!
