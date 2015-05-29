@@ -37,7 +37,7 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, lebelled by airport codes in that region. A map can be found `here <http://objectrocket.com/features>`_.
+- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. A map can be found `here <http://objectrocket.com/features>`_.
 
 - Select a plan that suits your needs.  Consider that as you grow you always add shards in your plan size. More details on plans and pricing are available `here <http://www.objectrocket.com/pricing>`_.
 
