@@ -1,7 +1,7 @@
 Getting Started Guide
 =====================
 
-This guide is designed to help understand how to get up and running on the ObjectRocket platform quickly and easily. There are just a few steps necessary to be up and running with a brand new instance. This guide assumes you're using the ObjectRocket dashboard `here <https://app.objectrocket.com/>`_.
+This guide is designed to help understand how to get up and running on the ObjectRocket platform quickly and easily. There are just a few steps necessary to be up and running with a brand new instance. This guide assumes you're using the ObjectRocket `dashboard <https://app.objectrocket.com/>`_.
 
 Here are the high level steps:
 
@@ -37,9 +37,9 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. A map can be found `here <http://objectrocket.com/features>`_.
+- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
-- Select a plan that suits your needs.  Consider that as you grow you always add shards in your plan size. More details on plans and pricing are available `here <http://www.objectrocket.com/pricing>`_.
+- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
 
 Step 4 of 6: Create a database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
