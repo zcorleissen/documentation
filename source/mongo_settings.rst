@@ -18,7 +18,7 @@ Profiling Level
 
 .. image:: images/proflvl.png
 
-This allows you to enable a specific `profiling level <http://docs.mongodb.org/manual/tutorial/manage-the-database-profiler/>`_ for databases on this instance. Slow, by default, is anything longer than 100ms, and All will log all queries. All does incur a performance hit as it turns every query into a write, regardless of the query itself.
+This allows you to enable a specific `profiling level <http://docs.mongodb.org/manual/tutorial/manage-the-database-profiler/>`_ for databases on this instance. Slow, by default, is anything longer than 100ms. We're more than happy ot change this value for you if you need a different value. All will log all queries. All does incur a performance hit as it turns every query into a write, regardless of the query itself.
 
 Auto Key Checkbox
 -----------------
@@ -39,38 +39,38 @@ Balancer Checkbox
 
 This enables or disables the balancer entirely. Please use with caution, as if a shard is added and this is turned off, no data will be allocated to the new shard.
 
-Balancer Window (UTC)
+Balancer Window (PDT)
 ---------------------
 
 .. image:: images/balancerwindow.png
 
-This allows you to choose whether the balancer is allowed to run all the time, or within a definable daily window. Please note this is in Coordinated Universal Time, or UDT.
+This allows you to choose whether the balancer is allowed to run all the time, or within a definable daily window. Please note this is in Pacific Daylight Time.
 
 Balancer Schedule
 -----------------
 
 .. image:: images/balancersched.png
 
-This allows you to specify when the balancer runs each day, making sure no data is in transit during peak hours. MongoDB has this set in UTC to help minimize any timezone differences, so please be aware when choosing when this is run.
+This allows you to specify when the balancer runs each day, making sure no data is in transit during peak hours. This is in PDT.
 
 Stepdown Window
 ===============
 
-ObjectRocket can handle compactions for you automatically, making sure you're only using the least possible space. MongoDB automatically creates file extents to add data to later, which can sometimes make the database seem like it's using more space than it really is. Setting a stepdown window allows us to compact your instance weekly ensuring that the padding factor doesn't grow unchecked. It also allows you to reclaim disk space from deleted documents which MongoDB doesn't give back to the OS natively. You can read more on Mongo's space allocation here: `Why are the files in my data directory larger than the data in my database? <http://docs.mongodb.org/manual/faq/storage/#why-are-the-files-in-my-data-directory-larger-than-the-data-in-my-database>`_
+ObjectRocket can handle compactions for you automatically, making sure you're only using the least possible space. MongoDB automatically creates file extents to add data to later, which can sometimes make the database seem like it's using more space than it really is. Setting a stepdown window allows us to compact your instance weekly ensuring that the padding factor doesn't grow unchecked. It also allows you to reclaim disk space from deleted documents which MongoDB doesn't give back to the OS natively. You can read more on Mongo's space allocation here: `Understanding MongoDB Space Usage <http://objectrocket.com/blog/how-to/understanding-mongodb-space-usage>`_ and here: `Why are the files in my data directory larger than the data in my database? <http://docs.mongodb.org/manual/faq/storage/#why-are-the-files-in-my-data-directory-larger-than-the-data-in-my-database>`_
 
 Stepdown Scheduled
 ------------------
 
 .. image:: images/stepsched.png
 
-This enables or disables the stepdown option for this instance.
+This enables or disables the stepdown option, which allows you to compact the instance via the dashboard.
 
-Stepdown Window (PDT)
+Stepdown Window (UTC)
 ---------------------
 
 .. image:: images/stepwind.png
 
-This is the window in which your instance is allowed to stepdown. It needs to be at least a 10 minute window to allow for oplog differences between members, as it will not stepdown if a secondary isn't within a small enough difference from the current primary. Please note this time is in Pacific Daylight Time.
+This is the window in which your instance is allowed to stepdown. It needs to be at least a 10 minute window to allow for oplog differences between members, as it will not stepdown if a secondary has a large enough oplog difference from the current primary. Please note this time is in Coordinated Universal Time, or UTC.
 
 Enable Weekly Stepdown
 ----------------------
@@ -122,4 +122,4 @@ Instance Storage Usage
 
 .. image:: images/storagealarm.png
 
-Here is where you'll set the percentage you'd like to receive notifcations around. Any number between 1 and 100 is valid. An empty or 0 value disables the notification.
+Here is where you'll set the percentage you'd like to receive notifcations around. Any number between 1 and 100 is valid. An empty or 0 value disables the notifications.
