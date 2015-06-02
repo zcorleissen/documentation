@@ -14,11 +14,13 @@ Here's a breakdown of the differences between a Replica Set and a Sharded instan
 In our sharded plans, an instance will consist of four redundant mongos servers, three config servers and N number of shards. A shard is comprised of a three member replica set (1 Primary + 2 Secondaries).  This is for data redundancy, fault tolerance, and provides us with the ability to do maintenances in a MongoDB best practice way. These plans also come with Rackspace ServiceNet connectivity with the same datacenter, SSL connection support, and AWS DirectConnect in our London, East-IAD3, and West datacenters.
 
 .. image:: images/sharded.png
+	:align: center
 
 Our replica set plans consist of three members, but consist of a PRIMARY + SECONDARY + ARBITER (non-data bearing). There are 1GB instances which can scale in place to 5GB at 19$/GB/Mo (US DC prices). We also have 5GB and larger replica set instances, which have a flat storage allocation and does not scale like the 1GBs. Replica set instances do not have Rackspace Service Net connectivity nor SSL connectivity. A major difference between our Replica Set instances are that the 1GB versions are intended for development only and are limited to a single database running on 2.4.6. 5GB+ replica set instances are not limited in the number of databases other than by storage space, nor by version, and by default run 2.4.10.
 
 .. image:: images/replset.png
-
+	:align: center
+	
 - Click the 'Add Instance' button.
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
