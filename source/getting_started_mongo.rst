@@ -43,10 +43,13 @@ Provided you've added an ACL and have a database with a user you can authenticat
 	$ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
 	MongoDB shell version: 2.4.6
 	connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
+	
 	mongos> show collections
 	exampleDB
 	system.indexes
 	system.users
+	
 	mongos>
 
-If see something similar after running `show collections` you're connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
+
+If you see something similar after running `show collections` you've successfully connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
