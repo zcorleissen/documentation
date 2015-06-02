@@ -25,7 +25,8 @@ Auto Key Checkbox
 
 .. image:: images/autokey.png
 
-Auto Key is our feature which will automatically apply a hashed index on collections larger than 256MB that do not already have a shard key defined. It will notify you via email of any created, after it's applied the index and hashed key. It operates per database, so an ideal use case would be to specify shard keys on your larger collections where performance is needed most, and then let our system handle the rest for smaller collections.
+Auto Key is our feature which will automatically apply a hashed index on collections larger than 256MB that do not already have a shard key defined. Auto Key operates per database, so an ideal use case would be to specify shard keys on your larger collections where performance is needed most, and then let our system handle the rest for smaller collections. Our system will also send you a notification by email for any shard keys created and applied to collections.
+
 
 Balancer
 ========
