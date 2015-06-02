@@ -18,7 +18,7 @@ Profiling Level
 
 .. image:: images/proflvl.png
 
-This allows you to enable a specific `profiling level <http://docs.mongodb.org/manual/tutorial/manage-the-database-profiler/>`_ for databases on this instance. Slow is anything longer than 20ms, and All will log all queries. All does incur a bit of a performance hit as it turns every query into a write, regardless of the query itself.
+This allows you to enable a specific `profiling level <http://docs.mongodb.org/manual/tutorial/manage-the-database-profiler/>`_ for databases on this instance. Slow, by default, is anything longer than 100ms, and All will log all queries. All does incur a performance hit as it turns every query into a write, regardless of the query itself.
 
 Auto Key Checkbox
 -----------------
@@ -65,12 +65,12 @@ Stepdown Scheduled
 
 This enables or disables the stepdown option for this instance.
 
-Stepdown Window (PST)
+Stepdown Window (PDT)
 ---------------------
 
 .. image:: images/stepwind.png
 
-This is the window in which your instance is allowed to stepdown. It needs to be at least a 10 minute window to allow for oplog differences between members, as it will not stepdown if a secondary isn't within a small enough difference from the current primary. Please note this time is in Pacific Standard Time.
+This is the window in which your instance is allowed to stepdown. It needs to be at least a 10 minute window to allow for oplog differences between members, as it will not stepdown if a secondary isn't within a small enough difference from the current primary. Please note this time is in Pacific Daylight Time.
 
 Enable Weekly Stepdown
 ----------------------
