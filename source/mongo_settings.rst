@@ -25,7 +25,7 @@ Auto Key Checkbox
 
 .. image:: images/autokey.png
 
-Auto Key is our feature which will automatically apply a hashed index on collections larger than 256MB that do not already have a shard key defined. Auto Key operates per database, so an ideal use case would be to specify shard keys on your larger collections where performance is needed most, and then let our system handle the rest for smaller collections. Our system will also send you a notification by email for any shard keys created and applied to collections.
+Auto Key is our feature which will automatically apply a hashed index on `_id` for collections larger than 256MB that do not already have a shard key defined. Auto Key operates per database, so an ideal use case would be to specify shard keys on your larger collections where performance is needed most, and then let our system handle the rest for smaller collections. Our system will also send you a notification by email for any shard keys created and applied to collections.
 
 
 Balancer
@@ -45,14 +45,14 @@ Balancer Window (PDT)
 
 .. image:: images/balancerwindow.png
 
-This allows you to choose whether the balancer is allowed to run all the time, or within a definable daily window. Please note this is in Pacific Daylight Time.
+This allows you to choose whether the balancer is allowed to run all the time, or within a definable daily window.
 
 Balancer Schedule
 -----------------
 
 .. image:: images/balancersched.png
 
-This allows you to specify when the balancer runs each day, making sure no data is in transit during peak hours. This is in PDT.
+This allows you to specify when the balancer runs each day, making sure no data is in transit during peak hours. Please note this is in Pacific Daylight Time.
 
 Stepdown Window
 ===============
