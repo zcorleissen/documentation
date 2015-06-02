@@ -8,9 +8,6 @@ Here are the high level steps:
 1. Create an ObjectRocket account
 2. Add billing info
 3. Create an instance
-4. Create a database
-5. Add an ACL
-6. Connect!
 
 1. Create an account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
