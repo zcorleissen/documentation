@@ -38,6 +38,9 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 2. Create a database
 ~~~~~~~~~~~~~~~~~~~~
 
+.. image:: images/adddatabase.png
+	:align: center
+
 Once you've added an instance you should see it under the **Instances** heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: **Add Database** and **Copy Remote Database**. For now, click **Add Database**. This opens a popover with 3 fields, **Database Name**, **Username**, and **Password**. Simply fill in each and click the **Add Database** button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
 
 3. Add an ACL
