@@ -21,7 +21,7 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 .. image:: images/replset.png
    :align: center
 	
-- Click the 'Add Instance' button.
+- Click the **Add Instance** button.
 
 .. image:: images/addinstance.png
    :align: center
@@ -38,12 +38,12 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 2. Create a database
 ~~~~~~~~~~~~~~~~~~~~
 
-Once you've added an instance you should see it under the `Instances` heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: `Add Database` and `Copy Remote Database`. For now, click `Add Database`. This opens a popover with 3 fields, `Database Name`, `Username`, and `Password`. Simply fill in each and click the `Add Database` button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
+Once you've added an instance you should see it under the **Instances** heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: **Add Database** and **Copy Remote Database**. For now, click **Add Database**. This opens a popover with 3 fields, **Database Name**, **Username**, and **Password**. Simply fill in each and click the **Add Database** button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
 
 3. Add an ACL
 ~~~~~~~~~~~~~
 
-Back to the instance details page, under the heading `Security`, you have the option to `Add ACL`. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: `IP Address` and `Description`. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
+Back to the instance details page, under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
 4. Connect!
 ~~~~~~~~~~~
@@ -56,12 +56,17 @@ Provided you've added an ACL and have a database with a user you can authenticat
 	MongoDB shell version: 2.4.6
 	connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
 	
-	mongos> show collections
-	exampleDB
-	system.indexes
-	system.users
+	mongos> db.isMaster()
+	{
+	  "ismaster": true,
+	  "localTime": ISODate("2015-06-03T16:42:02.875Z"),
+	  "maxBsonObjectSize": 16777216,
+	  "maxMessageSizeBytes": 48000000,
+	  "msg": "isdbgrid",
+	  "ok": 1
+	}
 	
 	mongos>
 
 
-If you see something similar after running `show collections` you've successfully connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
+If you see something similar after running ``db.isMaster()`` you've successfully connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
