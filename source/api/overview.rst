@@ -58,8 +58,8 @@ your key in the 'API' column at https://app.objectrocket.com/instances.
 
 .. WARNING::
 
-   Your API key allows access to your data, so this key should not be
-   exposed untrusted.
+   Your API key allows access to your data on a per instance basis, so this key should not be
+   exposed to any untrusted source.
 
 
 Operations

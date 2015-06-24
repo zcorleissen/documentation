@@ -9,7 +9,7 @@ General
 What is ObjectRocket?
 ^^^^^^^^^^^^^^^^^^^^^
 
-ObjectRocket is the next generation cloud database. We've built a
+ObjectRocket is the next generation cloud database. We've built an
 Industrial Strength platform specifically for MongoDB using state of the art
 hardware like Solid State Disks (SSDs) so that you never have to worry about
 performance, geo-diverse colocations so you never have to worry about backups
@@ -19,13 +19,13 @@ and instant on capacity so that you can scale instantly.
 What do we manage?
 ^^^^^^^^^^^^^^^^^^
 
-We manage the entire platform scaling, updating and replicating your data so
+We manage the entire platform including scaling, updating, and replicating your data so
 that all you need to focus on is your business. Managing and scaling a
-database is hard you can spend a lot of time finding the right team and
-developing your own platform or you can let us do it for you, we have years
-of experience scaling platforms for fortune 100 companies and startups, we've
+database is hard, and you can spend a lot of time finding the right team and
+developing your own platform or you can let us do it for you, as we have years
+of experience scaling platforms for fortune 100 companies and startups. We've
 spent the time and capital to develop a world class solution and we provide
-you a simple interface to manage your individual instance.
+you a simple interface to manage your individual instances.
 
 
 What about data portability?
@@ -85,7 +85,7 @@ you normally otherwise would:
         "user" : "kg"
    }
 
-Also, feel free to contact `support <mailto:support@objectrocket.com>`_.
+Also, feel free to contact `support <mailto:support@objectrocket.com>`_ if you need any assistance.
 
 How is space usage calculated?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,11 +100,7 @@ fileSize includes data size, index size, extent size, some amount of file free
 space buffer. "Total File Size" is listed on the
 `instances page <https://app.objectrocket.com/instances>`_.
 
-ObjectRocket's
-`build of MongoDB <https://github.com/objectrocket/mongodb-2.2-objectrocket>`_
-utilizes a custom file allocator that helps to minimize empty free space ahead
-of actual data space so customers pay an absolute minimum. For more detail on
-MongoDB space usage see the :mongo-manual:`MongoDB docs </faq/storage>`.
+Detailed information about how this is calculated can be found on our blog: `Understanding MongoDB space usage <http://objectrocket.com/blog/how-to/understanding-mongodb-space-usage>`_.
 
 
 Redundancy, Scalability, Performance
@@ -164,10 +160,10 @@ How much does it cost?
 
 Pricing varies per region.  Please refer to the following pricing pages:
 
-`US Pricing Page <https://www.objectrocket.com/pricing>`_.
-`London Pricing Page <https://www.objectrocket.com/pricing_lon>`_.
-`Hong Kong Pricing Page <https://www.objectrocket.com/pricing_hkg>`_.
-`Sydney Pricing Page <https://www.objectrocket.com/pricing_syd>`_.
+`US Pricing <https://www.objectrocket.com/pricing>`_.
+`London Pricing <https://www.objectrocket.com/pricing_lon>`_.
+`Hong Kong Pricing <https://www.objectrocket.com/pricing_hkg>`_.
+`Sydney Pricing <https://www.objectrocket.com/pricing_syd>`_.
 
 When will I be billed?
 ^^^^^^^^^^^^^^^^^^^^^^
