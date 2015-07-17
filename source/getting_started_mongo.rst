@@ -15,11 +15,15 @@ In our sharded plans, an instance will consist of four redundant mongos servers,
 
 .. image:: images/sharded.png
    :align: center
+   :scale: 70 %
+   :alt: A sharded MongoDB instance with a single shard.
 
 Our replica set plans consist of three members, but consist of a PRIMARY + SECONDARY + ARBITER (non-data bearing). There are 1GB instances which can scale in place to 5GB at 19$/GB/Mo (US DC prices). We also have 5GB and larger replica set instances, which have a flat storage allocation and does not scale like the 1GBs. Replica set instances do not have Rackspace Service Net connectivity nor SSL connectivity. A major difference between our Replica Set instances are that the 1GB versions are intended for development only and are limited to a single database running on 2.4.6. 5GB+ replica set instances are not limited in the number of databases other than by storage space, nor by version, and by default run 2.4.10.
 
 .. image:: images/replset.png
    :align: center
+   :scale: 70%
+   :alt: A single MongoDB replica set
 	
 - Click the **Add Instance** button.
 
@@ -58,18 +62,13 @@ Provided you've added an ACL and have a database with a user you can authenticat
 	$ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
 	MongoDB shell version: 2.4.6
 	connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
-	
-	mongos> db.isMaster()
-	{
-	  "ismaster": true,
-	  "localTime": ISODate("2015-06-03T16:42:02.875Z"),
-	  "maxBsonObjectSize": 16777216,
-	  "maxMessageSizeBytes": 48000000,
-	  "msg": "isdbgrid",
-	  "ok": 1
-	}
-	
+
+	mongos> show collections
+	exampleDB
+	system.indexes
+	system.users
+
 	mongos>
 
 
-If you see something similar after running ``db.isMaster()`` you've successfully connected and can do anything you'd expect to against this database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
+If see something similar after running ``show collections`` you're connected to the instance and can do anything you'd expect to against the database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
