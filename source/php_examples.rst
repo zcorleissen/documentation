@@ -18,24 +18,28 @@ Then ensure it's enabled in your php.ini with:
 Connecting
 -------------
 Connecting to a replica set:
-.. code-block:: php
-<?php
-$m = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
+::
+   
+ <?php
+ $m = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
 
 Connecting to a replica set with SSL:
-.. code-block:: php
-<?php
-$m = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7", array("ssl" => true));
+::
+   
+ <?php
+ $m = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7", array("ssl" => true));
 
 Connecting to a sharded instance:
-.. code-block:: php
-<?php
-$m = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045");
+::
+   
+ <?php
+ $m = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045");
 
 Connecting to a sharded instance with SSL:
-.. code-block:: php
-<?php
-$m = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045", array("ssl" => true));
+::
+
+ <?php
+ $m = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045", array("ssl" => true));
 
 
 
