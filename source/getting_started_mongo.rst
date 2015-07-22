@@ -54,6 +54,9 @@ Once you've added an instance you should see it under the **Instances** heading.
 
 Back to the instance details page, under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
+.. image:: images/addacl.png
+   :align: left
+
 4. Connect!
 ~~~~~~~~~~~
 
