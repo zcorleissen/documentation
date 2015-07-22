@@ -1,4 +1,4 @@
-PHP Connection Examples
+PHP Driver Examples
 =======================
 
 The PHP MongoDB driver is an official driver maintained by MongoDB Inc. Complete information for all features of the driver is available in the `Official Documentation`_.
