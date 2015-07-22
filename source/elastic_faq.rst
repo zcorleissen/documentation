@@ -92,7 +92,7 @@ Check out our `plans and pricing <http://www.objectrocket.com/pricing>`_, and cl
 What versions are supported?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We currently support **1.6.0**, **1.6.1**, and **1.7.0**.
+We currently default to **1.7.0**, but please contact `support@objectrocket.com <mailto:support@objectrocket.com>`_ if you need something different!
 
 What kind of architecture is this using?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
