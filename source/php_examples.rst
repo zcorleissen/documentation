@@ -47,23 +47,23 @@ Creating a Document
 Our doc in json format
 ::
 
-var doc = {
-  "date": new Date('2014-05-26T02:00:22.378Z'),
-  "winner": "Javi",
-  "decks": {
-    "first": [ "Dinosaurs", "Plants" ],
-    "second": [ "Spies", "Zombies" ],
-    "third": [ "Steampunk", "Wizards" ],
-    "fourth": [ "Shapeshifters", "Ninjas" ]
-  },
-  "prior_winner": "Castro",
-  "points": [ 24, 20, 20, 18 ],
-  "players": {
-    "first": "Javi",
-    "second": "Seth",
-    "third": "Wittman",
-    "fourth": "Castro"
-}};
+ var doc = {
+  "date": new Date('2014-05-26T02:00:22.378Z'),
+  "winner": "Javi",
+  "decks": {
+    "first": [ "Dinosaurs", "Plants" ],
+    "second": [ "Spies", "Zombies" ],
+    "third": [ "Steampunk", "Wizards" ],
+    "fourth": [ "Shapeshifters", "Ninjas" ]
+  },
+  "prior_winner": "Castro",
+  "points": [ 24, 20, 20, 18 ],
+  "players": {
+    "first": "Javi",
+    "second": "Seth",
+    "third": "Wittman",
+    "fourth": "Castro"
+ }};
    
 
 PHP representation and inserting the document
@@ -89,7 +89,6 @@ PHP representation and inserting the document
  $collection->insert( $doc );
 
  ?>
-
 
 
 
