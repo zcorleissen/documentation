@@ -28,8 +28,30 @@ If you have questions we have data services specialists ready to assist, just co
 
 If you are ready to sign up now and don’t already have an ObjectRocket account go to our `sign up <https://app.objectrocket.com/sign_up>`_ page to create one!  
 
-If you already have an ObjectRocket account or just made one then simply log into the ObjectRocket Control Panel, and click the **Add Instance** button to get started!
+If you already have an ObjectRocket account or just made one, go ahead and `log in <https://app.objectrocket.com>`_, and here's how to get started once you're there!
+
+1. Create an instance
+2. Create ACLs
+3. Add an Admin user
+
+1. Create an instance
+~~~~~~~~~~~~~~~~~~
+
+- Click the **Add Instance** button.
 
 .. image:: images/addinstance.png
-   :align: center
+   :align: left
+
+- Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
+
+- Select a backend engine, Elasticsearch in this case.
+
+- Select the default **Clustered** type.
+
+- Select the default Elasticsearch zone, but we'll be launching in other zones soon!
+
+- Select the best Memory and Storage size for your application.
+
+.. image:: images/create_elastic.png
+   :align: left
 

@@ -28,22 +28,24 @@ Our replica set plans consist of three members, but consist of a PRIMARY + SECON
 - Click the **Add Instance** button.
 
 .. image:: images/addinstance.png
-   :align: center
+   :align: left
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
+- Select a backend engine, MongoDB in this case.
+
+- Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
 - Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
 
 .. image:: images/createmongo.png
-   :align: center
+   :align: left
 
 2. Create a database
 ~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/adddatabase.png
-	:align: center
+	:align: left
 
 Once you've added an instance you should see it under the **Instances** heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: **Add Database** and **Copy Remote Database**. For now, click **Add Database**. This opens a popover with 3 fields, **Database Name**, **Username**, and **Password**. Simply fill in each and click the **Add Database** button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
 
