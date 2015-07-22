@@ -102,7 +102,7 @@ Check out our `plans and pricing <http://www.objectrocket.com/pricing>`_, and cl
 What versions are supported?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We currently support **1.6.0**, **1.6.1**, and **1.7.0**. We'll be adding more supported versions soon!
+We currently support **1.6.0**, **1.6.1**, and **1.7.0**.
 
 What kind of architecture is this using?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +124,7 @@ We automatically backup your data every 24 hours using Elasticsearch snapshots. 
 What are the default number of shards and replicas per index?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket Elasticsearch instances are configured with the standard Elasticsearch default settings of ``number_of_shards = 5 and number_of_replicas = 1``, which means any newly created index will have 5 primary shards, each with 1 replica shard (for a total of 10 shards for any new index). The number of primary shards can be specified per index when the index is created, as described in the `Create Index API <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_. If you would like to change these defaults for your ObjectRocket Elasticsearch instance, please contact `support@objectrocket.com <mailto:support@objectrocket.com>`_.
+ObjectRocket Elasticsearch instances are configured with the standard Elasticsearch default settings of ``number_of_shards = 5`` and ``number_of_replicas = 1``, which means any newly created index will have 5 primary shards, each with 1 replica shard (for a total of 10 shards for any new index). The number of primary shards can be specified per index when the index is created, as described in the `Create Index API <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_. If you would like to change these defaults for your ObjectRocket Elasticsearch instance, please contact `support@objectrocket.com <mailto:support@objectrocket.com>`_.
 
 How can I add a data node?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
