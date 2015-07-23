@@ -9,6 +9,7 @@ Contents:
    getting_started
    mongodb
    redis
+   elastic_faq
 
 Indices and tables
 ==================
