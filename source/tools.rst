@@ -17,7 +17,7 @@ The ``--host`` argument would be the "Connect String" in the Control Panel. The 
 http://docs.mongodb.org/manual/reference/program/mongostat/
 
 mongodump/mongorestore
----------
+----------------------
 
 The **mongodump** utility exports the contents of a database in binary format. This will result in a ``.bson`` and ``.json`` file per collection. If you've ever used mysqldump, it works in a similar fashion. Keep in mind that a similar utility exists with the name of **mongoexport**, which works in a completely different manner (don't use mongoexport for backups!). Here is an example of how one might use mongodump to create a backup of their database.
 
@@ -43,7 +43,7 @@ The **mongorestore** utility imports the contents of a database. Here...
    $ mongorestore --optionsssss
 
 mongoexport/mongoimport
-------------
+-----------------------
 
 ...
 
