@@ -1,8 +1,8 @@
-Redis on ObjectRocket
-=====================
+Redis
+=====
 
 .. toctree::
    :maxdepth: 2
    
-   getting_started_redis
+   redis_getting_started
    redis_faq
