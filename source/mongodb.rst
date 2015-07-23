@@ -1,11 +1,11 @@
-MongoDB on ObjectRocket
-=======================
+MongoDB
+=======
 
 .. toctree::
    :maxdepth: 2
    
-   getting_started_mongo
    mongodb_overview
+   mongodb_getting_started
    connection_examples
    backup_and_recovery
    faq
