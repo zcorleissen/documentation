@@ -69,7 +69,7 @@ needing to add a particular user to a large number of already existing
 databases.
 
 For additional information on creating databases and database users,
-see :ref:`create-a-database`.
+see :doc:`getting_started_mongo`.
 
 Arguments
 ^^^^^^^^^

@@ -23,10 +23,10 @@ If you are ready to sign up now and don’t already have an ObjectRocket account
 1. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
-- Click the **Add Instance** button.
-
 .. image:: images/addinstance.png
-   :align: left
+   :align: center
+
+- Click the **Add Instance** button.
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
@@ -39,7 +39,10 @@ If you are ready to sign up now and don’t already have an ObjectRocket account
 - Select the best Memory and Storage size for your application.
 
 .. image:: images/create_elastic.png
-   :align: left
+   :align: center
+   :height: 631px
+   :width: 500 px
+   :scale: 70%
 
 - Click the **Create Instance** button.
 
@@ -51,7 +54,8 @@ You'll now be routed back to the **Instances** page, where you can see the build
 - Under the **Users** heading, click the **Add User** button. Fill in the username and password, and for your first user make sure to create it as Admin.
 
 .. image:: images/add_user_elastic.png
-   :align: left
+   :align: center
+
 
 3. Add an ACL
 ~~~~~~~~~~~~~
@@ -59,7 +63,8 @@ You'll now be routed back to the **Instances** page, where you can see the build
 - Under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
 .. image:: images/addacl.png
-   :align: left
+   :align: center
+
 
 What else do I need to know?
 ----------------------------
@@ -122,6 +127,7 @@ How can I add a data node?
 A new instance comes with two data nodes and more can be easily added after the initial instance creation. To add more nodes go to the Elasticsearch instance in the Control Panel and simply click the **Data Nodes** heading, then the  **Add Data Node** button and follow the prompts. Additional charges apply, so take a look at our `pricing <http://objectrocket.com/pricing>`_ page for details.
 
 .. image:: images/add_datanode.png
-   :align: left
+   :align: center
+
 
 

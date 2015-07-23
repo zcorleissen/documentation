@@ -7,8 +7,10 @@ Contents:
    :maxdepth: 2
 
    getting_started
+   elastic_faq
    mongodb
    redis
+   api/overview
 
 Indices and tables
 ==================
