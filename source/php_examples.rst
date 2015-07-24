@@ -120,6 +120,7 @@ Reading documents
 
 Finding all documents searching by a specific field
 ::
+
  <?php
 
  $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
@@ -142,6 +143,7 @@ Finding all documents searching by a specific field
 Console output
 --------------
 ::
+   
  array(8) {
   ["_id"]=>
   object(MongoId)#7 (1) {
@@ -214,7 +216,7 @@ Console output
     ["fourth"]=>
     string(6) "Castro"
   }
-}
+ }
 
  
 
