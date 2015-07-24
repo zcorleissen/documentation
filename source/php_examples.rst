@@ -25,11 +25,6 @@ Connecting to a replica set:
  <?php
  $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
 
-Connecting to a replica set with SSL:
-::
-   
- <?php
- $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7", array("ssl" => true));
 
 Connecting to a sharded instance:
 ::
