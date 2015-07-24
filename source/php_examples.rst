@@ -217,10 +217,73 @@ Console output for the above code
   }
  }
 
- 
+
+Updating a Document
+-------------------
+
+Updating a document
+::
+
+ <?php
+
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+
+ $database = $connection->myDatabaseName;
+
+ $collection = $database->myCollectionName;
 
 
+ $retval = $collection->findAndModify(
+    array("winner" => "Javi", "logged" => TRUE),
+    array('$set' => array("winner" => "Castro", "logged" => FALSE, "players.first" => "Castro", "players.fourth" => "Javi")),
+    null,
+    array("new" => TRUE)
+ );
 
+ ?>
+
+
+The resulting document directly from MongoDB
+::
+
+ > db.myCollectionName.find().pretty()
+ {
+	"_id" : ObjectId("55b29b5ed5d145014f8b4567"),
+	"date" : ISODate("2014-05-26T02:00:22Z"),
+	"decks" : {
+		"first" : [
+			"Dinosaurs",
+			"Plants"
+		],
+		"second" : [
+			"Spies",
+			"Zombies"
+		],
+		"third" : [
+			"Steampunk",
+			"Wizards"
+		],
+		"fourth" : [
+			"Shapeshifters",
+			"Ninjas"
+		]
+	},
+	"logged" : false,
+	"players" : {
+		"first" : "Castro",
+		"fourth" : "Javi",
+		"second" : "Seth",
+		"third" : "Dave"
+	},
+	"points" : [
+		NumberLong(24),
+		NumberLong(20),
+		NumberLong(20),
+		NumberLong(18)
+	],
+	"prior_winner" : "Castro",
+	"winner" : "Castro"
+ }
 
 
 
