@@ -62,6 +62,8 @@ You'll now be routed back to the **Instances** page, where you can see the build
 
 - Under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
+- We also offer connectivity via the Transport Protocol, using the Java transport client. Transport access lacks any authentication and as such must be explicitly allowed through an ACL option as seen in the screenshot below. Adding an ACL with the ``Transport Interface`` checked includes regular HTTP/HTTPS as well, so there's no need to add an additional to cover both.
+
 .. image:: images/addacl.png
    :align: center
 

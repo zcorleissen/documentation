@@ -10,7 +10,7 @@ ObjectRocket allows for easy provisioning of MongoDB instances via the web UI.  
 .. _instances page: https://app.objectrocket.com/instances
 
 Instances
-----------------
+---------
 
 Currently there are three types of instances:
 
@@ -19,7 +19,7 @@ Currently there are three types of instances:
 - LARGE: clustered instance.  Not available via the website.  Contact sales@objectrocket.com for sizes larger than available on the website.  Generally this is clusters in the 1TB or larger range.
 
 SMALL Instances
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 A SMALL instance is a simple replica set.  It's designed to be simple and easy to use without more complex sharding capabilities. The SMALL plan works great for dev, test or QA instances.
 
@@ -38,7 +38,7 @@ More information is available on the `plans and pricing page`_.
 .. _plans and pricing page: https://www.objectrocket.com/pricing
 
 MEDIUM Instances
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 MEDIUM instances are clustered instances.  They are designed to be the workhorse of a system.  They are initially provisioned with a single shard, but can grow by adding shards at any time.  A MEDIUM instance is provisioned with all of the required components for the cluster.  The end user need not care about the specifics of the MongoDB sharding components, daemons, etc.
 
