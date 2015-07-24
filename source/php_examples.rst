@@ -140,8 +140,7 @@ Finding all documents searching by a specific field
  ?>
 
 
-Console output
---------------
+Console output for the above code
 ::
    
  array(8) {
