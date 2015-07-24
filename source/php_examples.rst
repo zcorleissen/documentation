@@ -286,7 +286,57 @@ The resulting document directly from MongoDB
  }
 
 
+Deleting a Document
+-------------------
 
+Deleting a document
+::
+
+ <?php
+
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+
+ $database = $connection->myDatabaseName;
+
+ $collection = $database->myCollectionName;
+
+
+ $query = array("winner" => "Castro");
+
+ $retval = $collection->remove($query);
+
+ var_dump($retval);
+
+
+ ?>
+
+
+Console output
+::
+
+ array(6) {
+  ["singleShard"]=>
+  string(161) "0c86375ef57646f094a0a27164679c33/hkgclus1br0vz17.hkg.objectrocket.com:32728,hkgclus1br1vz17.hkg.objectrocket.com:32728,hkgclus1br2vz17.hkg.objectrocket.com:32728"
+  ["n"]=>
+  int(1)
+  ["lastOp"]=>
+  object(MongoTimestamp)#6 (2) {
+    ["sec"]=>
+    int(1437769866)
+    ["inc"]=>
+    int(1)
+  }
+  ["connectionId"]=>
+  int(64925)
+  ["err"]=>
+  NULL
+  ["ok"]=>
+  float(1)
+ }
+
+
+
+ 
 
 
 
