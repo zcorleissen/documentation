@@ -115,9 +115,106 @@ The resulting document directly from MongoDB
  } 
 
 
+Reading documents
+-------------------
+
+Finding all documents searching by a specific field
+::
+ <?php
+
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+
+ $database = $connection->myDatabaseName;
+
+ $collection = $database->myCollectionName;
 
 
+ $query = array("winner" => "Javi");
 
+ $cursor = $collection->find($query);
+ foreach ($cursor as $doc) {
+    var_dump($doc);
+ }
+
+ ?>
+
+
+Console output
+--------------
+::
+ array(8) {
+  ["_id"]=>
+  object(MongoId)#7 (1) {
+    ["$id"]=>
+    string(24) "55b29160d5d145e1438b4567"
+  }
+  ["date"]=>
+  object(MongoDate)#8 (2) {
+    ["sec"]=>
+    int(1401069622)
+    ["usec"]=>
+    int(0)
+  }
+  ["winner"]=>
+  string(4) "Javi"
+  ["logged"]=>
+  bool(true)
+  ["decks"]=>
+  array(4) {
+    ["first"]=>
+    array(2) {
+      [0]=>
+      string(9) "Dinosaurs"
+      [1]=>
+      string(6) "Plants"
+    }
+    ["second"]=>
+    array(2) {
+      [0]=>
+      string(5) "Spies"
+      [1]=>
+      string(7) "Zombies"
+    }
+    ["third"]=>
+    array(2) {
+      [0]=>
+      string(9) "Steampunk"
+      [1]=>
+      string(7) "Wizards"
+    }
+    ["fourth"]=>
+    array(2) {
+      [0]=>
+      string(13) "Shapeshifters"
+      [1]=>
+      string(6) "Ninjas"
+    }
+  }
+  ["prior_winner"]=>
+  string(6) "Castro"
+  ["points"]=>
+  array(4) {
+    [0]=>
+    int(24)
+    [1]=>
+    int(20)
+    [2]=>
+    int(20)
+    [3]=>
+    int(18)
+  }
+  ["players"]=>
+  array(4) {
+    ["first"]=>
+    string(4) "Javi"
+    ["second"]=>
+    string(4) "Seth"
+    ["third"]=>
+    string(4) "Dave"
+    ["fourth"]=>
+    string(6) "Castro"
+  }
+}
 
  
 
