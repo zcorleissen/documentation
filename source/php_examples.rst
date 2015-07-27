@@ -8,10 +8,12 @@ Installation
 ---------------
 To use the PHP driver you'll need to first install it via pecl:
 ::
+
  sudo pecl install mongo
 
 Then ensure it's enabled in your php.ini with:
 ::
+
  extension=mongo.so
 
 Note that if you've installed the driver via a package manager like yum the configuration may be in a standalone file in your php.d directory or similar.
