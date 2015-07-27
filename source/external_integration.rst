@@ -74,34 +74,30 @@ Disabling ACLSync
 Amazon Web Services (AWS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To disable automatic ACL creation for a particular instance:
-
-* Go to the settings page for that instance.
-* Uncheck the box labeled **Amazon ACL Sync**.
+* To disable automatic ACL creation for a particular instance:
+    * Go to the settings page for that instance.
+    * Uncheck the box labeled **Amazon ACL Sync**.
 
 .. image:: images/awssync.png
     :align: center
 
-To disable automatic ACL creation completely:
-
-* Go to the `External Integration Settings`_ page.
-* In the *Amazon* section, click the button labeled **Delete AWS Access Key**.
+* To disable automatic ACL creation completely:
+    * Go to the `External Integration Settings`_ page.
+    * In the *Amazon* section, click the button labeled **Delete AWS Access Key**.
 
 Rackspace Cloud
 ~~~~~~~~~~~~~~~
 
-To disable automatic ACL creation for a particular instance:
-
-* Go to the settings page for that instance.
-* Uncheck the box labeled **Rackspace ACL Sync**.
+* To disable automatic ACL creation for a particular instance:
+    * Go to the settings page for that instance.
+    * Uncheck the box labeled **Rackspace ACL Sync**.
 
 .. image:: images/raxsync.png
     :align: center
 
-To disable automatic ACL creation completely:
-
-* Go to the `External Integration Settings`_ page.
-* In the *Rackspace* section, click the button labeled **Delete Rackspace API Key**.
+* To disable automatic ACL creation completely:
+    * Go to the `External Integration Settings`_ page.
+    * In the *Rackspace* section, click the button labeled **Delete Rackspace API Key**.
 
 
 .. _External Integration Settings: https://app.objectrocket.com/external/new_relic
