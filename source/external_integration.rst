@@ -8,10 +8,12 @@ The ObjectRocket platform can automatically report metrics about your MongoDB in
 Enabling New Relic Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To enable New Relic integration:
+* To enable New Relic integration:
+    * Go to the `External Integration Settings`_ page.
+    * Enter a valid New Relic License Key and click **Set License Key**.
 
-* Go to the `External Integration Settings`_ page.
-* Enter a valid New Relic License Key and click **Set License Key**.
+.. image:: images/newrelic_ext.png
+    :align: center
 
 By default, metrics with automatically be reported for all instances, but you can disable it on a per instance basis in the **Settings** page. Each instance will appear as an individual dashboard in New Relic, and metrics are sent roughly every five minutes.
 
@@ -19,18 +21,16 @@ By default, metrics with automatically be reported for all instances, but you ca
 Disabling New Relic Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To disable the reporting of metrics to New Relic for a particular instance:
-
-* Go to the settings page for that instance
-* Set the button labeled 'New Relic Monitoring' to off.
+* To disable the reporting of metrics to New Relic for a particular instance:
+    * Go to the settings page for that instance.
+    * Uncheck the box labeled **New Relic Monitoring**.
 
 .. image:: images/newrelic.png
     :align: center
 
-To disable New Relic integration completely:
-
-* Browse to the `External Integration Settings`_ page.
-* Click the button labeled **Delete License Key**.
+* To disable New Relic integration completely:
+    * Go to the `External Integration Settings`_ page.
+    * Click the button labeled **Delete License Key**.
 
 
 ACLSync
@@ -60,7 +60,7 @@ Rackspace Cloud
 ~~~~~~~~~~~~~~~
 
 * Go to the `External Integration Settings`_ page.
-* Add Rackspace API credentials
+* Add Rackspace API credentials.
     * Add your Rackspace Cloud username.
     * Add your Rackspace Cloud API key.
 
@@ -98,6 +98,8 @@ Rackspace Cloud
 * To disable automatic ACL creation completely:
     * Go to the `External Integration Settings`_ page.
     * In the *Rackspace* section, click the button labeled **Delete Rackspace API Key**.
+
+If you have any trouble or questions you can always reach out to our `support team <mailto:support@objectrocket.com>`_!
 
 
 .. _External Integration Settings: https://app.objectrocket.com/external/new_relic
