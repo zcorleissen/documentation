@@ -13,4 +13,5 @@ MongoDB
    mongo_settings
    sharding_and_scaling
    external_integration
-   onboarding_checklist
+
+   
