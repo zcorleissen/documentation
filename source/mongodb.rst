@@ -11,6 +11,7 @@ MongoDB
    faq
    features
    mongo_settings
+   mongodb_utilities
    sharding_and_scaling
    external_integration
 
