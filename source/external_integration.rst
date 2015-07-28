@@ -8,15 +8,10 @@ The ObjectRocket platform can automatically report metrics about your MongoDB in
 
 .. note::
 
-   Please note that this is only for MongoDB instances. Please see below for Redis and Elasticsearch.
-
-New Relic Monitoring for Redis and Elasticsearch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We currently don't have official ObjectRocket plugins to monitor our Redis and Elasticsearch products, but we recommend using a third-party plugin called `MeetMe <http://newrelic.com/plugins/poison-pen-llc/28>`_. It's an Open Source plugin, and you can read more about the plugin and how to install it on their `GitHub page <https://github.com/MeetMe/newrelic-plugin-agent>`_.
+   Please note that this is only for MongoDB instances. We currently don't have official ObjectRocket plugins to monitor our Redis and Elasticsearch products, but we recommend using a third-party plugin called `MeetMe <http://newrelic.com/plugins/poison-pen-llc/28>`_. It's an Open Source plugin, and you can read more about the plugin and how to install it on their `GitHub page <https://github.com/MeetMe/newrelic-plugin-agent>`_.
 
 Enabling New Relic Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * To enable New Relic integration:
     * Go to the `External Integration Settings`_ page.
@@ -29,7 +24,7 @@ By default, metrics with automatically be reported for all instances, but you ca
 
 
 Disabling New Relic Integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * To disable the reporting of metrics to New Relic for a particular instance:
     * Go to the settings page for that instance.
@@ -79,7 +74,7 @@ Rackspace Cloud
 
 
 Disabling ACLSync
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Amazon Web Services (AWS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
