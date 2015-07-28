@@ -48,7 +48,7 @@ ACLSync
 The ObjectRocket platform can automatically retrieve IP addresses from your Rackspace Cloud or AWS environment, and create an ACL for each of those. This feature is currently limited to retrieving IP addresses from a single AWS region.
 
 Enabling ACLSync
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 By default, ACLs will automatically be created for all instances. For any service you can disable it on a per instance basis.
 
