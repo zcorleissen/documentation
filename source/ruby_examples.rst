@@ -1,51 +1,65 @@
-Ruby Connection Examples
+Ruby Driver Examples
 ========================
 
-At the very least when working with ruby, you should be requiring the ``mongo`` gem. There are other gems out there that can help with performance in some cases, namely ``bson_ext``, but generally requiring this will get you by.
+Installation
+------------
 
-Here's a simple example from MongoDB Inc. showing a connection, creating a document, and then deleting the collection that houses that sample doc.
+The Ruby driver is bundled as a gem, and can be installed like so:
 
-.. code-block:: ruby
-	
-	require 'mongo'
-	require 'pp'
+.. code-block:: bash
 
-	include Mongo
+   $ gem install mongo
 
-	host = ENV['MONGO_RUBY_DRIVER_HOST'] || 'localhost'
-	port = ENV['MONGO_RUBY_DRIVER_PORT'] || MongoClient::DEFAULT_PORT
+Authentication
+--------------
 
-	puts "Connecting to #{host}:#{port}"
-	client  = MongoClient.new(host, port)
-	db   = client.db('ruby-mongo-examples')
-	coll = db.create_collection('test')
+You can create a connection using the standard MongoDB connection format:
 
-	# Erase all records from collection, if any
-	coll.remove
+.. code-block:: bash
 
-	admin = client['admin']
+   mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
 
-	# Profiling level set/get
-	puts "Profiling level: #{admin.profiling_level}"
+Note: When creating a new client connection, debug output will be sent to the console every second, and can make development a bit difficult. This default behavior is currently under review here:
 
-	# Start profiling everything
-	admin.profiling_level = :all
+https://jira.mongodb.org/browse/RUBY-893
 
-	# Read records, creating a profiling event
-	coll.find().to_a
+If you wish to turn this off, you can issue the following command:
 
-	# Stop profiling
-	admin.profiling_level = :off
+.. code-block:: bash
 
-	# Print all profiling info
-	pp admin.profiling_info
+   $ irb(main):001:0> Mongo::Logger.logger.level = Logger::WARN
+   => 2
 
-	# Validate returns a hash if all is well and
-	# raises an exception if there is a problem.
-	info = db.validate_collection(coll.name)
-	puts "valid = #{info['ok']}"
-	puts info['result']
+Connecting to a sharded instance:
 
-	# Destroy the collection
-	coll.drop
+.. code-block:: bash
+
+   $ irb(main):001:0> require 'mongo'
+   => true
+
+   $ irb(main):002:0> client = Mongo::Client.new('mongodb://iad-mongos0.objectrocket.com:15045', :user => 'username', :password => 'password')
+   => #<Mongo::Client:0x70360972955500 cluster=iad-mongos0.objectrocket.com:15045>
+
+   $ irb(main):003:0> client.database_names
+   => ["test", "config", "admin"]
+
+Create a document
+-----------------
+
+...
+
+Read a document
+---------------
+
+...
+
+Update a document
+-----------------
+
+...
+
+Delete a document
+-----------------
+
+...
 
