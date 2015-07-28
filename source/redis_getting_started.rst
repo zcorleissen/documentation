@@ -33,15 +33,25 @@ Under the heading `Security`, you have the option to `Add ACL`. This is necessar
 
 Provided you've added an ACL, you can test basic connectivity from your terminal of choice with redis-cli:
 
-..
+.. code-block:: bash
 
-	$ redis-cli -h <HOST> -p <PORT> -a <PASSWORD>
+   $ redis-cli -h '<hostname>' -p '<port>' -a '<password>'
+   hostname:port> set my_key my_value
+   OK
+   hostname:port> get my_key
+   "my_value"
 
-	redis> set foo bar
-	OK
-	
-	redis> get foo
-	"bar"
+Or you can use netcat/telnet as well:
 
+.. code-block:: bash
+
+   $ nc '<hostname>' '<port>'
+   auth <password>
+   +OK
+   set my_key my_value
+   +OK
+   get my_key
+   $8
+   my_value
 
 If you see something similar to the example above, you're good to use the instance as you normally would any other redis implementation! If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
