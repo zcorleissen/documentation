@@ -1,4 +1,4 @@
-Elasticsearch Rescources
+Elasticsearch Resources
 ==================
 
 Description: Lorem Ipsum

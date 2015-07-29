@@ -1,4 +1,4 @@
-MongoDB Rescources
+MongoDB Resources
 ==================
 
 Description: Lorem Ipsum

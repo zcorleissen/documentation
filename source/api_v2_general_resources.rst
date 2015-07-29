@@ -1,4 +1,4 @@
-General Rescources
+General Resources
 ==================
 
 Description: Lorem Ipsum
