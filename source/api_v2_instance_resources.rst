@@ -1,4 +1,4 @@
-Instance Rescources
+Instance Resources
 ==================
 
 Description: Lorem Ipsum

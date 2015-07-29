@@ -1,4 +1,4 @@
-Redis Rescources
+Redis Resources
 ================
 
 Description: Lorem Ipsum
