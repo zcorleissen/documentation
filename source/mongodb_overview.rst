@@ -31,7 +31,7 @@ Here's what the underlying infrastructure looks like:
    :align: center
    :height: 1458px
    :width: 970px
-   :scale: 60%
+   :scale: 50%
    :alt: A sharded MongoDB instance with a single shard.
 
 Replica sets
@@ -39,5 +39,15 @@ Replica sets
 
 Our Replica set instances are available in 1GB (scalable to 5GB, limited to 2.4.6 with a single database), 5GB, 20GB, 50GB, and 100GB sizes. These don't have the ability to scale as the Sharded instances do, so are meant more for development or simpler use cases where sharding may not be needed. The 5GB+ replica sets default to 2.4.10, but other versions can be made available to reaching out to our `Support team <mailto:support@objectrocket.com>`_.
 
-Replica sets do not offer SSL, ServiceNet connectivity, so please keep that in mind. We recommend using Sharded plans for that, as they have the additional infrastructure needed to support those features.
+.. note::
 
+   Replica set instances do not offer SSL or ServiceNet connectivity, so please keep that in mind. We recommend using Sharded plans for that access, as they have the additional infrastructure needed to support those features. Replica sets **do** offer AWS DirectConnect in our UK-London, US-East-IAD3, and US-West datacenters.
+
+.. image:: images/replset.png
+	:align: center
+	:height: 949px
+	:width: 564px
+	:scale: 60%
+	:alt: MongoDB Replica set instance
+
+As always, if you have any questions about anything you've read here, please feel free to reach out to our `Support team <mailto:support@objectrocket.com>`_!
