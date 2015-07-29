@@ -77,151 +77,64 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
         ]
     }
 
-Quick Reference (Methods)
--------------------------
+Quick Reference
+---------------
 
-General resources
+This is the full list of all the routes our API offers (grouped by product name). Clicking on a heading will take you to a more detailed page which describes each route in more detail.
 
-=======================  =========
-URL                      HTTP Verb
-=======================  =========
-/plans/
-/plans/<string:planid>/
-/tokens/
-/contact/
-/accounts/<uid>/
-/casters/
-/casters/<caster_id>/
-=======================  =========
+:doc:`api_v2_general_resources`
 
-Stats resources
+* /accounts/<uid>/
+* /casters/
+* /casters/<caster_id>/
+* /contact/
+* /dashboards/
+* /dashboards/<dashboard_id>/
+* /graphs/ad_hoc
+* /instances/<instance_name>/stats_config/
+* /plans/
+* /plans/<string:planid>/
+* /tokens/
 
-========================================  =========
-URL                                       HTTP VERB
-========================================  =========
-/graphs/ad_hoc
-/instances/<instance_name>/stats_config/
-/dashboards/
-/dashboards/<dashboard_id>/
-========================================  =========
+:doc:`api_v2_instance_resources`
 
-Instance resources
+* /instances/
+* /instances/<instance_name>/
+* /instances/<instance_name>/acls/
+* /instances/<instance_name>/acls/<acl_id>/
+* /instances/<instance_name>/rename/
 
-=========================================  =========
-URL                                        HTTP Verb
-=========================================  =========
-/instances/                                GET      
-/instances/<instance>/                     GET      
-/instances/<instance>/rename/              GET      
-/instances/<instance>/acls/                GET      
-/instances/<instance>/acls/<acl_id>/       GET      
-=========================================  =========
+:doc:`api_v2_elasticsearch_resources`
 
-Elasticsearch resources
+* /elasticsearch/
+* /elasticsearch/<instance_name>/cluster/
+* /elasticsearch/<instance_name>/data_nodes/
+* /elasticsearch/<instance_name>/indices/
+* /elasticsearch/<instance_name>/nodes/
+* /elasticsearch/<instance_name>/users/
+* /elasticsearch/check_states/
 
-==========================================  =========
-URL                                         HTTP Verb
-==========================================  =========
-/elasticsearch/check_states/                POST     
-/elasticsearch/<instance>/cluster/          GET      
-/elasticsearch/<instance>/data_nodes/       GET      
-/elasticsearch/<instance>/indices/          GET      
-/elasticsearch/<instance>/nodes/            GET      
-/elasticsearch/                             GET      
-/elasticsearch/<instance>/users/            GET      
-==========================================  =========
+:doc:`api_v2_redis_resources`
 
-Redis resources
+* /redis/<instance_name>/connectedSlaves/
+* /redis/<instance_name>/maxClients/
+* /redis/<instance_name>/maxMemoryPolicy/
+* /redis/<instance_name>/resize/
+* /redis/<instance_name>/spaceUsage/
 
-==================================================================  ===============
-URL                                                                 HTTP Verb
-==================================================================  ===============
-/redis/<instance>/connectedSlaves/                                  GET     
-/redis/<instance>/spaceUsage/                                       GET      
-/redis/<instance>/maxMemoryPolicy/                                  GET      
-/redis/<instance>/maxClients/                                       GET      
-/redis/<instance>/resize/                                           POST    
-==================================================================  ===============
+:doc:`api_v2_mongodb_resources`
 
-MongoDB resources
-
-+---------------------------------------------------------------------+
-| Endpoint                                                            |
-+=====================================================================+
-| GET /mongodb/:instance/databases/:database/collections/             |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/databases/:database/collections/:collection/ |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/compaction/                                  |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/databases/                                   |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/databases/<database>/                        |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/opcounters/persecond/                        |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/opcounters/                                  |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/replicasets/                                 |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/shards/                                      |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/spaceusage/                                  |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/stepdown/                                    |
-+---------------------------------------------------------------------+
-| GET /mongodb/:instance/backups/                                     |
-+---------------------------------------------------------------------+
-| GET :ref:`mongodb-instance-logs`                                    |
-+---------------------------------------------------------------------+
-
-MongoDB
-~~~~~~~
-
-.. _mongodb-instance-logs:
-
-/mongodb/:instance/logs/
--------------------------
-
-Description: Lorem Ipsum
-
-Example Request:
-
-.. code-block:: bash
-
-   $ http --auth 'user@example.com:password' 'https://sjc-api.objectrocket.com/v2/mongodb/test123/backups/'
-
-Example Response:
-
-.. code-block:: bash
-
-   {
-            "_id": {
-                "$oid": "55b1e6f95559617dd0a517ec"
-            },
-            "backup_directory": "/backups/55410c7f5b335278490a5be8/20150724_0018",
-            "backup_host": "sydbackups0.syd.objectrocket.com",
-            "error_msg": "Successful, completed in 61 seconds",
-            "filenames": {
-                "5db16d02db25b9673ff2f72440366df0": "5db16d02db25b9673ff2f72440366df0_20150724_0018.tgz",
-                "90a85209de63519f0c04728a1bdb9313": "90a85209de63519f0c04728a1bdb9313_20150724_0018.tgz",
-                "config_server": "config_12345_20150724_0018.tgz"
-            },
-            "instance_id": {
-                "$oid": "55410c7f5b335278490a5be8"
-            },
-            "instance_name": "test123",
-            "instance_type": "mongodb_sharded",
-            "login": "donovan@heydonovan.io",
-            "port": 12345,
-            "timestamp": {
-                "$date": 1437697100909
-            },
-            "timestamp_formatted": "2015/07/24 00:18:20"
-        }
-
-Redis
-~~~~~
-
-more stuff
+* /mongodb/<instance_name>/backups/
+* /mongodb/<instance_name>/compaction/
+* /mongodb/<instance_name>/databases/
+* /mongodb/<instance_name>/databases/<database_name>/
+* /mongodb/<instance_name>/databases/<database_name>/collections/
+* /mongodb/<instance_name>/databases/<database_name>/collections/<collection_name>/
+* /mongodb/<instance_name>/logs/
+* /mongodb/<instance_name>/opcounters/
+* /mongodb/<instance_name>/opcounters/persecond/
+* /mongodb/<instance_name>/replicasets/
+* /mongodb/<instance_name>/shards/
+* /mongodb/<instance_name>/spaceusage/
+* /mongodb/<instance_name>/stepdown/
 
