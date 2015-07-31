@@ -10,7 +10,6 @@ Contents:
    mongodb
    redis
    elastic
-   api/overview
    api_v2
 
 Indices and tables

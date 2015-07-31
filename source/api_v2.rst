@@ -1,15 +1,26 @@
-API Overview (v2)
+..
+   -- Random Thoughts
+   All method descriptions should fit on one line
+   If it's a GET request, prefix the desc with Get
+
+=====================
+ObjectRocket API (v2)
 =====================
 
-This document covers version 2.0 of the ObjectRocket API.
+Overview
+--------
 
 Getting Started
----------------
+~~~~~~~~~~~~~~~
 
-v2 API Endpoint: `https://sjc-api.objectrocket.com/v2/`
+All data is sent and received as JSON. API access is accessed from the following domain:
+
+.. code-block:: bash
+
+   https://sjc-api.objectrocket.com/v2/
 
 Authentication
---------------
+~~~~~~~~~~~~~~
 
 Authentication to the API occurs via `HTTP Basic Auth <https://en.wikipedia.org/wiki/Basic_access_authentication>`_. You'll need to authenticate with the API before you can do anything else (this would be the same username and password used when logging into the ObjectRocket Customer Portal). The server will respond with a **token** and **uid**. The token will expire after 24 hours. Here is an example on how to do so using cURL and HTTPie:
 
@@ -77,64 +88,170 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
         ]
     }
 
-Quick Reference
+Rate Limiting
+~~~~~~~~~~~~~
+
+TODO
+
+General Resources
+-----------------
+
+List all accounts
+~~~~~~~~~~~~~~~~~
+
+Caster Resources
+----------------
+
+Get all casters
+~~~~~~~~~~~~~~~
+Get caster details
+~~~~~~~~~~~~~~~~~~
+
+Stat Resources
+--------------
+
+Instance Resources
+------------------
+
+Get all instances
+~~~~~~~~~~~~~~~~~
+Get instance details
+~~~~~~~~~~~~~~~~~~~~
+Get ACL's
+~~~~~~~~~
+Get ACL details
+~~~~~~~~~~~~~~~
+Rename an instance
+~~~~~~~~~~~~~~~~~~
+
+
+Elasticsearch Resources
+-----------------------
+
+Get all instances
+~~~~~~~~~~~~~~~~~
+Get cluster details
+~~~~~~~~~~~~~~~~~~~
+Get data node details
+~~~~~~~~~~~~~~~~~~~~~
+Add a new data node
+~~~~~~~~~~~~~~~~~~~
+Get indices
+~~~~~~~~~~~
+Get instance node details
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Get all users
+~~~~~~~~~~~~~
+Update a user
+~~~~~~~~~~~~~
+Delete a user
+~~~~~~~~~~~~~
+Check state
+~~~~~~~~~~~
+
+Redis Resources
 ---------------
 
-This is the full list of all the routes our API offers (grouped by product name). Clicking on a heading will take you to a more detailed page which describes each route in more detail.
+Get 'connected_slaves' info
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`api_v2_general_resources`
+.. code-block:: bash
 
-* /accounts/<uid>/
-* /casters/
-* /casters/<caster_id>/
-* /contact/
-* /dashboards/
-* /dashboards/<dashboard_id>/
-* /graphs/ad_hoc
-* /instances/<instance_name>/stats_config/
-* /plans/
-* /plans/<string:planid>/
-* /tokens/
+   GET /redis/<instance_name>/connectedSlaves/
 
-:doc:`api_v2_instance_resources`
+Request/Response:
 
-* /instances/
-* /instances/<instance_name>/
-* /instances/<instance_name>/acls/
-* /instances/<instance_name>/acls/<acl_id>/
-* /instances/<instance_name>/rename/
+.. code-block:: bash
 
-:doc:`api_v2_elasticsearch_resources`
+   $ http
 
-* /elasticsearch/
-* /elasticsearch/<instance_name>/cluster/
-* /elasticsearch/<instance_name>/data_nodes/
-* /elasticsearch/<instance_name>/indices/
-* /elasticsearch/<instance_name>/nodes/
-* /elasticsearch/<instance_name>/users/
-* /elasticsearch/check_states/
+Get 'maxclients' config
+~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`api_v2_redis_resources`
+.. code-block:: bash
 
-* /redis/<instance_name>/connectedSlaves/
-* /redis/<instance_name>/maxClients/
-* /redis/<instance_name>/maxMemoryPolicy/
-* /redis/<instance_name>/resize/
-* /redis/<instance_name>/spaceUsage/
+   GET /redis/<instance_name>/maxClients/
 
-:doc:`api_v2_mongodb_resources`
+Request/Response:
 
-* /mongodb/<instance_name>/backups/
-* /mongodb/<instance_name>/compaction/
-* /mongodb/<instance_name>/databases/
-* /mongodb/<instance_name>/databases/<database_name>/
-* /mongodb/<instance_name>/databases/<database_name>/collections/
-* /mongodb/<instance_name>/databases/<database_name>/collections/<collection_name>/
-* /mongodb/<instance_name>/logs/
-* /mongodb/<instance_name>/opcounters/
-* /mongodb/<instance_name>/opcounters/persecond/
-* /mongodb/<instance_name>/replicasets/
-* /mongodb/<instance_name>/shards/
-* /mongodb/<instance_name>/spaceusage/
-* /mongodb/<instance_name>/stepdown/
+.. code-block:: bash
+
+   $ http
+
+Get 'maxmemory-policy' config
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /redis/<instance_name>/maxMemoryPolicy/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Change size of instance
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /redis/<instance_name>/resize/
+
+*Parameters*:
+
+======== ======= ==============================================
+Name     Type    Description
+======== ======= ==============================================
+new_plan integer The size of the redis instance to provision to.
+======== ======= ==============================================
+
+*Request/Response:*
+
+.. code-block:: bash
+
+   $ http
+
+Get space usage details
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /redis/<instance_name>/spaceUsage/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+MongoDB Resources
+-----------------
+
+Get backups
+~~~~~~~~~~~
+Get compaction state
+~~~~~~~~~~~~~~~~~~~~
+Get databases
+~~~~~~~~~~~~~
+Get database details
+~~~~~~~~~~~~~~~~~~~~
+Get collections
+~~~~~~~~~~~~~~~
+Get collection details
+~~~~~~~~~~~~~~~~~~~~~~
+Get logs
+~~~~~~~~
+Get opcounters
+~~~~~~~~~~~~~~
+Get opcounters per second
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Get replica sets
+~~~~~~~~~~~~~~~~
+Get shards
+~~~~~~~~~~
+Get space usage statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get stepdown window
+~~~~~~~~~~~~~~~~~~~
 
