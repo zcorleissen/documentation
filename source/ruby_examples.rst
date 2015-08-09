@@ -1,5 +1,9 @@
 Ruby Driver Examples
-========================
+====================
+
+.. |checkmark| unicode:: U+2713
+
+
 
 Installation
 ------------

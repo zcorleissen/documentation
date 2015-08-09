@@ -1,51 +1,151 @@
 PHP Driver Examples
 ===================
 
-The PHP MongoDB driver is an official driver maintained by MongoDB Inc. Complete information for all features of the driver is available in the `Official Documentation`_.
+.. |checkmark| unicode:: U+2713
 
+The `PHP driver <https://github.com/mongodb/mongo-php-driver>`_ is an official driver maintained by MongoDB. It is written in C, and is currently compatible with the following versions of MongoDB:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 25 25 25 25
+   :class: compatibility
+
+   * - PHP Driver
+     - MongoDB 2.4
+     - MongoDB 2.6
+     - MongoDB 3.0
+
+   * - 1.6
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+
+   * - 1.5
+     - |checkmark|
+     - |checkmark|
+     - 
+
+The current version of the PHP driver supports the following versions of PHP:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :class: compatibility
+
+   * - PHP Driver
+     - PHP 5.3
+     - PHP 5.4
+     - PHP 5.5
+     - PHP 5.6
+
+   * - 1.6
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+
+   * - 1.5
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
 
 Installation
 ------------
 To use the PHP driver you'll need to first install it via pecl:
-::
 
- sudo pecl install mongo
+.. code-block:: bash
+
+   $ sudo pecl install mongo
 
 Then ensure it's enabled in your php.ini with:
-::
 
- extension=mongo.so
+.. code-block:: bash
+
+   extension=mongo.so
 
 Note that if you've installed the driver via a package manager like yum the configuration may be in a standalone file in your php.d directory or similar.
 
+Example document
+----------------
+
+Here's the example document we'll be using:
+
+.. code-block:: javascript
+
+  {
+        "_id" : ObjectId("55b29160d5d145e1438b4567"),
+        "date" : ISODate("2014-05-26T02:00:22Z"),
+        "winner" : "Javi",
+        "logged" : true,
+        "decks" : {
+                "first" : [
+                        "Dinosaurs",
+                        "Plants"
+                ],
+                "second" : [
+                        "Spies",
+                        "Zombies"
+                ],
+                "third" : [
+                        "Steampunk",
+                        "Wizards"
+                ],
+                "fourth" : [
+                        "Shapeshifters",
+                        "Ninjas"
+                ]
+        },
+        "prior_winner" : "Castro",
+        "points" : [
+                NumberLong(24),
+                NumberLong(20),
+                NumberLong(20),
+                NumberLong(18)
+        ],
+        "players" : {
+
+                "first" : "Javi",
+                "second" : "Seth",
+                "third" : "Dave",
+                "fourth" : "Castro"
+        }
+  }
 
 Connecting
 ----------
+
 Connecting to a replica set:
-::
+
+.. code-block:: php
    
  <?php
  $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
-
+ ?>
 
 Connecting to a sharded instance:
-::
-   
+
+.. code-block:: php
+
  <?php
  $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045");
+ ?>
 
 Connecting to a sharded instance with SSL:
-::
+
+.. code-block:: php
 
  <?php
  $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045", array("ssl" => true));
-
+ ?>
 
 Creating a Document
 -------------------
 
-PHP representation and inserting the document
-::
+Creating and inserting the document:
+
+.. code-block:: php
 
  <?php
 
@@ -69,8 +169,9 @@ PHP representation and inserting the document
 
  ?>
 
-The resulting document directly from MongoDB
-::
+The resulting document seen through the MongoDB shell:
+
+.. code-block:: javascript
 
  > db.myCollectionName.find().pretty()
  {
@@ -115,8 +216,9 @@ The resulting document directly from MongoDB
 Reading documents
 -----------------
 
-Finding all documents searching by a specific field
-::
+Finding all documents with a specific field:
+
+.. code-block:: php
 
  <?php
 
@@ -137,8 +239,9 @@ Finding all documents searching by a specific field
  ?>
 
 
-Console output for the above code
-::
+Output from above:
+
+.. code-block:: php
    
  array(8) {
   ["_id"]=>
@@ -215,11 +318,12 @@ Console output for the above code
  }
 
 
-Updating a Document
+Updating a document
 -------------------
 
-Updating a document
-::
+Updating a document:
+
+.. code-block:: php
 
  <?php
 
@@ -240,8 +344,9 @@ Updating a document
  ?>
 
 
-The resulting document directly from MongoDB
-::
+The resulting document as seen from the MongoDB shell:
+
+.. code-block:: javascript
 
  > db.myCollectionName.find().pretty()
  {
@@ -283,11 +388,12 @@ The resulting document directly from MongoDB
  }
 
 
-Deleting a Document
+Deleting a document
 -------------------
 
-Deleting a document
-::
+Deleting a document:
+
+.. code-block:: php
 
  <?php
 
@@ -304,12 +410,12 @@ Deleting a document
 
  var_dump($retval);
 
-
  ?>
 
 
-Console output
-::
+Output from above:
+
+.. code-block:: php
 
  array(6) {
   ["singleShard"]=>
@@ -331,5 +437,12 @@ Console output
   float(1)
  }
 
+Additional reading
+------------------
 
-.. _Official Documentation: http://docs.mongodb.org/ecosystem/drivers/php/
+If you need more help with the PHP driver, links to official documentation are below:
+
+* `PHP Driver Documentation <http://docs.mongodb.org/ecosystem/drivers/php/>`_
+* `MongoDB for the PHP Mind, Part 1 <http://blog.mongodb.org/post/24960636131/mongodb-for-the-php-mind-part-1>`_
+* `PHP.net MongoDB Driver documentation <http://us2.php.net/mongo>`_
+* MongoDB PHP Driver Github <https://github.com/mongodb/mongo-php-driver>`_
