@@ -34,14 +34,12 @@ Here are the recommended versions of each driver to use with a specific version 
      - |checkmark|
      - |checkmark|
 
-.. include:: /includes/extracts/python-driver-compatibility-full-mongodb.rst
-
-.. include:: /includes/older-server-versions-unsupported.rst
+Older versions of MongoDB aren't supported, so please keep that in mind.
 
 Language Compatibility
-``````````````````````
+~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /includes/extracts/python-driver-compatibility-matrix-language.rst
+If you're using a specific version of Python, here are the recommended driver versions to use with each:
 
 .. list-table::
    :header-rows: 1
@@ -82,9 +80,26 @@ Language Compatibility
 Installation
 ------------
 
-
+Installation is simple and uses the expected `pip` command:
 ::
 
+ pip install pymongo
+
+However you can also install it using `setuptools`:
+::
+ 
+ easy_install pymongo
+
+
+Then you can import it like anything else:
+::
+ 
+ from pymongo import MongoClient
+
+
+
+Example document
+----------------
 
 Here's the example document we'll be using:
 ::
@@ -158,7 +173,7 @@ Creating and inserting the document:
 Output from above:
 ::
 
-Switching to a shell, the document you instered should look just like the above example.
+ code
 
 Reading documents
 -----------------
@@ -184,6 +199,8 @@ Updating a document:
 Output from above:
 ::
 
+ code
+
 Deleting a document
 -------------------
 
@@ -197,4 +214,14 @@ Output from above:
 
  code
 
-This is the end, I need official links here, to do later.
+Additional reading
+------------------
+
+If you need more help with PyMongo, links to their official documentation are below:
+
+* `PyMongo Github <https://github.com/mongodb/mongo-python-driver>`_
+* `MongoDB Python Driver documentation <http://docs.mongodb.org/ecosystem/drivers/python/>`_
+* `MongoDB Python Driver Tutorial <http://api.mongodb.org/python/current/tutorial.html>`_
+* `Getting Started with MongoDB (Python Edition) <http://docs.mongodb.org/getting-started/python>`_
+
+As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
