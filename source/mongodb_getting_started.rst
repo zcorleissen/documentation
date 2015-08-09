@@ -56,7 +56,7 @@ Provided you've added an ACL and have a database with a user you can authenticat
 	connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
 
 	mongos> show collections
-	exampleDB
+	example_collection
 	system.indexes
 	system.users
 
