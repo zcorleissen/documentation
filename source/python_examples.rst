@@ -165,7 +165,7 @@ Connecting to a sharded instance using SSL:
 Creating a document
 -------------------
 
-Creating and inserting the document:
+Creating and inserting a document:
 ::
 
  code
@@ -178,7 +178,7 @@ Output from above:
 Reading documents
 -----------------
 
-finding all documents with a specific field:
+Finding all documents with a specific field:
 ::
 
  code
@@ -204,7 +204,7 @@ Output from above:
 Deleting a document
 -------------------
 
-Deleting a specific document:
+Deleting a document:
 ::
 
  code
@@ -217,7 +217,7 @@ Output from above:
 Additional reading
 ------------------
 
-If you need more help with PyMongo, links to their official documentation are below:
+If you need more help with PyMongo, links to official documentation are below:
 
 * `PyMongo Github <https://github.com/mongodb/mongo-python-driver>`_
 * `MongoDB Python Driver documentation <http://docs.mongodb.org/ecosystem/drivers/python/>`_
