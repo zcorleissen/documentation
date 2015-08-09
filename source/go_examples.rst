@@ -47,9 +47,9 @@ Installation
 
 Installing `mgo <http://labix.org/mgo>`_ is simple, using the usual go get procedure:
 
-::
+.. code-block:: bash
 
-  go get gopkg.in/mgo.v2
+   $ go get gopkg.in/mgo.v2
 
 Example document
 ----------------
@@ -100,72 +100,84 @@ Connecting
 ----------
 
 Connecting to a replica set:
-::
+
+.. code-block:: go
  
- code
+   code
 
 Connecting to a sharded instance:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Connecting to a sharded instance using SSL:
-::
 
- code
+.. code-block:: go
+
+   code
 
 
 Creating a document
 -------------------
 
 Creating and inserting the document:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Output from above:
-::
+
+.. code-block:: go
  
- code 
+   code
+
 
 Reading documents
 -----------------
 
-finding all documents with a specific field:
-::
+Finding all documents with a specific field:
 
- code
+.. code-block:: go
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Updating a document
 -------------------
 
 Updating a document:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Deleting a document
 -------------------
 
 Deleting a specific document:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: go
+
+   code
 
 Additional reading
 ------------------
@@ -175,3 +187,5 @@ If you need more help with `mgo`, here are some links to more documentation:
 * `mgo GoDoc documentation <http://godoc.org/labix.org/v2/mgo>`_
 * `mgo Mailing List <https://groups.google.com/forum/#!forum/mgo-users>`_
 * `mgo Github <https://github.com/go-mgo/mgo>`_
+
+As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!

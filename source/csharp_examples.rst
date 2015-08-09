@@ -188,3 +188,5 @@ If you need more help with the `C#` driver, here are some links to more document
 * `C# 2.0 Quick Start <http://mongodb.github.io/mongo-csharp-driver/2.0/getting_started/quick_tour/>`_
 * `C# Documentation <http://api.mongodb.org/csharp/2.0/html/R_Project_CSharpDriverDocs.htm>`_
 * `Getting Started with MongoDB using C#/.NET <http://docs.mongodb.org/getting-started/csharp>`_
+
+As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!

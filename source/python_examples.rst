@@ -81,28 +81,31 @@ Installation
 ------------
 
 Installation is simple and uses the expected `pip` command:
-::
 
- pip install pymongo
+.. code-block:: bash
+
+   pip install pymongo
 
 However you can also install it using `setuptools`:
-::
+
+.. code-block:: bash
  
- easy_install pymongo
+   easy_install pymongo
 
 
 Then you can import it like anything else:
-::
- 
- from pymongo import MongoClient
 
+.. code-block:: python
+
+   from pymongo import MongoClient
 
 
 Example document
 ----------------
 
 Here's the example document we'll be using:
-::
+
+.. code-block:: javascript
 
   {
         "_id" : ObjectId("55b29160d5d145e1438b4567"),
@@ -147,72 +150,83 @@ Connecting
 ----------
 
 Connecting to a replica set:
-::
+
+.. code-block:: python
  
- code
+   code
 
 Connecting to a sharded instance:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Connecting to a sharded instance using SSL:
-::
 
- code
+.. code-block:: python
+
+   code
 
 
 Creating a document
 -------------------
 
 Creating and inserting a document:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Reading documents
 -----------------
 
 Finding all documents with a specific field:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Updating a document
 -------------------
 
 Updating a document:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Deleting a document
 -------------------
 
 Deleting a document:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Output from above:
-::
 
- code
+.. code-block:: python
+
+   code
 
 Additional reading
 ------------------
