@@ -1,9 +1,46 @@
 Go Connection Examples
 ======================
 
-The Go MongoDB driver isn't an officially supported driver at the moment, and as such is maintained by the community. It's called `mgo <http://labix.org/mgo>`_, and as of `07-09-2015` version v2 of the driver supports MongoDB 2.4, 2.6, and 3.0. It does not support older versions of MongoDB.
+.. |checkmark| unicode:: U+2713
 
-`mgo <http://labix.org/mgo>`_ v2 is currently compatible with `go1.1`, `go1.2`, `go1.3`, and `go1.4`.
+The Go MongoDB driver isn't an officially supported driver at the moment, and as such is maintained by the community. It's called `mgo <http://labix.org/mgo>`_.
+
+`mgo <http://labix.org/mgo>`_ at the time of this writing, `07-10-15`, supports the following versions of MongoDB:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :class: compatibility
+
+   * - Go Driver Version
+     - MongoDB 2.4
+     - MongoDB 2.6
+     - MongoDB 3.0
+
+   * - v2
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+
+Here are the current versions of `golang` the driver supports:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :class: compatibility
+   :widths: 40 20 20 20 20
+
+   * - Go Driver Version
+     - go1.1
+     - go1.2
+     - go1.3
+     - go1.4
+
+   * - v2
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
+     - |checkmark|
 
 Installation
 ------------
@@ -13,6 +50,9 @@ Installing `mgo <http://labix.org/mgo>`_ is simple, using the usual go get proce
 ::
 
   go get gopkg.in/mgo.v2
+
+Example document
+----------------
 
 Here's the example document we'll be using:
 ::
@@ -85,8 +125,8 @@ Creating and inserting the document:
 
 Output from above:
 ::
-
-Switching to a shell, the document you instered should look just like the above example.
+ 
+ code 
 
 Reading documents
 -----------------
@@ -112,6 +152,8 @@ Updating a document:
 Output from above:
 ::
 
+ code
+
 Deleting a document
 -------------------
 
@@ -125,4 +167,11 @@ Output from above:
 
  code
 
-This is the end, I need official links here, to do later.
+Additional reading
+------------------
+
+If you need more help with `mgo`, here are some links to more documentation:
+
+* `mgo GoDoc documentation <http://godoc.org/labix.org/v2/mgo>`_
+* `mgo Mailing List <https://groups.google.com/forum/#!forum/mgo-users>`_
+* `mgo Github <https://github.com/go-mgo/mgo>`_
