@@ -1,11 +1,11 @@
 PHP Driver Examples
-=======================
+===================
 
 The PHP MongoDB driver is an official driver maintained by MongoDB Inc. Complete information for all features of the driver is available in the `Official Documentation`_.
 
 
 Installation
----------------
+------------
 To use the PHP driver you'll need to first install it via pecl:
 ::
 
@@ -20,7 +20,7 @@ Note that if you've installed the driver via a package manager like yum the conf
 
 
 Connecting
--------------
+----------
 Connecting to a replica set:
 ::
    
@@ -113,7 +113,7 @@ The resulting document directly from MongoDB
 
 
 Reading documents
--------------------
+-----------------
 
 Finding all documents searching by a specific field
 ::
@@ -330,13 +330,6 @@ Console output
   ["ok"]=>
   float(1)
  }
-
-
-
- 
-
-
-
 
 
 .. _Official Documentation: http://docs.mongodb.org/ecosystem/drivers/php/
