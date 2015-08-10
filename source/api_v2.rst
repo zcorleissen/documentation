@@ -10,5 +10,5 @@ API v2
    api_v2_mongodb_resources
    api_v2_redis_resources
    api_v2_elasticsearch_resources
-   
+   api_v2_remote_resources.rst
 
