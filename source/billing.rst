@@ -55,13 +55,15 @@ What happens if my credit card is declined?
 
 If your credit card issuer declines the transaction, or the credit card is expired or otherwise isn't allowing the transaction to go through, you will receive emails asking you to update your credit card information. 
 
-After approximately 30 days we have not received payment, access to your data will be removed.
+.. note::
+
+ After approximately 30 days we have not received payment, access to your data will be removed.
 
 
 What are the Terms of Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here's a link directly to our `Terms of Service <http://objectrocket.com/tos>`_
+Here's a link directly to our `Terms of Service <http://objectrocket.com/tos>`_.
 
 
 Where can I get billing Support?
