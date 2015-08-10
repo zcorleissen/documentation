@@ -1,39 +1,70 @@
-Billing
--------
+Billing FAQ
+===========
+
+What free trials are available?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can get a single 30 day trial instance of each type listed below. Your subscription starts 30 days later, or when you spin up above the trial amount.
+
+Trial eligible plans:
+
+* MongoDB Sharded - 5GB
+* MongoDB Replica Set - 1GB
+* Elasticsearch Clustered - 256MB Ram / 2GB Disk
+* Redis - 50MB
+
+What is "tiered pricing"?
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tiered pricing is a way to save money as your data grows on the platform. It’s a graduated tier structure that means your price per GB goes down the bigger our footprint is. 
+
+Here's a link to our `pricing calculator <http://objectrocket.com/pricing>`_, which shows the costs for each tier.
+
+Why is ObjectRocket for MongoDB billed using a tiered model, but other ObjectRocket solutions are not?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We are working to provide tiered pricing for all of our products, but in the meantime feel free to reach out to our `sales team <mailto:sales@objectrocket.com>`_ if you’d like to learn how pricing scales as you grow.
+
+Why do I have multiple ObjectRocket charges on different dates during the month? or, When will I be billed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each database technology has its own subscription with its own anniversary date. The anniversary date is the date that you created an instance or the instance came out of its trial. For example, if you have a Mongo instance created on the 5th and a Redis instance created on the 12th, you will have two different subscriptions that are billed on those dates for each product. This isn't per instance, but rather technology, so your MongoDB instances are billed on that first anniversary date, and then your Redis instances on the other.
+
+I was billed up front, so what happens if I increase or reduce my footprint before my next bill?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ObjectRocket is a subscription based service that bills in advance. The subscription rate is based on the footprint that exists at the time of the transaction. 
+
+Because ObjectRocket subscriptions are billed a month in advance, any increases or decreases in usage are added as prorated adjustments on the next bill. 
+
+For example: if you are charged for 10GB on the first of the month, but reduce your footprint to 5GB, you will receive a prorated credit. If instead you raise your footprint to 15GB, you will receive a prorated charge for the increase on your next anniversary date.
+
+What happens if I delete my instance and start a new one, will I be billed in advance for that instance again?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you delete an instance and the create a new one within the same billing period, it will be added to the same subscription with the appropriate prorated charges. If the addition of a new instance takes after the end of the billing period in which your first instance was deleted, a new subscription will be created, for which you will be billed in advance.
 
 
-What are the details of the free promotional offer?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What types of credit cards do you accept?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The promotional offer is only available to NEW ObjectRocket for MongoDB customers and/or NEW ObjectRocket for Redis customers. Only 1GB Mongo Replica Sets, 5GB sharded (single shard) Mongo instances, and 500MB Redis instances qualify for this promotional offer.
+Visa, Mastercard, and American Express.
 
-This promotional offer starts on Sep. 18, 2014 and ends Sep. 30, 2015. Customers that sign up for the ObjectRocket for MongoDB service for the FIRST time during the promotional period will have the option to receive either a single 1GB replica set or a single 5GB shard free of charge for the FIRST 30 days upon sign up. Customers that sign up for the ObjectRocket for Redis service for the FIRST time during the promotional period will receive a 500MB Redis Instance free of charge for the FIRST 30 days upon sign up. After the end of the 30 days or if additional plans are added, standard fees for ObjectRocket services will apply.
+What happens if my credit card is declined?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your account is not billed until the end of each 30-day service period, starting from the day you sign up. You can cancel at any time by `emailing support <mailto:support@objectrocket.com>`_. If the account remains open after the 30 day trial period, you will be billed standard fees for the ObjectRocket services. For more information see our `billing information <http://objectrocket.com/pricing>`_.
+If your credit card issuer declines the transaction, or the credit card is expired or otherwise isn't allowing the transaction to go through, you will receive emails asking you to update your credit card information. 
 
-How much does it cost?
-~~~~~~~~~~~~~~~~~~~~~~
-
-Pricing varies per region.  Please refer to the following pricing pages:
-
-`US Pricing <https://www.objectrocket.com/pricing>`_.
-`London Pricing <https://www.objectrocket.com/pricing_lon>`_.
-`Hong Kong Pricing <https://www.objectrocket.com/pricing_hkg>`_.
-`Sydney Pricing <https://www.objectrocket.com/pricing_syd>`_.
-
-When will I be billed?
-~~~~~~~~~~~~~~~~~~~~~~
-
-ObjectRocket bills for instance subscription one month in advance. When a change to
-your set of instances occurs, an invoice is generated with the prorated increased or decreased amount. That invoice amount is added to your next billing cycle creating an bill for the prorated increase or decrease, plus next months subscription.  Changes can occur when you manually add
-instances or shards from our website, or automatically when RocketScale™
-adds shards to an instance.
-
-If you reduce your usage but continue to use your account, we'll apply any
-credit toward your next bill.
+After approximately 30 days we have not received payment, access to your data will be removed.
 
 
-What kinds of payment do you accept?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What are the Terms of Service?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We accept Visa, MasterCard, American Express, Diners Club, JCB.
+Here's a link directly to our `Terms of Service <http://objectrocket.com/tos>`_
+
+
+Where can I get billing Support?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Questions about billing can be sent to our `billing team <mailto:billing@objectrocket.com>`_.

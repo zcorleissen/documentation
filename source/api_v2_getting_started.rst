@@ -3,7 +3,6 @@
    All method descriptions should fit on one line
    If it's a GET request, prefix the desc with Get
 
-=====================
 ObjectRocket API (v2)
 =====================
 

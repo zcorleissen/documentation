@@ -10,7 +10,11 @@ Contents:
    mongodb
    redis
    elastic
+   external_integration
    api_v2
+   billing
+   faq
+
 
 Indices and tables
 ==================
