@@ -1,41 +1,39 @@
-ObjectRocket Backup and Recovery Guide
-======================================
+Backup and Recovery
+===================
 
 Overview
 --------
 
-Each instance is protected by replication. Should any component fail, the replica set architecture of MongoDB provides the primary level of high availability, fault tolerance and uptime. However as a last resort and for overall data protection backups are taken on the ObjectRocket system.
+Each instance is protected by replication. Should any component fail, the replica set architecture of MongoDB provides the primary level of high availability, fault tolerance, and uptime. However as a last resort and for overall data protection backups are taken daily here at ObjectRocket.
 
 Backups
 -------
 
-Data backups are provided so customers can have access to point in time copy of their data. Backups are taken at regular intervals. Backups are taken per instance. A list of backup images can be seen under the GUI application at app.objectrocket.com under the instances->backups tab.
+.. note::
 
-Backups are taken off a slave member, and are archived on the ObjectRocket system. The backup mechanism is a file-level mongodb backup. The files from a replica are copied to a backup location via OS level tools. All instances run with journaling enabled, however, recovery does not require any journal reply because the disk images are guaranteed consistent.
+ Our default backup retention is two weeks. If you need this to be a larger window, please contact our `sales team <mailto:sales@objectrocket.com>`_.
 
-Because ObjectRocket is inherently sharded, backups are designed according to best practices to ensure backups are as consistent as possible among the members of a cluster (instance). Each instance is backed up with a high level of consistency, but not guaranteed consistency. They are not true point in time.
+Backups are taken once daily by default, but please talk to our `sales team <mailto:sales@objectrocket.com>`_ if you need a different schedule. Backups are taken per instance, and a list of backups can be seen by clicking the name of a MongoDB or Elasticsearch instance and then by clicking the **Backups** header.
 
-Customer Recovery Options
--------------------------
+Backups are taken using `mongodump` and are archived on the ObjectRocket system internally. Because ObjectRocket is built around sharding, backups are designed according to best practices to ensure backups are as consistent as possible among the members of an instance. Each instance is backed up with a high level of consistency, but not guaranteed consistency. They are not true point in time, and each shard is backed up individually.
 
-Download a backup image
-~~~~~~~~~~~~~~~~~~~~~~~
+Recovery Options
+----------------
 
-Each backup is available for download. Customers need to email support@objectrocket.com and indicate the backup image to be restored. A list of the backup images is available in the ObjectRocket GUI application under ‘backups’ for each database. The backup is then posted to Rackspace cloudfiles under the the customer API Key (or alternatively a ObjectRocket API Key). The customer can then restore the backup offsite.
+Download a backup
+~~~~~~~~~~~~~~~~~
 
-If a customer has a single shard, recovery on an external environment to ObjectRocket is as simple as starting a downloaded backup image, uncompressing/untarring the datafiles into a directory, and starting MongoDB with that location as the --dbpath argument.
-
-For instances with more than one shard, contact support@objectrocket.com for help with restoration in an environment external to ObjectRocket.
+Each backup is available for download. Customers need to email our `support team <mailto:support@objectrocket.com>`_ and let us know which backup you need. A list of the backup images is available in the ObjectRocket control panel under **Backups** for each instance. We can upload backups to S3 or Cloud Files, but if you need something else we'll be happy to work something out.
 
 In place restore
 ~~~~~~~~~~~~~~~~
 
-On customer request, an existing and running instance can be replaced/recovered with a backup image. All data in the existing instance will be replaced with the data of the backup image essentially ‘rolling back’ the entire instance. Customers need to email support@objectrocket.com requesting an in-place recovery.
+An existing instance can be replaced/recovered with a backup image. All data in the existing instance will be replaced with the data of the backup image essentially ‘rolling back’ the entire instance. Customers need to email our `support team <mailto:support@objectrocket.com>`_ to request an in-place recovery.
 
-Human Error
-~~~~~~~~~~~~~~~~~~~~~~
+Delayed Slaves
+~~~~~~~~~~~~~~
 
-Code release, mis-typing, or other human errors recovery is accomplished using a time delayed replica. In the case of a problem, the replica is manually stopped and opened in a read/only mode to manually piece back together the data. In order to have an instance enabled for a delayed slave, customers need to email support@objectrocket.com and request a delayed slave. This feature is an additional cost. Direct access to this delayed slave can be provided via a virtual IP address for tools/scripts to have access specifically to the delayed slave. Recovery is a customer responsibility beyond the core components provided by ObjectRocket. This is due to the fact there is an inherent knowledge of the schema, application and customer data required.
+Code release, mis-typing, or other human errors can be fixed by using using a time delayed replica set member. In case of a problem, the replica is manually stopped and opened in a read/only mode to manually piece back together the data. If you'd like to add a delayed slave to an instance, please email our `sales team <mailto:sales@objectrocket.com>`_. This feature has an additional cost, but does also provide direct access to this delayed slave via a virtual IP address for tools/scripts to have access specifically to the delayed slave. Recovery is a customer responsibility beyond the core components provided by ObjectRocket. This is due to the fact there is an inherent knowledge of the schema, application and customer data required.
 
 Data Validation Options
 -----------------------
