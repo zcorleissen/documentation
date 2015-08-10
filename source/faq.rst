@@ -132,6 +132,6 @@ How can I monitor performance / availability?
 You have two options for directly monitoring system performance and
 availability. The ObjectRocket user interface has an entire page devoted to
 performance, availability, and statistics, and you can also use our 
-`New Relic integration <https://app.objectrocket.com/external/new_relic>`_
- to view them there.
+`New Relic integration <https://app.objectrocket.com/external/new_relic>`_ 
+to view them there.
 

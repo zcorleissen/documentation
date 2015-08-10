@@ -1,5 +1,5 @@
 Node.js Connection Examples
-==========================
+===========================
 
 .. |checkmark| unicode:: U+2713
 
