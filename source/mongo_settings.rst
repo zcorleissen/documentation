@@ -97,7 +97,7 @@ New Relic Monitoring
 
 .. image:: images/newrelic.png
 
-This enables or disables the NewRelic intergration, sending statistics around this OR instance to your NewRelic dashboard. It requires you have entered a valid NewRelic license key.
+This enables or disables the NewRelic integration, sending statistics around this OR instance to your NewRelic dashboard. It requires you have entered a valid NewRelic license key.
 
 Amazon ACL Sync
 ~~~~~~~~~~~~~~~
