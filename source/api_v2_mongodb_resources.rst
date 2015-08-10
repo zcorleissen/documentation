@@ -1,59 +1,250 @@
 MongoDB Resources
 ==================
 
-Description: Lorem Ipsum
-
-/instances/
------------
-
-/instances/<instance_name>/
----------------------------
-
-========== ========================================
-HTTP VERBS Description
-========== ========================================
-GET        Performs a read of the object
-POST       Creates a new object using <name>
-DELETE     Deletes the object and associated things
-========== ========================================
-
-Example Request:
+Get a list of collection names belonging to the given instance database.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-   $ http --auth 'user@example.com:password' 'https://sjc-api.objectrocket.com/v2/mongodb/test123/backups/'
+   GET /mongodb/<instance_name>/databases/<database_name>/collections/
 
-Example Response:
+Request/Response:
 
 .. code-block:: bash
 
-   {
-            "_id": {
-                "$oid": "55b1e6f95559617dd0a517ec"
-            },
-            "backup_directory": "/backups/55410c7f5b335278490a5be8/20150724_0018",
-            "backup_host": "sydbackups0.syd.objectrocket.com",
-            "error_msg": "Successful, completed in 61 seconds",
-            "filenames": {
-                "5db16d02db25b9673ff2f72440366df0": "5db16d02db25b9673ff2f72440366df0_20150724_0018.tgz",
-                "90a85209de63519f0c04728a1bdb9313": "90a85209de63519f0c04728a1bdb9313_20150724_0018.tgz",
-                "config_server": "config_12345_20150724_0018.tgz"
-            },
-            "instance_id": {
-                "$oid": "55410c7f5b335278490a5be8"
-            },
-            "instance_name": "test123",
-            "instance_type": "mongodb_sharded",
-            "login": "donovan@heydonovan.io",
-            "port": 12345,
-            "timestamp": {
-                "$date": 1437697100909
-            },
-            "timestamp_formatted": "2015/07/24 00:18:20"
-        }
+   $ http
 
-Redis
-~~~~~
+Create a new collection in the specified instance database.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-more stuff
+.. code-block:: bash
+
+   POST /mongodb/<instance_name>/databases/<database_name>/collections/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get details on a collection belonging to the given instance database.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/databases/<database_name>/collections/<collection_name>/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get the compaction state of the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/compaction/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Schedule the specified instance for compaction.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /mongodb/<instance_name>/compaction/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get a list of databases and their statistics belonging to the given
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/databases/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Create a database and user on the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /mongodb/<instance_name>/databases/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get details on a database belonging to the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/databases/<database_name>/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Delete a database from the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   DELETE /mongodb/<instance_name>/databases/<database_name>/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get opcounters per second for the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/opcounters/persecond/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get opcounters for the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/opcounters/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get a list of replica sets belonging to the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/replicasets/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get a list of shards belonging to the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/shards/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Add a shard to the given instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /mongodb/<instance_name>/shards/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get space usage statistics from the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/spaceusage/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get the current stepdown window configuration of the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/stepdown/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Update the stepdown window configuration of the specified instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /mongodb/<instance_name>/stepdown/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get details on backups
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/backups/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get log details
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /mongodb/<instance_name>/logs/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
 

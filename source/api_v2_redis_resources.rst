@@ -1,51 +1,68 @@
 Redis Resources
 ================
 
-Description: Lorem Ipsum
+Get details on the specified Redis instance's connected slaves.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/redis/<instance_name>/connectedSlaves/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
 
-========= ===============================================================
-HTTP VERB Description
-========= ===============================================================
-GET       Get details on the specified Redis instance's connected slaves.
-========= ===============================================================
+   GET /redis/<instance_name>/connectedSlaves/
 
-/redis/<instance_name>/maxClients/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Request/Response:
 
-========= ===============================================================
-HTTP VERB Description
-========= ===============================================================
-GET       Get details on the specified Redis instance's max clients.
-========= ===============================================================
+.. code-block:: bash
 
-/redis/<instance_name>/maxMemoryPolicy/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   $ http
 
-========= ===============================================================
-HTTP VERB Description
-========= ===============================================================
-GET       Get details on the specified Redis instance's max memory policy.
-========= ===============================================================
+Get details on the specified Redis instance's space usage.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/redis/<instance_name>/resize/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
 
-========= ===============================================================
-HTTP VERB Description
-========= ===============================================================
-POST      Resize a redis instance to the specified size.
-========= ===============================================================
+   GET /redis/<instance_name>/spaceUsage/
 
-:required field: new_plan (integer)
+Request/Response:
 
-/redis/<instance_name>/spaceUsage/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
 
-========= ===============================================================
-HTTP VERB Description
-========= ===============================================================
-GET       Get details on the specified Redis instance's space usage.
-========= ===============================================================
+   $ http
+
+Get details on the specified Redis instance's max memory policy.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /redis/<instance_name>/maxMemoryPolicy/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Get details on the specified Redis instance's max clients.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   GET /redis/<instance_name>/maxClients/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Resize a redis instance to the specified size.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /redis/<instance_name>/resize/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
