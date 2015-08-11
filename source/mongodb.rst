@@ -6,7 +6,7 @@ MongoDB
    
    mongodb_overview
    mongodb_getting_started
-   connection_examples
+   mongodb_connection_examples
    backup_and_recovery
    features
    mongo_settings
