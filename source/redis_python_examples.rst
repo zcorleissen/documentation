@@ -1,21 +1,21 @@
-Go Connection Examples
-======================
+Python Connection Examples
+==========================
 
-Redigo
-------
+<driver name>
+-------------
 
 .. |checkmark| unicode:: U+2713
 
-The Go Redis driver is an officially recommended driver, and it's called `redigo <https://github.com/garyburd/redigo>`_.
+The C# Redis driver is an officially recommended driver, and it's called `name <`https://link>`_.
 
 Installation
 ~~~~~~~~~~~~
 
-Installing `redigo <https://github.com/garyburd/redigo>`_ is simple, using the usual go get procedure:
+Installing `name <https://link>`_ is simple, using  :
 
-.. code-block:: bash
+.. code-block:: language
 
-   $ go get github.com/garyburd/redigo/redis
+   $ command
 
 Connecting, Authenticating, SET, GET, and DEL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,9 +77,9 @@ Output from above:
 Additional reading
 ~~~~~~~~~~~~~~~~~~
 
-If you need more help with `redigo`, here are some links to more documentation:
+If you need more help with `driver`, here are some links to more documentation:
 
-* `redigo FAQ <https://github.com/garyburd/redigo/wiki/FAQ>`_
-* `redigo API Documentation <http://godoc.org/github.com/garyburd/redigo/redis>`_
+* `link FAQ <https://link>`_
+* `link API Documentation <http://link>`_
 
 As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
