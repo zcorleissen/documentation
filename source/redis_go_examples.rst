@@ -1,15 +1,12 @@
 Go Connection Examples
 ======================
 
-Redigo
-------
-
 .. |checkmark| unicode:: U+2713
 
 The Go Redis driver is an officially recommended driver, and it's called `redigo <https://github.com/garyburd/redigo>`_.
 
 Installation
-~~~~~~~~~~~~
+------------
 
 Installing `redigo <https://github.com/garyburd/redigo>`_ is simple, using the usual go get procedure:
 
@@ -18,7 +15,7 @@ Installing `redigo <https://github.com/garyburd/redigo>`_ is simple, using the u
    $ go get github.com/garyburd/redigo/redis
 
 Connecting, Authenticating, SET, GET, and DEL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 .. code-block:: go
    
@@ -75,7 +72,7 @@ Output from above:
 
 
 Additional reading
-~~~~~~~~~~~~~~~~~~
+------------------
 
 If you need more help with `redigo`, here are some links to more documentation:
 

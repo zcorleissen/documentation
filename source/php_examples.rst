@@ -445,4 +445,4 @@ If you need more help with the PHP driver, links to official documentation are b
 * `PHP Driver Documentation <http://docs.mongodb.org/ecosystem/drivers/php/>`_
 * `MongoDB for the PHP Mind, Part 1 <http://blog.mongodb.org/post/24960636131/mongodb-for-the-php-mind-part-1>`_
 * `PHP.net MongoDB Driver documentation <http://us2.php.net/mongo>`_
-* MongoDB PHP Driver Github <https://github.com/mongodb/mongo-php-driver>`_
+* `MongoDB PHP Driver Github <https://github.com/mongodb/mongo-php-driver>`_
