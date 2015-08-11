@@ -1,15 +1,12 @@
 Python Connection Examples
 ==========================
 
-<driver name>
--------------
-
 .. |checkmark| unicode:: U+2713
 
-The C# Redis driver is an officially recommended driver, and it's called `name <`https://link>`_.
+The Python Redis driver is an officially recommended driver, and it's called `name <`https://link>`_.
 
 Installation
-~~~~~~~~~~~~
+------------
 
 Installing `name <https://link>`_ is simple, using  :
 
@@ -18,7 +15,7 @@ Installing `name <https://link>`_ is simple, using  :
    $ command
 
 Connecting, Authenticating, SET, GET, and DEL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 .. code-block:: go
    
@@ -75,7 +72,7 @@ Output from above:
 
 
 Additional reading
-~~~~~~~~~~~~~~~~~~
+------------------
 
 If you need more help with `driver`, here are some links to more documentation:
 
