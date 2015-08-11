@@ -1,5 +1,5 @@
 MongoDB Resources
-==================
+=================
 
 Get a list of collection names belonging to the given instance database.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

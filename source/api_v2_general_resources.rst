@@ -1,5 +1,5 @@
 General Resources
-==================
+=================
 
 Get details on all plans.
 ~~~~~~~~~~~~~~~~~~~~~~~~~

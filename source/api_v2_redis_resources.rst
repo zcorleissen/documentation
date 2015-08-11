@@ -1,5 +1,5 @@
 Redis Resources
-================
+===============
 
 Get details on the specified Redis instance's connected slaves.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
