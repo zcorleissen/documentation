@@ -14,8 +14,8 @@ Request/Response:
 
    $ http
 
-Get details on all plans.
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Get details on the plan specified by ID.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -79,8 +79,8 @@ Request/Response:
 
    $ http
 
-Get details on all casters belonging to this account.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get details on a caster specified by ID.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 

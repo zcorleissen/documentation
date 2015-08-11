@@ -14,12 +14,25 @@ Request/Response:
 
    $ http
 
-Get details on an account's remote instances.
+Get details on the specified remote instance.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
    GET /remote_instances/<instance_name>/
+
+Request/Response:
+
+.. code-block:: bash
+
+   $ http
+
+Delete the specified remote instance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   DELETE /remote_instances/<instance_name>/
 
 Request/Response:
 

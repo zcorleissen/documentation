@@ -27,7 +27,7 @@ Request/Response:
 
    $ http
 
-Get details on an account's instances.
+Get details on the specified instance.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -40,12 +40,12 @@ Request/Response:
 
    $ http
 
-Create a new instance.
-~~~~~~~~~~~~~~~~~~~~~~
+Delete the specified instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-   POST /instances/<instance_name>/
+   DELETE /instances/<instance_name>/
 
 Request/Response:
 
@@ -92,8 +92,8 @@ Request/Response:
 
    $ http
 
-Get a list of ACLs for the given instance.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get a specific ACL.
+~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -105,12 +105,12 @@ Request/Response:
 
    $ http
 
-Create a new ACL for the given instance.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Delete an ACL.
+~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-   POST /instances/<instance_name>/acls/<acl_id>/
+   DELETE /instances/<instance_name>/acls/<acl_id>/
 
 Request/Response:
 
