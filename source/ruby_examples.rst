@@ -3,7 +3,7 @@ Ruby Driver Examples
 
 .. |checkmark| unicode:: U+2713
 
-The `Ruby driver https://github.com/mongodb/mongo-ruby-driver`_ is an official driver maintained by MongoDB. It is written in Ruby, and is currently compatible with the following versions of MongoDB:
+The `Ruby driver <https://github.com/mongodb/mongo-ruby-driver>`_ is an official driver maintained by MongoDB. It is written in Ruby, and is currently compatible with the following versions of MongoDB:
 
 .. list-table::
    :header-rows: 1
