@@ -5,12 +5,6 @@ Python Connection Examples
 
 .. |checkmark| unicode:: U+2713
 
-Python Driver Compatibility
----------------------------
-
-MongoDB Compatibility
-~~~~~~~~~~~~~~~~~~~~~
-
 Here are the recommended versions of each driver to use with a specific version of MongoDB:
 
 .. list-table::
@@ -34,12 +28,7 @@ Here are the recommended versions of each driver to use with a specific version 
      - |checkmark|
      - |checkmark|
 
-Older versions of MongoDB aren't supported, so please keep that in mind.
-
-Language Compatibility
-~~~~~~~~~~~~~~~~~~~~~~
-
-If you're using a specific version of Python, here are the recommended driver versions to use with each:
+Here are the recommended driver versions to use with each version of Python:
 
 .. list-table::
    :header-rows: 1
@@ -47,9 +36,6 @@ If you're using a specific version of Python, here are the recommended driver ve
    :class: compatibility-large
 
    * - Python Driver 
-     - Python 2.4
-     - Python 2.5, Jython 2.5
-     - Python 2.6
      - Python 2.7, PyPy
      - Python 3.1
      - Python 3.2, PyPy3
@@ -57,9 +43,6 @@ If you're using a specific version of Python, here are the recommended driver ve
      - Python 3.4
 
    * - 3.0
-     - 
-     - 
-     - |checkmark|
      - |checkmark|
      - 
      - |checkmark|
@@ -67,9 +50,6 @@ If you're using a specific version of Python, here are the recommended driver ve
      - |checkmark|
 
    * - 2.8
-     - |checkmark|
-     - |checkmark|
-     - |checkmark|
      - |checkmark|
      - |checkmark|
      - |checkmark|
@@ -84,13 +64,13 @@ Installation is simple and uses the expected `pip` command:
 
 .. code-block:: bash
 
-   pip install pymongo
+   $ sudo pip install pymongo
 
 However you can also install it using `setuptools`:
 
 .. code-block:: bash
  
-   easy_install pymongo
+   $ sudo easy_install pymongo
 
 
 Then you can import it like anything else:
@@ -107,65 +87,120 @@ Here's the example document we'll be using:
 
 .. code-block:: javascript
 
-  {
-        "_id" : ObjectId("55b29160d5d145e1438b4567"),
-        "date" : ISODate("2014-05-26T02:00:22Z"),
-        "winner" : "Javi",
-        "logged" : true,
-        "decks" : {
-                "first" : [
-                        "Dinosaurs",
-                        "Plants"
-                ],
-                "second" : [
-                        "Spies",
-                        "Zombies"
-                ],
-                "third" : [
-                        "Steampunk",
-                        "Wizards"
-                ],
-                "fourth" : [
-                        "Shapeshifters",
-                        "Ninjas"
-                ]
+  { "start": datetime.utcnow(),
+    "end": datetime(2015, 8, 22, 16, 22, 38),
+    "location": "Texas",
+    "official_game": False,
+    "winner": "Javi",
+    "players": [
+        {
+    "name": "Javi",
+            "decks": [
+                "Dinosaurs",
+                "Plants"
+            ],
+            "points": 24,
+            "place": 1
         },
-        "prior_winner" : "Castro",
-        "points" : [
-                NumberLong(24),
-                NumberLong(20),
-                NumberLong(20),
-                NumberLong(18)
-        ],
-        "players" : {
-
-                "first" : "Javi",
-                "second" : "Seth",
-                "third" : "Dave",
-                "fourth" : "Castro"
+        {
+            "name": "Seth",
+            "decks": [
+                "Spies",
+                "Zombies"
+            ],
+            "points": 20,
+            "place": 2
+        },
+        {
+            "name": "Dave",
+            "decks": [
+                "Steampunk",
+                "Wizard"
+            ],
+            "points": 20,
+            "place": 2
+        },
+        {
+            "name": "Castro",
+            "decks": [
+                "Shapeshifters",
+                "Ninjas"
+            ],
+            "points": 18,
+            "place": 4
         }
+    ]
   }
 
 Connecting
 ----------
 
+.. warning::
+  
+  When connecting using the MongoDB URI, we highly recommend avoiding usernames with an @ symbol inside. 
+  This can break things and cause failures when trying to connect this way.
+
 Connecting to a replica set:
-
-.. code-block:: python
- 
-   code
-
-Connecting to a sharded instance:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-   code
+  import pymongo
+
+  settings = {
+      'host': 'dfw-c9-1.objectrocket.com:37143,dfw-c9-0.objectrocket.com:37143',
+      'database': 'example_db',
+      'username': 'example',
+      'pnts""Plants""Plants"assword': 'example_pass',
+      'options': 'replicaSet=c74b5276378ed3bd70cba37a3ac45fea'
+  }
+
+  try:
+      conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+  except Exception as ex:
+      print "Error:", ex
+      exit('Failed to connect, terminating.')
+
+Connecting to a sharded instance with a write concern of 1:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+.. code-block:: python
+
+  import pymongo
+
+  settings = {
+      'host': 'iad-mongos0.objectrocket.com:15014/example_db',
+      'database': 'example_db',
+      'username': 'example',
+      'password': 'example_pass',
+      'options': 'w=1'
+  }
+  
+  try:
+      conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+  except Exception as ex:
+      print "Error:", ex
+      exit('Failed to connect, terminating.')
 
 Connecting to a sharded instance using SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-   code
+  import pymongo
+
+  settings = {
+      'host': 'iad-mongos0.objectrocket.com:15014',
+      'database': 'example_db',
+      'username': 'example',
+      'password': 'example_pass',
+      'options': 'ssl=true'
+  }
+  try:
+      conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+  except Exception as ex:
+      print "Error:", ex
+      exit('Failed to connect, terminating.')
 
 
 Creating a document
@@ -175,28 +210,142 @@ Creating and inserting a document:
 
 .. code-block:: python
 
-   code
+  import pymongo
+  from datetime import datetime
+
+  settings = {
+      'host': 'iad-mongos0.objectrocket.com:15014',
+      'database': 'example_db',
+      'username': 'example',
+      'password': 'example_pass',
+      'options': 'w=1'
+  }
+
+  example_doc = { "start": datetime.utcnow(),
+      "end": datetime(2015, 8, 22, 16, 22, 38),
+      "location": "Texas",
+      "official_game": False,
+      "winner": "Javi",
+      "players": [
+          {
+      "name": "Javi",
+              "decks": [
+                  "Dinosaurs",
+                  "Plants"
+              ],
+              "points": 24,
+              "place": 1
+          },
+          {
+              "name": "Seth",
+              "decks": [
+                  "Spies",
+                  "Zombies"
+              ],
+              "points": 20,
+              "place": 2
+          },
+          {
+              "name": "Dave",
+              "decks": [
+                  "Steampunk",
+                  "Wizard"
+              ],
+              "points": 20,
+              "place": 2
+          },
+          {
+              "name": "Castro",
+              "decks": [
+                  "Shapeshifters",
+                  "Ninjas"
+              ],
+              "points": 18,
+              "place": 4
+          }
+      ]
+  }
+
+  try:
+      conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+  except Exception as ex:
+      print "Error:", ex
+      exit('Failed to connect, terminating.')
+
+  db = conn.example_db
+  collection = db.test_collection
+
+  doc_id = collection.insert_one(example_doc).inserted_id
+
+  print "Here's the _id of the doc I inserted: %s." % doc_id
+
 
 Output from above:
 
-.. code-block:: python
+.. code-block:: bash
 
-   code
+  ipython pymongo_example.py
+
+  Here's the _id of the doc I inserted: 55ce1520f643f056fd1c9887.
+
 
 Reading documents
 -----------------
 
-Finding all documents with a specific field:
+Finding a document with a specific field:
 
 .. code-block:: python
 
-   code
+    import pymongo
+    from pprint import pprint
+
+    settings = {
+        'host': 'iad-mongos0.objectrocket.com:15014',
+        'database': 'example_db',
+        'username': 'example',
+        'password': 'example_pass',
+        'options': 'w=1'
+    }
+
+    try:
+        conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+    except Exception as ex:
+        print "Error:", ex
+        exit('Failed to connect, terminating.')
+
+    db = conn.example_db
+    collection = db.test_collection
+    results = collection.find_one({"winner" : "Javi"})
+    print "Here's a doc: "
+    pprint(results)
 
 Output from above:
 
-.. code-block:: python
+.. code-block:: bash
 
-   code
+    Here's a doc:
+    {u'_id': ObjectId('55ce1520f643f056fd1c9887'),
+     u'end': datetime.datetime(2015, 8, 22, 16, 22, 38),
+     u'location': u'Texas',
+     u'official_game': False,
+     u'players': [{u'decks': [u'Dinosaurs', u'Plants'],
+                   u'name': u'Javi',
+                   u'place': 1,
+                   u'points': 24},
+                  {u'decks': [u'Spies', u'Zombies'],
+                   u'name': u'Seth',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Steampunk', u'Wizard'],
+                   u'name': u'Dave',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Shapeshifters', u'Ninjas'],
+                   u'name': u'Castro',
+                   u'place': 4,
+                   u'points': 18}],
+     u'start': datetime.datetime(2015, 8, 14, 16, 19, 44, 868000),
+     u'winner': u'Javi'}
 
 Updating a document
 -------------------
@@ -205,13 +354,89 @@ Updating a document:
 
 .. code-block:: python
 
-   code
+    import pymongo
+    from pprint import pprint
+
+    settings = {
+        'host': 'iad-mongos0.objectrocket.com:15014',
+        'database': 'example_db',
+        'username': 'example',
+        'password': 'example_pass',
+        'options': 'w=1'
+    }
+
+    try:
+        conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+    except Exception as ex:
+        print "Error:", ex
+        exit('Failed to connect, terminating.')
+
+    db = conn.example_db
+    collection = db.test_collection
+    results = collection.find_one({"winner" : "Javi"})
+    print "Here's the original doc: "
+    pprint(results)
+
+    update_doc = collection.update_one({"winner" : "Javi"},{"$set": {"winner" : "Seth"}})
+    updated_doc = collection.find_one({"winner" : "Seth"})
+    print "Here's how many documents I found: "
+    pprint(update_doc.matched_count)
+    print "Here's the new doc: "
+    pprint(updated_doc)
 
 Output from above:
 
-.. code-block:: python
+.. code-block:: bash
 
-   code
+    $ ipython update_doc.py
+    Here's the original doc:
+    {u'_id': ObjectId('55ce1d01f643f05a6ca695d4'),
+     u'end': datetime.datetime(2015, 8, 22, 16, 22, 38),
+     u'location': u'Texas',
+     u'official_game': False,
+     u'players': [{u'decks': [u'Dinosaurs', u'Plants'],
+                   u'name': u'Javi',
+                   u'place': 1,
+                   u'points': 24},
+                  {u'decks': [u'Spies', u'Zombies'],
+                   u'name': u'Seth',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Steampunk', u'Wizard'],
+                   u'name': u'Dave',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Shapeshifters', u'Ninjas'],
+                   u'name': u'Castro',
+                   u'place': 4,
+                   u'points': 18}],
+     u'start': datetime.datetime(2015, 8, 14, 16, 53, 21, 950000),
+     u'winner': u'Javi'}
+    Here's how many documents I found:
+    1
+    Here's the new doc:
+    {u'_id': ObjectId('55ce1d01f643f05a6ca695d4'),
+     u'end': datetime.datetime(2015, 8, 22, 16, 22, 38),
+     u'location': u'Texas',
+     u'official_game': False,
+     u'players': [{u'decks': [u'Dinosaurs', u'Plants'],
+                   u'name': u'Javi',
+                   u'place': 1,
+                   u'points': 24},
+                  {u'decks': [u'Spies', u'Zombies'],
+                   u'name': u'Seth',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Steampunk', u'Wizard'],
+                   u'name': u'Dave',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Shapeshifters', u'Ninjas'],
+                   u'name': u'Castro',
+                   u'place': 4,
+                   u'points': 18}],
+     u'start': datetime.datetime(2015, 8, 14, 16, 53, 21, 950000),
+     u'winner': u'Seth'}
 
 Deleting a document
 -------------------
@@ -220,13 +445,63 @@ Deleting a document:
 
 .. code-block:: python
 
-   code
+    import pymongo
+    from pprint import pprint
+
+    settings = {
+        'host': 'iad-mongos0.objectrocket.com:15014',
+        'database': 'example_db',
+        'username': 'example',
+        'password': 'example_pass',
+        'options': 'w=1'
+    }
+
+    try:
+        conn = pymongo.MongoClient("mongodb://{username}:{password}@{host}/{database}?{options}".format(**settings))
+    except Exception as ex:
+        print "Error:", ex
+        exit('Failed to connect, terminating.')
+
+    db = conn.example_db
+    collection = db.test_collection
+    results = collection.find_one({"winner" : "Seth"})
+    print "Here's the doc I found: "
+    pprint(results)
+
+    deleted = collection.delete_one({"winner" : "Seth"})
+    print "Here's how many documents I deleted: "
+    pprint(deleted.deleted_count)
 
 Output from above:
 
-.. code-block:: python
+.. code-block:: bash
 
-   code
+    $ ipython delete_doc.py
+    Here is the doc I found:
+    {u'_id': ObjectId('55ce1d01f643f05a6ca695d4'),
+     u'end': datetime.datetime(2015, 8, 22, 16, 22, 38),
+     u'location': u'Texas',
+     u'official_game': False,
+     u'players': [{u'decks': [u'Dinosaurs', u'Plants'],
+                   u'name': u'Javi',
+                   u'place': 1,
+                   u'points': 24},
+                  {u'decks': [u'Spies', u'Zombies'],
+                   u'name': u'Seth',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Steampunk', u'Wizard'],
+                   u'name': u'Dave',
+                   u'place': 2,
+                   u'points': 20},
+                  {u'decks': [u'Shapeshifters', u'Ninjas'],
+                   u'name': u'Castro',
+                   u'place': 4,
+                   u'points': 18}],
+     u'start': datetime.datetime(2015, 8, 14, 16, 53, 21, 950000),
+     u'winner': u'Seth'}
+    Here's how many documents I deleted:
+    1
 
 Additional reading
 ------------------

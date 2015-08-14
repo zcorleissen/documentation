@@ -6,7 +6,7 @@ New Relic Metric Reporting
 
 The ObjectRocket platform can automatically report metrics about your MongoDB instances to the New Relic monitoring service. If you don't have an account you can sign up through `New Relic <http://newrelic.com/signup>`_. You can then grab your License Key from your `Accounts page <https://rpm.newrelic.com/accounts>`_.
 
-.. note::
+.. warning::
 
    Please note that this is only for MongoDB instances. We currently don't have official ObjectRocket plugins to monitor our Redis and Elasticsearch products, but we recommend using a third-party plugin called `MeetMe <http://newrelic.com/plugins/poison-pen-llc/28>`_. It's an Open Source plugin, and you can read more about the plugin and how to install it on their `GitHub page <https://github.com/MeetMe/newrelic-plugin-agent>`_.
 
