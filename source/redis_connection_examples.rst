@@ -1,5 +1,5 @@
-MongoDB Connection Examples
-===========================
+Redis Connection Examples
+=========================
 
 .. toctree::
    :maxdepth: 2

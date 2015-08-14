@@ -2,7 +2,7 @@ MongoDB Connection Examples
 ===========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    csharp_examples
    go_examples
