@@ -13,6 +13,8 @@ Trial eligible plans:
 * Elasticsearch Clustered - 256MB Ram / 2GB Disk
 * Redis - 50MB
 
+To read more about our trial Terms of Service, follow this `link <http://objectrocket.com/tos>`_.
+
 What is "tiered pricing"?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -25,7 +27,7 @@ Why is ObjectRocket for MongoDB billed using a tiered model, but other ObjectRoc
 
 We are working to provide tiered pricing for all of our products, but in the meantime feel free to reach out to our `sales team <mailto:sales@objectrocket.com>`_ if you’d like to learn how pricing scales as you grow.
 
-Why do I have multiple ObjectRocket charges on different dates during the month? or, When will I be billed?
+Why do I have multiple ObjectRocket charges on different dates during the month? When will I be billed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each database technology has its own subscription with its own anniversary date. The anniversary date is the date that you created an instance or the instance came out of its trial. For example, if you have a Mongo instance created on the 5th and a Redis instance created on the 12th, you will have two different subscriptions that are billed on those dates for each product. This isn't per instance, but rather technology, so your MongoDB instances are billed on that first anniversary date, and then your Redis instances on the other.
