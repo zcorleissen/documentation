@@ -65,74 +65,206 @@ Example document
 Here's the example document we'll be using:
 ::
 
-  {
-        "_id" : ObjectId("55b29160d5d145e1438b4567"),
-        "date" : ISODate("2014-05-26T02:00:22Z"),
-        "winner" : "Javi",
-        "logged" : true,
-        "decks" : {
-                "first" : [
-                        "Dinosaurs",
-                        "Plants"
-                ],
-                "second" : [
-                        "Spies",
-                        "Zombies"
-                ],
-                "third" : [
-                        "Steampunk",
-                        "Wizards"
-                ],
-                "fourth" : [
-                        "Shapeshifters",
-                        "Ninjas"
-                ]
+  { "start": datetime.utcnow(),
+    "end": datetime(2015, 8, 22, 16, 22, 38),
+    "location": "Texas",
+    "official_game": False,
+    "winner": "Javi",
+    "players": [
+        {
+    "name": "Javi",
+            "decks": [
+                "Dinosaurs",
+                "Plants"
+            ],
+            "points": 24,
+            "place": 1
         },
-        "prior_winner" : "Castro",
-        "points" : [
-                NumberLong(24),
-                NumberLong(20),
-                NumberLong(20),
-                NumberLong(18)
-        ],
-        "players" : {
-
-                "first" : "Javi",
-                "second" : "Seth",
-                "third" : "Dave",
-                "fourth" : "Castro"
+        {
+            "name": "Seth",
+            "decks": [
+                "Spies",
+                "Zombies"
+            ],
+            "points": 20,
+            "place": 2
+        },
+        {
+            "name": "Dave",
+            "decks": [
+                "Steampunk",
+                "Wizard"
+            ],
+            "points": 20,
+            "place": 2
+        },
+        {
+            "name": "Castro",
+            "decks": [
+                "Shapeshifters",
+                "Ninjas"
+            ],
+            "points": 18,
+            "place": 4
         }
+    ]
   }
 
 Connecting
 ----------
 
 Connecting to a replica set:
-::
- 
- code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: javascript
+
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
+
+  // Connect
+  MongoClient.connect('mongodb://example:example_pass@dfw-c9-1.objectrocket.com:37143,dfw-c9-0.objectrocket.com:37143/example_db?replicaSet=c74b5276378ed3bd70cba37a3ac45fea', function(err, db) {
+    if(!err) {
+      console.log("We are connected");
+    } else {
+      console.log(err);
+    }
+    process.exit();
+  });
+
+Output from above:
+
+.. code-block:: bash
+
+  $ node repl_connect_example.js
+  We are connected
 
 Connecting to a sharded instance:
-::
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- code
+.. code-block:: javascript
 
-Connecting to a sharded instance using SSL:
-::
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
 
- code
+  // Connect
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
+    if(!err) {
+      console.log("We are connected");
+    } else {
+      console.log(err);
+    }
+    process.exit();
+  });
+
+Output from above:
+
+.. code-block:: bash
+
+  $ node sharded_connect_example.js
+  We are connected
+
+Connecting to a sharded instance with SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: javascript
+
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
+
+  // Connect
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:25014/example_db?ssl=true", function(err, db) {
+    if(!err) {
+      console.log("We are connected");
+    } else {
+      console.log(err);
+    }
+    process.exit();
+  });
+
+Output from above:
+
+.. code-block:: bash
+
+  $ node ssl_sharded_connect_example.js
+  We are connected
 
 
 Creating a document
 -------------------
 
 Creating and inserting the document:
-::
 
- code
+.. code-block:: javascript
+
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
+
+  // Connect
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
+    if(!err) {
+      console.log("We are connected");
+    } else {
+      return console.dir(err);
+    };
+    var example_doc = {
+    "start" : new Date(),
+    "end" : new Date(2015, 9, 28, 14, 17, 23, 0),
+    "location" : "Texas",
+    "official_game" : false,
+    "Winner" : "Javi",
+    "players" : [
+          {
+      "name": "Javi",
+              "decks": [
+                  "Dinosaurs",
+                  "Plants"
+              ],
+              "points": 24,
+              "place": 1
+          },
+          {
+              "name": "Seth",
+              "decks": [
+                  "Spies",
+                  "Zombies"
+              ],
+              "points": 20,
+              "place": 2
+          },
+          {
+              "name": "Dave",
+              "decks": [
+                  "Steampunk",
+                  "Wizard"
+              ],
+              "points": 20,
+              "place": 2
+          },
+          {
+              "name": "Castro",
+              "decks": [
+                  "Shapeshifters",
+                  "Ninjas"
+              ],
+              "points": 18,
+              "place": 4
+          }
+      ]
+    };
+    var collection = db.collection('example_collection');
+    collection.insert(example_doc, {w:1}, function(err, result) {
+      if(!err) {
+        console.log("Inserted a doc!");
+        process.exit();
+      } else {
+        return console.dir(err);
+      }
+    });
+  });
 
 Output from above:
-::
+
+.. code-block:: bash
  
  code 
 
@@ -140,12 +272,14 @@ Reading documents
 -----------------
 
 Finding all documents with a specific field:
-::
+
+.. code-block:: javascript
 
  code
 
 Output from above:
-::
+
+.. code-block:: bash
 
  code
 
@@ -153,12 +287,14 @@ Updating a document
 -------------------
 
 Updating a document:
-::
+
+.. code-block:: javascript
 
  code
 
 Output from above:
-::
+
+.. code-block:: bash
 
  code
 
@@ -166,12 +302,14 @@ Deleting a document
 -------------------
 
 Deleting a specific document:
-::
+
+.. code-block:: javascript
 
  code
 
 Output from above:
-::
+
+.. code-block:: bash
 
  code
 
