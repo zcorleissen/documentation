@@ -35,6 +35,7 @@ Here are the current versions of `golang` the driver supports:
      - go1.2
      - go1.3
      - go1.4
+     - go1.5
 
    * - v2
      - |checkmark|
@@ -57,44 +58,52 @@ Example document
 Here's the example document we'll be using:
 ::
 
-  {
-        "_id" : ObjectId("55b29160d5d145e1438b4567"),
-        "date" : ISODate("2014-05-26T02:00:22Z"),
-        "winner" : "Javi",
-        "logged" : true,
-        "decks" : {
-                "first" : [
-                        "Dinosaurs",
-                        "Plants"
+    {
+        "_id" : ObjectId("55da804ea5b2a779329ceb8e"),
+        "winner" : "Dave",
+        "official_game" : true,
+        "location" : "Austin",
+        "start" : ISODate("2015-02-12T04:11:00Z"),
+        "end" : ISODate("2015-02-12T05:54:00Z"),
+        "players" : [
+            {
+                "name" : "Dave",
+                "decks" : [
+                    "Wizards",
+                    "Steampunk"
                 ],
-                "second" : [
-                        "Spies",
-                        "Zombies"
+                "points" : 21,
+                "place" : 1
+            },
+            {
+                "name" : "Javier",
+                "decks" : [
+                    "Zombies",
+                    "Ghosts"
                 ],
-                "third" : [
-                        "Steampunk",
-                        "Wizards"
+                "points" : 18,
+                "place" : 2
+            },
+            {
+                "name" : "George",
+                "decks" : [
+                    "Aliens",
+                    "Dinosaurs"
                 ],
-                "fourth" : [
-                        "Shapeshifters",
-                        "Ninjas"
-                ]
-        },
-        "prior_winner" : "Castro",
-        "points" : [
-                NumberLong(24),
-                NumberLong(20),
-                NumberLong(20),
-                NumberLong(18)
-        ],
-        "players" : {
-
-                "first" : "Javi",
-                "second" : "Seth",
-                "third" : "Dave",
-                "fourth" : "Castro"
-        }
-  }
+                "points" : 17,
+                "place" : 3
+            },
+            {
+                "name" : "Seth",
+                "decks" : [
+                    "Spies",
+                    "Leprechauns"
+                ],
+                "points" : 10,
+                "place" : 4
+            }
+        ]
+    }
 
 Connecting
 ----------
@@ -103,35 +112,198 @@ Connecting to a replica set:
 
 .. code-block:: go
  
-   code
+    package main
+
+    import (
+        "fmt"
+        "gopkg.in/mgo.v2"
+    )
+
+    func main() {
+        Host := []string{
+            "dfw-c9-0.objectrocket.com:37143",
+            "dfw-c9-1.objectrocket.com:37143",
+        }
+        const (
+            Username = "example"
+            Password = "example"
+            Database = "test"
+        )
+
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    Host,
+            Username: Username,
+            Password: Password,
+            Database: Database,
+        })
+        if err != nil {
+            panic(err)
+        }
+
+        fmt.Printf("Connected to replica set %v!\n", session.LiveServers())
+    }
 
 Connecting to a sharded instance:
 
 .. code-block:: go
 
-   code
+    package main
+
+    import (
+        "fmt"
+        "gopkg.in/mgo.v2"
+    )
+
+    func main() {
+        const (
+            Host     = "iad-mongos0.objectrocket.com:9999"
+            Username = "example"
+            Password = "example"
+            Database = "test"
+        )
+
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+        })
+        if err != nil {
+            panic(err)
+        }
+
+        fmt.Printf("Connected to %v!\n", session.LiveServers())
+    }
+
 
 Connecting to a sharded instance using SSL:
 
 .. code-block:: go
 
-   code
+    package main
+
+    import (
+        "crypto/tls"
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "net"
+    )
+
+    func main() {
+        const (
+            Host     = "iad-mongos0.objectrocket.com:19999"
+            Username = "example"
+            Password = "example"
+            Database = "test"
+        )
+
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+            DialServer: func(addr *mgo.ServerAddr) (net.Conn, error) {
+                return tls.Dial("tcp", addr.String(), &tls.Config{})
+            },
+        })
+        if err != nil {
+            panic(err)
+        }
+        defer session.Close()
+
+        fmt.Printf("Connected to %v!\n", session.LiveServers())
+    }
+
 
 
 Creating a document
 -------------------
 
-Creating and inserting the document:
+Creating and inserting a document:
 
 .. code-block:: go
 
-   code
+    package main
 
-Output from above:
+    import (
+        "crypto/tls"
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "net"
+        "time"
+    )
 
-.. code-block:: go
- 
-   code
+    type Game struct {
+        Winner       string    `bson:"winner"`
+        OfficialGame bool      `bson:"official_game"`
+        Location     string    `bson:"location"`
+        StartTime    time.Time `bson:"start"`
+        EndTime      time.Time `bson:"end"`
+        Players      []Player  `bson:"players"`
+    }
+
+    type Player struct {
+        Name   string    `bson:"name"`
+        Decks  [2]string `bson:"decks"`
+        Points uint8     `bson:"points"`
+        Place  uint8     `bson:"place"`
+    }
+
+    func NewPlayer(name, firstDeck, secondDeck string, points, place uint8) Player {
+        return Player{
+            Name:   name,
+            Decks:  [2]string{firstDeck, secondDeck},
+            Points: points,
+            Place:  place,
+        }
+    }
+
+    func main() {
+        const (
+            Host       = "iad-mongos0.objectrocket.com:9999"
+            Username   = "example"
+            Password   = "example"
+            Database   = "Smashup"
+            Collection = "games"
+        )
+
+        game := Game{
+            Winner:       "Dave",
+            OfficialGame: true,
+            Location:     "Austin",
+            StartTime:    time.Date(2015, time.February, 12, 04, 11, 0, 0, time.UTC),
+            EndTime:      time.Date(2015, time.February, 12, 05, 54, 0, 0, time.UTC),
+            Players: []Player{
+                NewPlayer("Dave", "Wizards", "Steampunk", 21, 1),
+                NewPlayer("Javier", "Zombies", "Ghosts", 18, 2),
+                NewPlayer("George", "Aliens", "Dinosaurs", 17, 3),
+                NewPlayer("Seth", "Spies", "Leprechauns", 10, 4),
+            },
+        }
+
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+            DialServer: func(addr *mgo.ServerAddr) (net.Conn, error) {
+                return tls.Dial("tcp", addr.String(), &tls.Config{})
+            },
+        })
+        if err != nil {
+            panic(err)
+        }
+        defer session.Close()
+
+        fmt.Printf("Connected to %v\n", session.LiveServers())
+
+        coll := session.DB(Database).C(Collection)
+        if err := coll.Insert(game); err != nil {
+            panic(err)
+        }
+        fmt.Println("Document inserted successfully!")
+    }
+
 
 
 Reading documents
@@ -141,13 +313,50 @@ Finding all documents with a specific field:
 
 .. code-block:: go
 
-   code
+    package main
 
-Output from above:
+    import (
+        "crypto/tls"
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "gopkg.in/mgo.v2/bson"
+        "net"
+    )
 
-.. code-block:: go
+    func main() {
+        const (
+            Host       = "iad-mongos0.objectrocket.com:19999"
+            Username   = "example"
+            Password   = "example"
+            Database   = "Smashup"
+            Collection = "games"
+        )
 
-   code
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+            DialServer: func(addr *mgo.ServerAddr) (net.Conn, error) {
+                return tls.Dial("tcp", addr.String(), &tls.Config{})
+            },
+        })
+        if err != nil {
+            panic(err)
+        }
+        defer session.Close()
+
+        coll := session.DB(Database).C(Collection)
+
+        // Find the number of games won by Dave
+        player := "Dave"
+        gamesWon, err := coll.Find(bson.M{"winner": player}).Count()
+        if err != nil {
+            panic(err)
+        }
+
+        fmt.Printf("%s has won %d games.\n", player, gamesWon)
+    }
 
 Updating a document
 -------------------
@@ -156,13 +365,52 @@ Updating a document:
 
 .. code-block:: go
 
-   code
+    package main
 
-Output from above:
+    import (
+        "crypto/tls"
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "gopkg.in/mgo.v2/bson"
+        "net"
+    )
 
-.. code-block:: go
+    func main() {
+        const (
+            Host       = "iad-mongos0.objectrocket.com:19999"
+            Username   = "example"
+            Password   = "example"
+            Database   = "Smashup"
+            Collection = "games"
+        )
 
-   code
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+            DialServer: func(addr *mgo.ServerAddr) (net.Conn, error) {
+                return tls.Dial("tcp", addr.String(), &tls.Config{})
+            },
+        })
+        if err != nil {
+            panic(err)
+        }
+        defer session.Close()
+
+        coll := session.DB(Database).C(Collection)
+
+        // Change the winner for game 55da80 to Seth
+        gameId := bson.ObjectIdHex("55da804ea5b2a779329ceb8e")
+        newWinner := "Seth"
+        update := bson.M{"$set": bson.M{"winner": newWinner}}
+        if err := coll.UpdateId(gameId, update); err != nil {
+            panic(err)
+        }
+
+        fmt.Printf("Winner of game %s updated to %s.\n", gameId, newWinner)
+    }
+
 
 Deleting a document
 -------------------
@@ -171,13 +419,50 @@ Deleting a specific document:
 
 .. code-block:: go
 
-   code
+    package main
 
-Output from above:
+    import (
+        "crypto/tls"
+        "fmt"
+        "gopkg.in/mgo.v2"
+        "gopkg.in/mgo.v2/bson"
+        "net"
+    )
 
-.. code-block:: go
+    func main() {
+        const (
+            Host       = "iad-mongos0.objectrocket.com:19999"
+            Username   = "example"
+            Password   = "example"
+            Database   = "Smashup"
+            Collection = "games"
+        )
 
-   code
+        session, err := mgo.DialWithInfo(&mgo.DialInfo{
+            Addrs:    []string{Host},
+            Username: Username,
+            Password: Password,
+            Database: Database,
+            DialServer: func(addr *mgo.ServerAddr) (net.Conn, error) {
+                return tls.Dial("tcp", addr.String(), &tls.Config{})
+            },
+        })
+        if err != nil {
+            panic(err)
+        }
+        defer session.Close()
+
+        coll := session.DB(Database).C(Collection)
+
+        // Remove all unofficial games
+        info, err := coll.RemoveAll(bson.M{"official_game": false})
+        if err != nil {
+            panic(err)
+        }
+
+        fmt.Printf("%d unofficial game(s) removed!\n", info.Removed)
+    }
+
 
 Additional reading
 ------------------
