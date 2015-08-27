@@ -8,11 +8,13 @@ Get details on the specified Redis instance's connected slaves.
 
    GET /redis/<instance_name>/connectedSlaves/
 
-Request/Response:
+Response:
 
 .. code-block:: bash
 
-   $ http
+   {
+       "data": 1
+   }
 
 Get details on the specified Redis instance's space usage.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,11 +23,16 @@ Get details on the specified Redis instance's space usage.
 
    GET /redis/<instance_name>/spaceUsage/
 
-Request/Response:
+Response:
 
 .. code-block:: bash
 
-   $ http
+   {
+       "data": {
+           "freeSpacePercentage": 0.0656610107421875,
+           "usedMemoryHuman": "1.64M"
+       }
+   }
 
 Get details on the specified Redis instance's max memory policy.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,11 +41,13 @@ Get details on the specified Redis instance's max memory policy.
 
    GET /redis/<instance_name>/maxMemoryPolicy/
 
-Request/Response:
+Response:
 
 .. code-block:: bash
 
-   $ http
+   {
+       "data": "volatile-lru"
+   }
 
 Get details on the specified Redis instance's max clients.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,11 +56,13 @@ Get details on the specified Redis instance's max clients.
 
    GET /redis/<instance_name>/maxClients/
 
-Request/Response:
+Response:
 
 .. code-block:: bash
 
-   $ http
+   {
+       "data": "4064"
+   }
 
 Resize a redis instance to the specified size.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,9 +71,19 @@ Resize a redis instance to the specified size.
 
    POST /redis/<instance_name>/resize/
 
-Request/Response:
+Request:
 
 .. code-block:: bash
 
-   $ http
+   {
+       "new_plan": 2500
+   }
+
+Response:
+
+.. code-block:: bash
+
+   {
+       "data": "Started process of resizing instance Test123 from 1000 to 2500"
+   }
 
