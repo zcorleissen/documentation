@@ -1,7 +1,7 @@
 Instance Resources
 ==================
 
-Get details on an account's instances.
+Get details on an account's instances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -76,7 +76,7 @@ Response:
        ]
    }
 
-Create a new instance.
+Create a new instance
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -89,7 +89,7 @@ Request/Response:
 
    $ ERROR
 
-Get details on the specified instance.
+Get details on the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -132,7 +132,7 @@ Response:
        "data": "Successfully deleted Instance \"Test123\"."
    }
 
-Rename the specified instance.
+Rename the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -155,7 +155,7 @@ Response:
        "data": "Successfully renamed instance from \"Test123\" to \"Test456\"."
    }
 
-Get a list of ACLs for the given instance.
+Get a list of ACLs for the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -201,7 +201,7 @@ Response:
        ]
    }
 
-Create a new ACL for the given instance.
+Create a new ACL for the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -225,7 +225,7 @@ Response:
        "data": "55df9d97cb143c40ddc8376f"
    }
 
-Get a specific ACL.
+Get a specific ACL
 ~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -259,7 +259,7 @@ Response:
        }
    }
 
-Delete an ACL.
+Delete an ACL
 ~~~~~~~~~~~~~~
 
 .. code-block:: bash

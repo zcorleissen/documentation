@@ -1,7 +1,7 @@
 Redis Resources
 ===============
 
-Get details on the specified Redis instance's connected slaves.
+Get details on the specified Redis instance's connected slaves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -16,7 +16,7 @@ Response:
        "data": 1
    }
 
-Get details on the specified Redis instance's space usage.
+Get details on the specified Redis instance's space usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -34,7 +34,7 @@ Response:
        }
    }
 
-Get details on the specified Redis instance's max memory policy.
+Get details on the specified Redis instance's max memory policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -49,7 +49,7 @@ Response:
        "data": "volatile-lru"
    }
 
-Get details on the specified Redis instance's max clients.
+Get details on the specified Redis instance's max clients
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -64,7 +64,7 @@ Response:
        "data": "4064"
    }
 
-Resize a redis instance to the specified size.
+Resize a redis instance to the specified size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash

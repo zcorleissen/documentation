@@ -1,7 +1,7 @@
 MongoDB Resources
 =================
 
-Get a list of collection names belonging to the given instance database.
+Get a list of collection names belonging to the given instance database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -20,7 +20,7 @@ Response:
        ]
    }
 
-Create a new collection in the specified instance database.
+Create a new collection in the specified instance database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -49,7 +49,7 @@ Response:
        "data": "Successfully added collection: 'Name123' to database: 'Database123'"
    }
 
-Get details on a collection belonging to the given instance database.
+Get details on a collection belonging to the given instance database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -82,7 +82,7 @@ Response:
        }
    }
 
-Get the compaction state of the specified instance.
+Get the compaction state of the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -174,7 +174,7 @@ Response:
        }
    }
 
-Schedule the specified instance for compaction.
+Schedule the specified instance for compaction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -249,7 +249,7 @@ Response:
        ]
    }
 
-Create a database and user on the specified instance.
+Create a database and user on the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -262,7 +262,7 @@ Request/Response:
 
    $ ERROR
 
-Get details on a database belonging to the given instance.
+Get details on a database belonging to the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -312,7 +312,7 @@ Response:
        }
    }
 
-Delete a database from the specified instance.
+Delete a database from the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -327,7 +327,7 @@ Response:
        "data": "Successfully deleted Database \"Database123\" from Instance \"Test123\"."
    }
 
-Get opcounters per second for the given instance.
+Get opcounters per second for the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -340,7 +340,7 @@ Request/Response:
 
    $ ERROR
 
-Get opcounters for the given instance.
+Get opcounters for the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -464,7 +464,7 @@ Response:
        ]
    }
 
-Get a list of replica sets belonging to the given instance.
+Get a list of replica sets belonging to the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -494,7 +494,7 @@ Response:
        ]
    }
 
-Get a list of shards belonging to the given instance.
+Get a list of shards belonging to the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -524,7 +524,7 @@ Response:
        ]
    }
 
-Add a shard to the given instance.
+Add a shard to the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -561,7 +561,7 @@ Response:
        ]
    }
 
-Get space usage statistics from the specified instance.
+Get space usage statistics from the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -590,7 +590,7 @@ Response:
        }
    }
 
-Get the current stepdown window configuration of the specified instance.
+Get the current stepdown window configuration of the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -613,7 +613,7 @@ Response:
        }
    }
 
-Update the stepdown window configuration of the specified instance.
+Update the stepdown window configuration of the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash

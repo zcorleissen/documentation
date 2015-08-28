@@ -1,7 +1,7 @@
 General Resources
 =================
 
-Get details on all plans.
+Get details on all plans
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -489,7 +489,7 @@ Response:
        ]
    }
 
-Get details on the plan specified by ID.
+Get details on the plan specified by ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -511,7 +511,7 @@ Response:
        }
    }
 
-Record the contact form data, and notify sales.
+Record the contact form data, and notify sales
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -524,7 +524,7 @@ Request/Response:
 
    $ ERROR
 
-Get details on an account.
+Get details on an account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -558,7 +558,7 @@ Response:
        }
    }
 
-Set the CC info for the authenticated account.
+Set the CC info for the authenticated account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -571,7 +571,7 @@ Request/Response:
 
    $ ERROR
 
-Get details on all casters belonging to this account.
+Get details on all casters belonging to this account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -584,7 +584,7 @@ Request/Response:
 
    $ ERROR
 
-Get details on a caster specified by ID.
+Get details on a caster specified by ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -597,7 +597,7 @@ Request/Response:
 
    $ ERROR
 
-Get the data for an ad-hoc query request.
+Get the data for an ad-hoc query request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -610,7 +610,7 @@ Request/Response:
 
    $ ERROR
 
-Get both the replset infrastructure and the list of stats for a host.
+Get both the replset infrastructure and the list of stats for a host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -706,7 +706,7 @@ Response:
        ]
    }
 
-Get all dashboards for the specified account.
+Get all dashboards for the specified account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -719,7 +719,7 @@ Request/Response:
 
    $ ERROR
 
-Create a new dashboard.
+Create a new dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -732,7 +732,7 @@ Request/Response:
 
    $ ERROR
 
-Get the dashboard specified by ID.
+Get the dashboard specified by ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -745,7 +745,7 @@ Request/Response:
 
    $ ERROR
 
-Update the dashboard specified by ID.
+Update the dashboard specified by ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -758,7 +758,7 @@ Request/Response:
 
    $ ERROR
 
-Delete the dashboard specified by ID.
+Delete the dashboard specified by ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash

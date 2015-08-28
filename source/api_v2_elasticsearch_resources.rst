@@ -14,7 +14,7 @@ Request/Response:
 
    $ http
 
-Get details on the specified Elasticsearch instance's cluster.
+Get details on the specified Elasticsearch instance's cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -27,7 +27,7 @@ Request/Response:
 
    $ http
 
-Get details on the specified Elasticsearch instance's data nodes.
+Get details on the specified Elasticsearch instance's data nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -40,7 +40,7 @@ Request/Response:
 
    $ http
 
-Add a new data node to the specified Elasticsearch instance.
+Add a new data node to the specified Elasticsearch instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -53,7 +53,7 @@ Request/Response:
 
    $ http
 
-Get details on the specified Elasticsearch instance's indices.
+Get details on the specified Elasticsearch instance's indices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -66,7 +66,7 @@ Request/Response:
 
    $ http
 
-Get details on the specified Elasticsearch instance's nodes.
+Get details on the specified Elasticsearch instance's nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -79,7 +79,7 @@ Request/Response:
 
    $ http
 
-Get details on an account's Elasticsearch instances.
+Get details on an account's Elasticsearch instances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -92,7 +92,7 @@ Request/Response:
 
    $ http
 
-Get a list of all users currenlty added to the instance specified by name.
+Get a list of all users currenlty added to the instance specified by name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -105,7 +105,7 @@ Request/Response:
 
    $ http
 
-Create or update a user for the instance specified by name.
+Create or update a user for the instance specified by name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -118,7 +118,7 @@ Request/Response:
 
    $ http
 
-Delete a user from the instance specified by name.
+Delete a user from the instance specified by name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
