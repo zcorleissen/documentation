@@ -620,6 +620,10 @@ Update the stepdown window configuration of the specified instance
 
    POST /mongodb/<instance_name>/stepdown/
 
+.. note::
+
+   The **start** and **end** fields must be a floating point Unix timestamp specified in UTC.
+
 Request:
 
 .. code-block:: bash
