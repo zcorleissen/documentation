@@ -334,11 +334,258 @@ Get opcounters per second for the given instance
 
    GET /mongodb/<instance_name>/opcounters/persecond/
 
-Request/Response:
+.. note::
+
+   Operation may take 30+ seconds to complete (adjust timeout settings if need be).
+
+Response:
 
 .. code-block:: bash
 
-   $ ERROR
+   {
+       "data": [
+           {
+               "5db16d02db25b9673ff2f72440366df0": {
+                   "sydclus2br0vz18.syd.objectrocket.com:31134": {
+                       "command": 81,
+                       "delete": 0,
+                       "getmore": 6,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   },
+                   "sydclus2br1vz18.syd.objectrocket.com:31134": {
+                       "command": 62,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz18.syd.objectrocket.com:31134": {
+                       "command": 57,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   }
+               },
+               "90a85209de63519f0c04728a1bdb9313": {
+                   "sydclus1br0vz10.syd.objectrocket.com:31166": {
+                       "command": 71,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br1vz10.syd.objectrocket.com:31166": {
+                       "command": 77,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br2vz10.syd.objectrocket.com:31166": {
+                       "command": 83,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               },
+               "fc0c163bd79c4de0b3d5127ec9e5156d": {
+                   "sydclus2br0vz28.syd.objectrocket.com:32795": {
+                       "command": 43,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br1vz28.syd.objectrocket.com:32795": {
+                       "command": 40,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz28.syd.objectrocket.com:32795": {
+                       "command": 41,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               }
+           },
+           {
+               "5db16d02db25b9673ff2f72440366df0": {
+                   "sydclus2br0vz18.syd.objectrocket.com:31134": {
+                       "command": 81,
+                       "delete": 0,
+                       "getmore": 6,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   },
+                   "sydclus2br1vz18.syd.objectrocket.com:31134": {
+                       "command": 62,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz18.syd.objectrocket.com:31134": {
+                       "command": 57,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   }
+               },
+               "90a85209de63519f0c04728a1bdb9313": {
+                   "sydclus1br0vz10.syd.objectrocket.com:31166": {
+                       "command": 71,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br1vz10.syd.objectrocket.com:31166": {
+                       "command": 77,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br2vz10.syd.objectrocket.com:31166": {
+                       "command": 83,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               },
+               "fc0c163bd79c4de0b3d5127ec9e5156d": {
+                   "sydclus2br0vz28.syd.objectrocket.com:32795": {
+                       "command": 43,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br1vz28.syd.objectrocket.com:32795": {
+                       "command": 40,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz28.syd.objectrocket.com:32795": {
+                       "command": 41,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               }
+           },
+           {
+               "5db16d02db25b9673ff2f72440366df0": {
+                   "sydclus2br0vz18.syd.objectrocket.com:31134": {
+                       "command": 81,
+                       "delete": 0,
+                       "getmore": 6,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   },
+                   "sydclus2br1vz18.syd.objectrocket.com:31134": {
+                       "command": 62,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz18.syd.objectrocket.com:31134": {
+                       "command": 57,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 0,
+                       "update": 0
+                   }
+               },
+               "90a85209de63519f0c04728a1bdb9313": {
+                   "sydclus1br0vz10.syd.objectrocket.com:31166": {
+                       "command": 71,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br1vz10.syd.objectrocket.com:31166": {
+                       "command": 77,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus1br2vz10.syd.objectrocket.com:31166": {
+                       "command": 83,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               },
+               "fc0c163bd79c4de0b3d5127ec9e5156d": {
+                   "sydclus2br0vz28.syd.objectrocket.com:32795": {
+                       "command": 43,
+                       "delete": 0,
+                       "getmore": 8,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br1vz28.syd.objectrocket.com:32795": {
+                       "command": 40,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   },
+                   "sydclus2br2vz28.syd.objectrocket.com:32795": {
+                       "command": 41,
+                       "delete": 0,
+                       "getmore": 0,
+                       "insert": 0,
+                       "query": 7,
+                       "update": 0
+                   }
+               }
+           }
+       ]
+   }
 
 Get opcounters for the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
