@@ -82,4 +82,18 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
 Rate Limiting
 ~~~~~~~~~~~~~
 
-TODO
+You can make up to 100 requests per minute. You can check the HTTP response headers of any API request to see your current rate limit status:
+
+.. code-block:: bash
+
+   HTTP/1.1 200 OK
+   Connection: keep-alive
+   Content-Length: 12
+   Content-Type: application/json
+   Date: Thu, 27 Aug 2015 23:57:22 GMT
+   Server: nginx/1.8.0
+   X-RateLimit-Limit: 100
+   X-RateLimit-Remaining: 99
+   X-RateLimit-Reset: 1440719843
+   X-Request-Id: 19dd4f836e424d20b6d4dd05a868c5ac
+
