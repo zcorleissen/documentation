@@ -71,6 +71,10 @@ Resize a redis instance to the specified size
 
    POST /redis/<instance_name>/resize/
 
+.. note::
+
+   Only resizing to larger plans is supported. The **new_plan** field is represented in megabytes and must be one of the following: 500, 1000, 2500, 5000, 10000, 20000, 50000, 75000, or 100000.
+
 Request:
 
 .. code-block:: bash
