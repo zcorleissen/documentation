@@ -5,6 +5,7 @@ API v2
    :maxdepth: 2
    
    api_v2_getting_started
+   api_v2_caster_resources
    api_v2_general_resources
    api_v2_elasticsearch_resources
    api_v2_instance_resources
