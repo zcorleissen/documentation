@@ -10,4 +10,4 @@ API v2
    api_v2_instance_resources
    api_v2_mongodb_resources
    api_v2_redis_resources
-   api_v2_remote_resources.rst
+   api_v2_remote_resources
