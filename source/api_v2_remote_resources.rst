@@ -1,7 +1,7 @@
 Remote Resources
 ================
 
-Get details on an account's remote instances.
+Get details on an account's remote instances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -14,7 +14,7 @@ Request/Response:
 
    $ http
 
-Get details on the specified remote instance.
+Get details on the specified remote instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -27,7 +27,7 @@ Request/Response:
 
    $ http
 
-Delete the specified remote instance.
+Delete the specified remote instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -40,7 +40,7 @@ Request/Response:
 
    $ http
 
-Rename the specified remote instance.
+Rename the specified remote instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
