@@ -83,11 +83,80 @@ Create a new instance
 
    POST /instances/
 
-Request/Response:
+.. note::
+
+   The **service** field must be one of the following: elasticsearch, mongodb, mysql, or redis.
+
+   **elasticsearch**:
+      Plans available: 2, 4, 8, 16, 32, 64, 128, 256, and 512.
+
+      Types available: elasticsearch.
+
+      Versions available: 1.6.2, and 1.7.1.
+
+      Zones available: US-East-IAD1, and US-Dallas.
+
+   **mongodb**:
+      Plans available: 1, 5, 20, 50, and 100.
+
+      Types available: mongodb_sharded, mongodb_replica_set, and mongodb_jumbo_replica_set.
+
+      Versions available: 2.4.6, 2.6.10, and 3.0.5.
+
+      Zones available: US-East-IAD3, US-West, EU-London, AP-HongKong, US-Chicago, AP-Sydney, and US-Dallas.
+
+   **mysql**:
+      ERROR
+
+   **redis**:
+      Plans available: 500, 1000, 2500, 5000, 10000, 20000, 50000, 75000, and 100000.
+
+      Types available: redis_ha_instance.
+
+      Versions available: 2.8.17, 2.8.21, and 3.0.3.
+
+      Zones available: EU-London, US-Chicago, US-East-IAD3, and US-Dallas.
+
+Request:
 
 .. code-block:: bash
 
-   $ ERROR
+   {
+       "name": "TEST123",
+       "plan": 2,
+       "service": "elasticsearch",
+       "type": "elasticsearch",
+       "version": "1.6.2",
+       "zone": "US-East-IAD1"
+   }
+
+Response:
+
+.. code-block:: bash
+
+   {
+       "data": {
+           "_id": {
+               "$oid": "55e0a924cb143c426df6927e"
+           },
+           "ansible_group": null,
+           "api_key": "2f91e30a48d94ef0ba403edf017d9e60",
+           "build_id": "55e0a924cb143c426df6927d",
+           "dtcreated": {
+               "$date": 1440761524190
+           },
+           "elasticsearch_version": "1.6.2",
+           "instance_name_prior": null,
+           "instance_service": "elasticsearch",
+           "instance_type": "elasticsearch",
+           "login": "donovan@heydonovan.io",
+           "login_prior": null,
+           "name": "TEST123",
+           "plan": 2,
+           "state": "REQUESTED",
+           "zone": "US-East-IAD1"
+       }
+   }
 
 Get details on the specified instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,4 +342,3 @@ Response:
    {
        "data": {}
    }
-
