@@ -92,7 +92,7 @@ Request/Response:
 
    $ http
 
-Get a list of all users currenlty added to the instance specified by name
+Get a list of all users currently added to the instance specified by name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
