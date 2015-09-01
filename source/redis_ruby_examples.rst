@@ -46,10 +46,10 @@ DEL (Delete a key)
 
 .. code-block:: ruby
 
-   irb(main):004:0> redis.del("best_car_ever")
+   irb(main):005:0> redis.del("best_car_ever")
    => 1
 
-   irb(main):005:0> redis.get("best_car_ever")
+   irb(main):006:0> redis.get("best_car_ever")
    => nil
 
 More Information
