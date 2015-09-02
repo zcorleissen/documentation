@@ -3,7 +3,7 @@ Ruby Connection Examples
 
 .. |checkmark| unicode:: U+2713
 
-The `redis-rb <https://github.com/redis/redis-rb>`_ gem is the recommended client for Redis when using the Ruby programming language.
+The `redis-rb <https://github.com/redis/redis-rb>`_ gem is the recommended client for Redis when using Ruby.
 
 Installation
 ------------
