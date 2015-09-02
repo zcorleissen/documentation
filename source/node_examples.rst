@@ -266,7 +266,9 @@ Output from above:
 
 .. code-block:: bash
  
- code 
+ $ node inserting_doc.js
+ We are connected
+ Inserted a doc!
 
 Reading documents
 -----------------

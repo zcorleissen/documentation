@@ -28,7 +28,7 @@ Here are the current versions of `golang` the driver supports:
    :header-rows: 1
    :stub-columns: 1
    :class: compatibility
-   :widths: 40 20 20 20 20
+   :widths: 40 20 20 20 20 20
 
    * - Go Driver Version
      - go1.1
@@ -42,6 +42,7 @@ Here are the current versions of `golang` the driver supports:
      - |checkmark|
      - |checkmark|
      - |checkmark|
+     - *untested*
 
 Installation
 ------------
@@ -215,6 +216,9 @@ Connecting to a sharded instance using SSL:
     }
 
 
+.. warning::
+
+    The below examples are connecting via SSL, which doesn't work with our Replica Set instances. Please adjust accordingly.
 
 Creating a document
 -------------------
