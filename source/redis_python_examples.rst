@@ -1,5 +1,5 @@
-Ruby Connection Examples
-========================
+Python Connection Examples
+==========================
 
 .. |checkmark| unicode:: U+2713
 
