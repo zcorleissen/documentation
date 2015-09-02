@@ -65,50 +65,51 @@ Example document
 Here's the example document we'll be using:
 ::
 
-  { "start": datetime.utcnow(),
-    "end": datetime(2015, 8, 22, 16, 22, 38),
-    "location": "Texas",
-    "official_game": False,
-    "winner": "Javi",
-    "players": [
-        {
-    "name": "Javi",
-            "decks": [
-                "Dinosaurs",
-                "Plants"
-            ],
-            "points": 24,
-            "place": 1
-        },
-        {
-            "name": "Seth",
-            "decks": [
-                "Spies",
-                "Zombies"
-            ],
-            "points": 20,
-            "place": 2
-        },
-        {
-            "name": "Dave",
-            "decks": [
-                "Steampunk",
-                "Wizard"
-            ],
-            "points": 20,
-            "place": 2
-        },
-        {
-            "name": "Castro",
-            "decks": [
-                "Shapeshifters",
-                "Ninjas"
-            ],
-            "points": 18,
-            "place": 4
-        }
-    ]
-  }
+   {
+       "start": "2015-09-02T22:46:30.782Z",
+       "end": "2016-09-02T22:46:30.782Z",
+       "location": "Texas",
+       "official_game": false,
+       "winner": "Javi",
+       "players": [
+           {
+               "name": "Javi",
+               "decks": [
+                   "Dinosaurs",
+                   "Plants"
+               ],
+               "points": 24,
+               "place": 1
+           },
+           {
+               "name": "Seth",
+               "decks": [
+                   "Spies",
+                   "Zombies"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Dave",
+               "decks": [
+                   "Steampunk",
+                   "Wizard"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Castro",
+               "decks": [
+                   "Shapeshifters",
+                   "Ninjas"
+               ],
+               "points": 18,
+               "place": 4
+           }
+       ]
+   }
 
 Connecting
 ----------

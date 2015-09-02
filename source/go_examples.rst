@@ -59,52 +59,51 @@ Example document
 Here's the example document we'll be using:
 ::
 
-    {
-        "_id" : ObjectId("55da804ea5b2a779329ceb8e"),
-        "winner" : "Dave",
-        "official_game" : true,
-        "location" : "Austin",
-        "start" : ISODate("2015-02-12T04:11:00Z"),
-        "end" : ISODate("2015-02-12T05:54:00Z"),
-        "players" : [
-            {
-                "name" : "Dave",
-                "decks" : [
-                    "Wizards",
-                    "Steampunk"
-                ],
-                "points" : 21,
-                "place" : 1
-            },
-            {
-                "name" : "Javier",
-                "decks" : [
-                    "Zombies",
-                    "Ghosts"
-                ],
-                "points" : 18,
-                "place" : 2
-            },
-            {
-                "name" : "George",
-                "decks" : [
-                    "Aliens",
-                    "Dinosaurs"
-                ],
-                "points" : 17,
-                "place" : 3
-            },
-            {
-                "name" : "Seth",
-                "decks" : [
-                    "Spies",
-                    "Leprechauns"
-                ],
-                "points" : 10,
-                "place" : 4
-            }
-        ]
-    }
+   {
+       "start": "2015-09-02T22:46:30.782Z",
+       "end": "2016-09-02T22:46:30.782Z",
+       "location": "Texas",
+       "official_game": false,
+       "winner": "Javi",
+       "players": [
+           {
+               "name": "Javi",
+               "decks": [
+                   "Dinosaurs",
+                   "Plants"
+               ],
+               "points": 24,
+               "place": 1
+           },
+           {
+               "name": "Seth",
+               "decks": [
+                   "Spies",
+                   "Zombies"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Dave",
+               "decks": [
+                   "Steampunk",
+                   "Wizard"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Castro",
+               "decks": [
+                   "Shapeshifters",
+                   "Ninjas"
+               ],
+               "points": 18,
+               "place": 4
+           }
+       ]
+   }
 
 Connecting
 ----------
