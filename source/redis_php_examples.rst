@@ -24,34 +24,26 @@ Install predis at the command prompt if you haven't yet:
    Writing lock file
    Generating autoload files
 
-Authenticate/Connect
---------------------
+Authentication
+--------------
 
 .. code-block:: bash
 
    php > require __DIR__ . '/vendor/autoload.php';
-   php > $redis = new Predis\Client(['host' => '###.publb.rackspaceclouddb.com', 'port' => 6379, 'password' => '###']);
+   php > $redis = new Predis\Client(['host' => '#####.publb.rackspaceclouddb.com', 'port' => 6379, 'password' => '#####']);
 
-SET (Create a key)
-------------------
+C.R.U.D.
+--------
+
+Create, read, update and destroy are the four basic functions of persistent storage.
 
 .. code-block:: bash
 
    php > echo $redis->set("best_car_ever", "Tesla Model S");
    OK
 
-GET (Retrieve a key)
---------------------
-
-.. code-block:: bash
-
    php > echo $redis->get("best_car_ever");
    Tesla Model S
-
-DEL (Delete a key)
-------------------
-
-.. code-block:: bash
 
    php > echo $redis->del("best_car_ever");
    1
