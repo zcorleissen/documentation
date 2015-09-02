@@ -1,9 +1,6 @@
 ObjectRocket FAQ
 ================
 
-General
--------
-
 What is ObjectRocket?
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -95,11 +92,6 @@ space buffer. "Total File Size" is listed on the
 `instances page <https://app.objectrocket.com/instances>`_.
 
 Detailed information about how this is calculated can be found on our blog: `Understanding MongoDB space usage <http://objectrocket.com/blog/how-to/understanding-mongodb-space-usage>`_.
-
-
-Redundancy, Scalability, Performance
-------------------------------------
-
 
 Where is my data?
 ~~~~~~~~~~~~~~~~~

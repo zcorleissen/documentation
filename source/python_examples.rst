@@ -151,7 +151,7 @@ Connecting to a replica set:
       'host': 'dfw-c9-1.objectrocket.com:37143,dfw-c9-0.objectrocket.com:37143',
       'database': 'example_db',
       'username': 'example',
-      'pnts""Plants""Plants"assword': 'example_pass',
+      'password': 'example_pass',
       'options': 'replicaSet=c74b5276378ed3bd70cba37a3ac45fea'
   }
 
