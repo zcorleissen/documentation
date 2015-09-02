@@ -74,44 +74,51 @@ Here's the example document we'll be using:
 
 .. code-block:: javascript
 
-  {
-        "_id" : ObjectId("55b29160d5d145e1438b4567"),
-        "date" : ISODate("2014-05-26T02:00:22Z"),
-        "winner" : "Javi",
-        "logged" : true,
-        "decks" : {
-                "first" : [
-                        "Dinosaurs",
-                        "Plants"
-                ],
-                "second" : [
-                        "Spies",
-                        "Zombies"
-                ],
-                "third" : [
-                        "Steampunk",
-                        "Wizards"
-                ],
-                "fourth" : [
-                        "Shapeshifters",
-                        "Ninjas"
-                ]
-        },
-        "prior_winner" : "Castro",
-        "points" : [
-                NumberLong(24),
-                NumberLong(20),
-                NumberLong(20),
-                NumberLong(18)
-        ],
-        "players" : {
-
-                "first" : "Javi",
-                "second" : "Seth",
-                "third" : "Dave",
-                "fourth" : "Castro"
-        }
-  }
+   {
+       "start": "2015-09-02T22:46:30.782Z",
+       "end": "2016-09-02T22:46:30.782Z",
+       "location": "Texas",
+       "official_game": false,
+       "winner": "Javi",
+       "players": [
+           {
+               "name": "Javi",
+               "decks": [
+                   "Dinosaurs",
+                   "Plants"
+               ],
+               "points": 24,
+               "place": 1
+           },
+           {
+               "name": "Seth",
+               "decks": [
+                   "Spies",
+                   "Zombies"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Dave",
+               "decks": [
+                   "Steampunk",
+                   "Wizard"
+               ],
+               "points": 20,
+               "place": 2
+           },
+           {
+               "name": "Castro",
+               "decks": [
+                   "Shapeshifters",
+                   "Ninjas"
+               ],
+               "points": 18,
+               "place": 4
+           }
+       ]
+   }
 
 Connecting
 ----------
