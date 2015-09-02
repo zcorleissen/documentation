@@ -1,82 +1,69 @@
 PHP Connection Examples
-=======================
+========================
 
 .. |checkmark| unicode:: U+2713
 
-The PHP Redis driver is an officially recommended driver, and it's called `name <`https://link>`_.
+The `predis <https://github.com/nrk/predis>`_ package is the recommended client for Redis when using PHP.
 
 Installation
 ------------
 
-Installing `name <https://link>`_ is simple, using  :
-
-.. code-block:: language
-
-   $ command
-
-Connecting, Authenticating, SET, GET, and DEL
----------------------------------------------
-
-.. code-block:: go
-   
-  package main
-
-  import "github.com/garyburd/redigo/redis"
-  import "fmt"
-
-  func main() {
-	//Connect
-	c, err := redis.Dial("tcp", "6d0350b##########523956f768b.publb.rackspaceclouddb.com:6379")
-	if err != nil {
-		panic(err)
-	}
-	defer c.Close()
-
-	//Authenticate
-	c.Do("AUTH", "KtKzkTB##############4jExUADzRfKC")
-
-	//Set two keys
-	c.Do("SET", "key1", "I'm a value!")
-	c.Do("SET", "key2", "I am too!")
-
-	//Get a key
-	key1, err := redis.String(c.Do("GET", "key1"))
-	if err != nil {
-		fmt.Println("key1 not found")
-	} else {
-		//Print our key if it exists
-		fmt.Println("key1 exists: " + key1)
-	}
-
-	//Delete a key
-	c.Do("DEL", "key2")
-
-	//Try to retrieve the key we just deleted
-	key2, err := redis.String(c.Do("GET", "key2"))
-	if err != nil {
-		fmt.Println("key2 not found", err)
-	} else {
-		//Print our key if it exists
-		fmt.Println(key2)
-	}
-  }
-
-Output from above:
+Install predis at the command prompt if you haven't yet:
 
 .. code-block:: bash
-   
-   $ go run redis.go
-   
-   key1 exists: I'm a value!
-   key2 not found redigo: nil returned
 
+   $ composer require predis/predis
+   Using version ^1.0 for predis/predis
+   ./composer.json has been created
+   Loading composer repositories with package information
+   Updating dependencies (including require-dev)
+     - Installing predis/predis (v1.0.3)
+       Loading from cache
+   
+   predis/predis suggests installing ext-phpiredis (Allows faster serialization and deserialization of the Redis protocol)
+   Writing lock file
+   Generating autoload files
 
-Additional reading
+Authenticate/Connect
+--------------------
+
+.. code-block:: bash
+
+   php > require __DIR__ . '/vendor/autoload.php';
+   php > $redis = new Predis\Client(['host' => '###.publb.rackspaceclouddb.com', 'port' => 6379, 'password' => '###']);
+
+SET (Create a key)
 ------------------
 
-If you need more help with `driver`, here are some links to more documentation:
+.. code-block:: bash
 
-* `link FAQ <https://link>`_
-* `link API Documentation <http://link>`_
+   php > echo $redis->set("best_car_ever", "Tesla Model S");
+   OK
+
+GET (Retrieve a key)
+--------------------
+
+.. code-block:: bash
+
+   php > echo $redis->get("best_car_ever");
+   Tesla Model S
+
+DEL (Delete a key)
+------------------
+
+.. code-block:: bash
+
+   php > echo $redis->del("best_car_ever");
+   1
+
+   php > echo $redis->get("best_car_ever");
+   php >
+
+More Information
+----------------
+
+If you need additional help with predis, here are some useful links:
+
+* `predis Official Documentation <https://github.com/nrk/predis>`_
 
 As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
