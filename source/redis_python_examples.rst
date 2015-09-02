@@ -14,34 +14,30 @@ Install redis-py at the command prompt if you haven't yet:
 
    $ pip install redis
 
-Authenticate/Connect
---------------------
 
-.. code-block:: python
+Authentication
+--------------
+
+.. code-block:: bash
 
    >>> import redis
-   >>> redis = redis.StrictRedis(host='###.publb.rackspaceclouddb.com', port=6379, password='###')
+   >>> redis = redis.StrictRedis(host='#####.publb.rackspaceclouddb.com', port=6379, password='#####')
 
-SET (Create a key)
-------------------
+   >>> print(redis)
+   >>> StrictRedis<ConnectionPool<Connection<host=#####.publb.rackspaceclouddb.com,port=6379,db=0>>>
+
+C.R.U.D.
+--------
+
+Create, read, update and destroy are the four basic functions of persistent storage.
 
 .. code-block:: python
 
    >>> redis.set("best_car_ever", "Tesla Model S")
    True
 
-GET (Retrieve a key)
---------------------
-
-.. code-block:: python
-
    >>> redis.get("best_car_ever")
    b'Tesla Model S'
-
-DEL (Delete a key)
-------------------
-
-.. code-block:: python
 
    >>> redis.delete("best_car_ever")
    1
