@@ -14,37 +14,29 @@ Install redis-rb at the command prompt if you haven't yet:
 
    $ gem install redis
 
-Authenticate/Connect
---------------------
+Authentication
+--------------
 
 .. code-block:: ruby
 
    irb(main):001:0> require 'redis'
    => true
 
-   irb(main):002:0> redis = Redis.new(:host => "###.publb.rackspaceclouddb.com", :port => 6379, :password => "###")
-   => #<Redis client v3.2.1 for redis://###.publb.rackspaceclouddb.com:6379/0>
+   irb(main):002:0> redis = Redis.new(:host => "#####.publb.rackspaceclouddb.com", :port => 6379, :password => "#####")
+   => #<Redis client v3.2.1 for redis://#####.publb.rackspaceclouddb.com:6379/0>
 
-SET (Create a key)
-------------------
+C.R.U.D.
+--------
+
+Create, read, update and destroy are the four basic functions of persistent storage.
 
 .. code-block:: ruby
 
    irb(main):003:0> redis.set("best_car_ever", "Tesla Model S")
    => "OK"
 
-GET (Retrieve a key)
---------------------
-
-.. code-block:: ruby
-
    irb(main):004:0> redis.get("best_car_ever")
    => "Tesla Model S"
-
-DEL (Delete a key)
-------------------
-
-.. code-block:: ruby
 
    irb(main):005:0> redis.del("best_car_ever")
    => 1
