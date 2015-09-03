@@ -36,28 +36,28 @@ Connecting, Authenticating, SET, GET, and DEL
 	c.Do("AUTH", "KtKzkTB##############4jExUADzRfKC")
 
 	//Set two keys
-	c.Do("SET", "key1", "I'm a value!")
-	c.Do("SET", "key2", "I am too!")
+	c.Do("SET", "best_car_ever", "Tesla Model S")
+	c.Do("SET", "worst_car_ever", "Geo Metro")
 
 	//Get a key
-	key1, err := redis.String(c.Do("GET", "key1"))
+	best_car_ever, err := redis.String(c.Do("GET", "best_car_ever"))
 	if err != nil {
-		fmt.Println("key1 not found")
+		fmt.Println("best_car_ever not found")
 	} else {
 		//Print our key if it exists
-		fmt.Println("key1 exists: " + key1)
+		fmt.Println("best_car_ever exists: " + best_car_ever)
 	}
 
 	//Delete a key
-	c.Do("DEL", "key2")
+	c.Do("DEL", "worst_car_ever")
 
 	//Try to retrieve the key we just deleted
-	key2, err := redis.String(c.Do("GET", "key2"))
+	worst_car_ever, err := redis.String(c.Do("GET", "worst_car_ever"))
 	if err != nil {
-		fmt.Println("key2 not found", err)
+		fmt.Println("worst_car_ever not found", err)
 	} else {
 		//Print our key if it exists
-		fmt.Println(key2)
+		fmt.Println(worst_car_ever)
 	}
   }
 
@@ -67,8 +67,8 @@ Output from above:
    
    $ go run redis.go
    
-   key1 exists: I'm a value!
-   key2 not found redigo: nil returned
+   best_car_ever exists: Tesla Model S
+   worst_car_ever not found redigo: nil returned
 
 
 Additional reading
