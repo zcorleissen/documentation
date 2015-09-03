@@ -123,13 +123,13 @@ Connecting to a replica set:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect('mongodb://example:example_pass@dfw-c9-1.objectrocket.com:37143,dfw-c9-0.objectrocket.com:37143/example_db?replicaSet=c74b5276378ed3bd70cba37a3ac45fea', function(err, db) {
-    if(!err) {
-      console.log("We are connected");
+  MongoClient.connect('mongodb://example:example_pass@dfw-c9-1.objectrocket.com:34567,dfw-c9-0.objectrocket.com:34567/example_db?replicaSet=c74b5276378ed3bd70cba37a3ac45fea', function(err, db) {
+    if (err) {
+      console.dir(err);
     } else {
-      console.log(err);
-    }
-    process.exit();
+      console.log("Connected!");
+      process.exit();
+    }  
   });
 
 Output from above:
@@ -137,7 +137,7 @@ Output from above:
 .. code-block:: bash
 
   $ node repl_connect_example.js
-  We are connected
+  Connected!
 
 Connecting to a sharded instance:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,13 +148,13 @@ Connecting to a sharded instance:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
-    if(!err) {
-      console.log("We are connected");
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db", function(err, db) {
+    if (err) {
+      console.dir(err);
     } else {
-      console.log(err);
+      console.log("Connected!");
+      process.exit();
     }
-    process.exit();
   });
 
 Output from above:
@@ -162,7 +162,7 @@ Output from above:
 .. code-block:: bash
 
   $ node sharded_connect_example.js
-  We are connected
+  Connected!
 
 Connecting to a sharded instance with SSL:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,13 +173,13 @@ Connecting to a sharded instance with SSL:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:25014/example_db?ssl=true", function(err, db) {
-    if(!err) {
-      console.log("We are connected");
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:23456/example_db?ssl=true", function(err, db) {
+    if (err) {
+      console.dir(err);
     } else {
-      console.log(err);
+      console.log("Connected!");
+      process.exit();
     }
-    process.exit();
   });
 
 Output from above:
@@ -187,7 +187,7 @@ Output from above:
 .. code-block:: bash
 
   $ node ssl_sharded_connect_example.js
-  We are connected
+  Connected!
 
 
 Creating a document
@@ -197,94 +197,150 @@ Creating and inserting the document:
 
 .. code-block:: javascript
 
-  // Require mongodb
-  var MongoClient = require('mongodb').MongoClient;
+	// Require mongodb
+	var MongoClient = require('mongodb').MongoClient;
 
-  // Connect
-  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
-    if(!err) {
-      console.log("We are connected");
-    } else {
-      return console.dir(err);
-    };
-    var example_doc = {
-    "start" : new Date(),
-    "end" : new Date(2015, 9, 28, 14, 17, 23, 0),
-    "location" : "Texas",
-    "official_game" : false,
-    "Winner" : "Javi",
-    "players" : [
-          {
-      "name": "Javi",
-              "decks": [
-                  "Dinosaurs",
-                  "Plants"
-              ],
-              "points": 24,
-              "place": 1
-          },
-          {
-              "name": "Seth",
-              "decks": [
-                  "Spies",
-                  "Zombies"
-              ],
-              "points": 20,
-              "place": 2
-          },
-          {
-              "name": "Dave",
-              "decks": [
-                  "Steampunk",
-                  "Wizard"
-              ],
-              "points": 20,
-              "place": 2
-          },
-          {
-              "name": "Castro",
-              "decks": [
-                  "Shapeshifters",
-                  "Ninjas"
-              ],
-              "points": 18,
-              "place": 4
-          }
-      ]
-    };
-    var collection = db.collection('example_collection');
-    collection.insert(example_doc, {w:1}, function(err, result) {
-      if(!err) {
-        console.log("Inserted a doc!");
-        process.exit();
-      } else {
-        return console.dir(err);
-      }
-    });
-  });
+	// Connect
+	MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db", function(err, db) {
+	  if (err) {
+	    return console.dir(err);
+	  } 
+	  var example_doc = {
+		"start" : new Date(),
+		"end" : new Date(2015, 9, 28, 14, 17, 23, 0),
+		"location" : "Texas",
+		"official_game" : false,
+		"winner" : "Javi",
+		"players" : [
+	        {
+	    "name": "Javi",
+	            "decks": [
+	                "Dinosaurs",
+	                "Plants"
+	            ],
+	            "points": 24,
+	            "place": 1
+	        },
+	        {
+	            "name": "Seth",
+	            "decks": [
+	                "Spies",
+	                "Zombies"
+	            ],
+	            "points": 20,
+	            "place": 2
+	        },
+	        {
+	            "name": "Dave",
+	            "decks": [
+	                "Steampunk",
+	                "Wizard"
+	            ],
+	            "points": 20,
+	            "place": 2
+	        },
+	        {
+	            "name": "Castro",
+	            "decks": [
+	                "Shapeshifters",
+	                "Ninjas"
+	            ],
+	            "points": 18,
+	            "place": 4
+	        }
+	    ]
+	  };
+	  var collection = db.collection('example_collection');
+	  collection.insert(example_doc, {w:1}, function(err, result) {
+	    if (err) {
+	      return console.dir(err);
+	    } else {
+	      console.log("Inserted a doc!");
+	      process.exit();
+	    }
+	  });
+	});
 
 Output from above:
 
 .. code-block:: bash
  
- $ node inserting_doc.js
- We are connected
- Inserted a doc!
+  $ node inserting_doc.js
+  Inserted a doc!
 
 Reading documents
 -----------------
 
-Finding all documents with a specific field:
+Finding a document with a specific field:
 
 .. code-block:: javascript
 
- code
+	// Require mongodb
+	var MongoClient = require('mongodb').MongoClient;
+	// Require prettyjson
+	var prettyjson = require('prettyjson');
+
+	// Connect
+	MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db", function(err, db) {
+	  if (err) {
+	    return console.dir(err);
+	    }
+	  var collection = db.collection('example_collection');
+	  // Find a document where Javi won
+	  collection.findOne({"winner":"Javi"},function(err, doc) {
+	    if (err) {
+	      return console.dir(err);
+	    } else {
+	      console.log(prettyjson.render(doc));
+	      process.exit();
+	    }
+	  });
+	});
 
 Output from above:
 
 .. code-block:: bash
 
- code
+  start:         Thu Sep 03 2015 12:22:26 GMT-0500 (CDT)
+  end:           Wed Oct 28 2015 14:17:23 GMT-0500 (CDT)
+  location:      Texas
+  official_game: false
+  winner:        Javi
+  players:
+    -
+    name:   Javi
+    decks:
+      - Dinosaurs
+      - Plants
+    points: 24
+    place:  1
+  -
+    name:   Seth
+    decks:
+      - Spies
+      - Zombies
+    points: 20
+    place:  2
+  -
+    name:   Dave
+    decks:
+      - Steampunk
+      - Wizard
+    points: 20
+    place:  2
+  -
+    name:   Castro
+    decks:
+      - Shapeshifters
+      - Ninjas
+    points: 18
+    place:  4
+  _id:
+  _bsontype: ObjectID
+  id:        Uàé7ÿ¥8�L±
+
+.. note::
+  In the above, prettyjson is trying to print the binary value of _id, so it renders unreadably.
 
 Updating a document
 -------------------
@@ -293,13 +349,77 @@ Updating a document:
 
 .. code-block:: javascript
 
- code
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
+  // Require prettyjson
+  var prettyjson = require('prettyjson');
+
+  // Connect
+  MongoClient.connect('mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db', function(err, db) {
+    if (err) {
+      return console.dir(err);
+    }
+    var collection = db.collection('example_collection');
+    // Update the doc to make Seth the winner
+    collection.update({"winner":"Javi"}, {$set:{"winner":"Seth"}}, {w:1}, function(err, result) {
+      if(err) {
+        return console.dir(err);
+    } else {
+        console.log('Updated a doc! Here\'s the new one.');
+    }
+    // Find the new document
+    collection.findOne({"winner":"Seth"},function(err, doc) {
+      if (err) {
+        return console.dir(err);
+    } else {
+        console.log(prettyjson.render(doc));
+        process.exit();
+    }});
+    });
+  });
 
 Output from above:
 
 .. code-block:: bash
 
- code
+  Updated a doc! Here's the new one.
+  start:         Thu Sep 03 2015 15:03:31 GMT-0500 (CDT)
+  end:           Wed Oct 28 2015 14:17:23 GMT-0500 (CDT)
+  location:      Texas
+  official_game: false
+  winner:        Seth
+  players:
+    -
+      name:   Javi
+      decks:
+        - Dinosaurs
+        - Plants
+      points: 24
+      place:  1
+    -
+      name:   Seth
+      decks:
+        - Spies
+        - Zombies
+      points: 20
+      place:  2
+    -
+      name:   Dave
+      decks:
+        - Steampunk
+        - Wizard
+      points: 20
+      place:  2
+    -
+      name:   Castro
+      decks:
+        - Shapeshifters
+        - Ninjas
+      points: 18
+      place:  4
+  _id:
+    _bsontype: ObjectID
+    id:        Uè§fß`Ì®~ã
 
 Deleting a document
 -------------------
@@ -308,13 +428,31 @@ Deleting a specific document:
 
 .. code-block:: javascript
 
- code
+  // Require mongodb
+  var MongoClient = require('mongodb').MongoClient;
+
+  // Connect
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
+    if (err) {
+      return console.dir(err);
+      }
+    var collection = db.collection('example_collection');
+    // Delete a single document where Javi won
+    collection.remove({"winner":"Javi"}, {w:1, single: true},function(err, doc) {
+      if (err) {
+        return console.dir(err);
+      } else {
+        return console.log('Deleted a doc!');
+        process.exit();
+      }
+    });
+  });
 
 Output from above:
 
 .. code-block:: bash
 
- code
+  $ Deleted a doc!
 
 Additional reading
 ------------------
