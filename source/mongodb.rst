@@ -9,8 +9,8 @@ MongoDB
    mongodb_connection_examples
    backup_and_recovery
    features
-   mongo_settings
+   mongodb_settings
    mongodb_utilities
-   sharding_and_scaling
+   mongodb_scaling
 
    
