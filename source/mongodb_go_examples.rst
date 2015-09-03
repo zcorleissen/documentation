@@ -1,5 +1,5 @@
-Go Connection Examples
-======================
+Go Driver Examples
+==================
 
 .. |checkmark| unicode:: U+2713
 

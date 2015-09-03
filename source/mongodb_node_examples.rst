@@ -1,5 +1,5 @@
-Node.js Connection Examples
-===========================
+Node.js Driver Examples
+=======================
 
 .. |checkmark| unicode:: U+2713
 

@@ -1,5 +1,5 @@
-Python Connection Examples
-==========================
+Python Driver Examples
+======================
 
 `PyMongo <http://docs.mongodb.org/ecosystem/drivers/python/>`_ is the recommended Python driver for working with MongoDB. Here's the compatibility breakdown:
 
