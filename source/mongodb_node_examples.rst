@@ -123,7 +123,7 @@ Connecting to a replica set:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect('mongodb://example:example_pass@dfw-c9-1.objectrocket.com:34567,dfw-c9-0.objectrocket.com:34567/example_db?replicaSet=c74b5276378ed3bd70cba37a3ac45fea', function(err, db) {
+  MongoClient.connect('mongodb://example:example_pass@dfw-c9-1.objectrocket.com:12345,dfw-c9-0.objectrocket.com:34567/example_db?replicaSet=c74b5276378ed3bd70cba37a3ac45fea', function(err, db) {
     if (err) {
       console.dir(err);
     } else {
@@ -173,7 +173,7 @@ Connecting to a sharded instance with SSL:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:23456/example_db?ssl=true", function(err, db) {
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db?ssl=true", function(err, db) {
     if (err) {
       console.dir(err);
     } else {
@@ -432,7 +432,7 @@ Deleting a specific document:
   var MongoClient = require('mongodb').MongoClient;
 
   // Connect
-  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:15014/example_db", function(err, db) {
+  MongoClient.connect("mongodb://example:example_pass@iad-mongos0.objectrocket.com:12345/example_db", function(err, db) {
     if (err) {
       return console.dir(err);
       }

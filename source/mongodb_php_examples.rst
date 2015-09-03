@@ -128,7 +128,7 @@ Connecting to a replica set:
 .. code-block:: php
    
  <?php
- $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
+ $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:12345,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
  ?>
 
 Connecting to a sharded instance:
@@ -136,7 +136,7 @@ Connecting to a sharded instance:
 .. code-block:: php
 
  <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045");
+ $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:12345");
  ?>
 
 Connecting to a sharded instance with SSL:
@@ -144,7 +144,7 @@ Connecting to a sharded instance with SSL:
 .. code-block:: php
 
  <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045", array("ssl" => true));
+ $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:12345", array("ssl" => true));
  ?>
 
 Creating a Document
@@ -166,7 +166,7 @@ Creating and inserting the document:
       "players" => array( "first" => "Javi", "second" => "Seth", "third" => "Dave", "fourth" => "Castro")
       );
 
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:12345/myDatabaseName");
 
  $database = $connection->myDatabaseName;
 
@@ -229,7 +229,7 @@ Finding all documents with a specific field:
 
  <?php
 
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:12345/myDatabaseName");
 
  $database = $connection->myDatabaseName;
 
@@ -334,7 +334,7 @@ Updating a document:
 
  <?php
 
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:12345/myDatabaseName");
 
  $database = $connection->myDatabaseName;
 
@@ -404,7 +404,7 @@ Deleting a document:
 
  <?php
 
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:12345/myDatabaseName");
 
  $database = $connection->myDatabaseName;
 
@@ -426,7 +426,7 @@ Output from above:
 
  array(6) {
   ["singleShard"]=>
-  string(161) "0c86375ef57646f094a0a27164679c33/hkgclus1br0vz17.hkg.objectrocket.com:32728,hkgclus1br1vz17.hkg.objectrocket.com:32728,hkgclus1br2vz17.hkg.objectrocket.com:32728"
+  string(161) "0c86375ef57646f094a0a27164679c33/hkgclus1br0vz17.hkg.objectrocket.com:12345,hkgclus1br1vz17.hkg.objectrocket.com:32728,hkgclus1br2vz17.hkg.objectrocket.com:32728"
   ["n"]=>
   int(1)
   ["lastOp"]=>
