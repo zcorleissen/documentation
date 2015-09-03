@@ -132,47 +132,119 @@ The client has auto-discovery that will find all members of the replica set if n
 
 .. code-block:: ruby
 
-   irb(main):001:0> client = Mongo::Client.new(['iad-c17-1.objectrocket.com:49022'],
-                             :database => 'db1',
-                             :replica_set => '3d62adc37bad4f628cf5e8db921ce445',
-                             :user => 'example_username',
-                             :password => 'example_password')
-   => #<Mongo::Client:0x70225022826660 cluster=iad-c17-1.objectrocket.com:49022, iad-c17-0.objectrocket.com:49022, iad-c17-a.objectrocket.com:49022>
+   #!/usr/bin/env ruby
+   require 'mongo'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_options = {
+     database: 'db1',
+     replica_set: '3d62adc37bad4f628cf5e8db921ce445',
+     user: 'example_username',
+     password: 'example_password'
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   puts('Client Connection: ')
+   puts(client.cluster.inspect)
+   puts
+   puts('Collection Names: ')
+   puts(client.database.collection_names)
 
-   irb(main):003:0> client.cluster
-   => #<Mongo::Cluster:0x70225018290560 servers=[#<Mongo::Server:0x70225014325940 address=iad-c17-0.objectrocket.com:49022>, #<Mongo::Server:0x70225014333140 address=iad-c17-1.objectrocket.com:49022>] topology=Replica Set>
+Output from above:
+
+.. code-block:: bash
+
+   Client Connection:
+   #<Mongo::Cluster:0x70194211277920 servers=[#<Mongo::Server:0x70194203419280 address=iad-c17-0.objectrocket.com:49022>, #<Mongo::Server:0x70194203425760 address=iad-c17-1.objectrocket.com:49022>] topology=Replica Set>
+   
+   Collection Names:
+   objectrocket.init
+   collection_1
+   collection_2
 
 Connecting to a sharded instance with a write concern of 1:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
+
 .. code-block:: ruby
 
-   irb(main):004:0> client = Mongo::Client.new(['syd-mongos0.objectrocket.com:35023'],
-                             :database => 'db1',
-                             :user => 'example_username',
-                             :password => 'example_password',
-                             :write => { :w => 1 })
-   => #<Mongo::Client:0x70225014248860 cluster=syd-mongos0.objectrocket.com:35023>
+   #!/usr/bin/env ruby
+   require 'mongo'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['syd-mongos0.objectrocket.com:35023']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password',
+     write: { w: 1 }
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   puts('Client Connection: ')
+   puts(client.cluster.inspect)
+   puts
+   puts('Collection Names: ')
+   puts(client.database.collection_names)
 
-   irb(main):005:0> client.cluster
-   => #<Mongo::Cluster:0x70225022643340 servers=[#<Mongo::Server:0x70225022642320 address=syd-mongos0.objectrocket.com:35023>] topology=Sharded>
+Output from above:
+
+.. code-block:: bash
+
+  Client Connection:
+  #<Mongo::Cluster:0x70257105430280 servers=[#<Mongo::Server:0x70257105429580 address=syd-mongos0.objectrocket.com:35023>] topology=Sharded>
+
+  Collection Names:
+  objectrocket.init
+  collection_1
+  collection_2
 
 Connecting to a sharded instance using SSL:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make sure to change the port number if using an SSL connection.
+Make sure to change the port number when using an SSL connection.
 
 .. code-block:: ruby
 
-   irb(main):004:0> client = Mongo::Client.new(['syd-mongos0.objectrocket.com:45023'],
-                             :database => 'db1',
-                             :user => 'example_username',
-                             :password => 'example_password',
-                             :ssl => true)
-   => #<Mongo::Client:0x70225011707900 cluster=syd-mongos0.objectrocket.com:45023>
+   #!/usr/bin/env ruby
+   require 'mongo'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['syd-mongos0.objectrocket.com:45023']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password',
+     ssl: true
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   puts('Client Connection: ')
+   puts(client.cluster.inspect)
+   puts
+   puts('Collection Names: ')
+   puts(client.database.collection_names)
 
-   irb(main):005:0> client.cluster
-   => #<Mongo::Cluster:0x70225009741280 servers=[#<Mongo::Server:0x70225009738800 address=syd-mongos0.objectrocket.com:45023>] topology=Sharded>
+Output from above:
+
+.. code-block:: bash
+
+   Client Connection:
+  #<Mongo::Cluster:0x70323940844040 servers=[#<Mongo::Server:0x70323945742140 address=syd-mongos0.objectrocket.com:45023>] topology=Sharded>
+
+  Collection Names:
+  objectrocket.init
+  collection_1
+  collection_2
 
 Creating a document
 -------------------
@@ -181,28 +253,85 @@ Creating and inserting a document:
 
 .. code-block:: ruby
 
-
+   #!/usr/bin/env ruby
+   require 'mongo'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password'
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   example_doc = {"start":"2015-09-02T22:46:30.782Z","end":"2016-09-02T22:46:30.782Z","location":"Texas","official_game":false,"winner":"Javi","players":[{"name":"Javi","decks":["Dinosaurs","Plants"],"points":24,"place":1},{"name":"Seth","decks":["Spies","Zombies"],"points":20,"place":2},{"name":"Dave","decks":["Steampunk","Wizard"],"points":20,"place":2},{"name":"Castro","decks":["Shapeshifters","Ninjas"],"points":18,"place":4}]}
+   
+   # Insert our example_doc
+   result = client[:pokemon].insert_one(example_doc)
+   
+   puts("There was #{result.n} document inserted")
+   puts("The _id of the new document is: #{result.inserted_id}")
 
 Output from above:
 
 .. code-block:: bash
 
-
+   There was 1 document inserted
+   The _id of the new document is: 55e8a17b4d61639133000000
 
 Reading documents
 -----------------
 
-Finding a document with a specific field:
+Finding documents with a specific field:
 
 .. code-block:: ruby
 
-
+   #!/usr/bin/env ruby
+   require 'mongo'
+   require 'neatjson'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password'
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   # Find the documents that match our query below
+   result = client[:pokemon].find({"winner":"Javi"})
+   
+   # Iterate through each of the results
+   result.each do |document|
+     puts JSON.neat_generate(document)
+   end
 
 Output from above:
 
 .. code-block:: bash
 
-
+   {
+     "start":"2015-09-02T22:46:30.782Z",
+     "end":"2016-09-02T22:46:30.782Z",
+     "location":"Texas",
+     "official_game":false,
+     "winner":"Javi",
+     "players":[
+       {"name":"Javi","decks":["Dinosaurs","Plants"],"points":24,"place":1},
+       {"name":"Seth","decks":["Spies","Zombies"],"points":20,"place":2},
+       {"name":"Dave","decks":["Steampunk","Wizard"],"points":20,"place":2},
+       {"name":"Castro","decks":["Shapeshifters","Ninjas"],"points":18,"place":4}
+     ],
+     "_id":{  "$oid":"55e8a02f4d616390ce000000"}
+   }
 
 Updating a document
 -------------------
@@ -211,13 +340,41 @@ Updating a document:
 
 .. code-block:: ruby
 
-
+   #!/usr/bin/env ruby
+   require 'mongo'
+   require 'neatjson'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password'
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   # Update the document that matches our query below
+   result = client[:dont_tell_me_what_to_do].find(winner: 'Javi').update_one('$set' => { winner: 'Seth' })
+   
+   # Iterate through each of the results
+   result.each do |document|
+     puts JSON.neat_generate(document)
+   end
 
 Output from above:
 
 .. code-block:: bash
 
-
+   {
+     "ok":1,
+     "nModified":1,
+     "n":1,
+     "lastOp":{  "t":1441313472,  "i":1},
+     "electionId":{  "$oid":"55e73f85fcfd98f64182f341"}
+   }
 
 Deleting a document
 -------------------
@@ -226,13 +383,40 @@ Deleting a document:
 
 .. code-block:: ruby
 
-
+   #!/usr/bin/env ruby
+   require 'mongo'
+   require 'neatjson'
+   
+   # Turn off debug-mode
+   Mongo::Logger.logger.level = Logger::WARN
+   
+   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_options = {
+     database: 'db1',
+     user: 'example_username',
+     password: 'example_password'
+   }
+   
+   client = Mongo::Client.new(client_host, client_options)
+   
+   # Delete the document that matches our query below
+   result = client[:dont_tell_me_what_to_do].find(winner: 'Seth').delete_one
+   
+   # Iterate through each of the results
+   result.each do |document|
+     puts JSON.neat_generate(document)
+   end
 
 Output from above:
 
 .. code-block:: bash
 
-
+   {
+     "ok":1,
+     "n":1,
+     "lastOp":{  "t":1441313712,  "i":1},
+     "electionId":{  "$oid":"55e73f85fcfd98f64182f341"}
+   }
 
 Additional reading
 ------------------
