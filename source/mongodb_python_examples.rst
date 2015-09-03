@@ -149,7 +149,7 @@ Connecting to a replica set:
   import pymongo
 
   settings = {
-      'host': 'dfw-c9-1.objectrocket.com:37143,dfw-c9-0.objectrocket.com:37143',
+      'host': 'dfw-c9-1.objectrocket.com:12345,dfw-c9-0.objectrocket.com:37143',
       'database': 'example_db',
       'username': 'example',
       'password': 'example_pass',
@@ -170,7 +170,7 @@ Connecting to a sharded instance with a write concern of 1:
   import pymongo
 
   settings = {
-      'host': 'iad-mongos0.objectrocket.com:15014/example_db',
+      'host': 'iad-mongos0.objectrocket.com:12345/example_db',
       'database': 'example_db',
       'username': 'example',
       'password': 'example_pass',
@@ -191,7 +191,7 @@ Connecting to a sharded instance using SSL:
   import pymongo
 
   settings = {
-      'host': 'iad-mongos0.objectrocket.com:15014',
+      'host': 'iad-mongos0.objectrocket.com:12345',
       'database': 'example_db',
       'username': 'example',
       'password': 'example_pass',
@@ -215,7 +215,7 @@ Creating and inserting a document:
   from datetime import datetime
 
   settings = {
-      'host': 'iad-mongos0.objectrocket.com:15014',
+      'host': 'iad-mongos0.objectrocket.com:12345',
       'database': 'example_db',
       'username': 'example',
       'password': 'example_pass',
@@ -301,7 +301,7 @@ Finding a document with a specific field:
     from pprint import pprint
 
     settings = {
-        'host': 'iad-mongos0.objectrocket.com:15014',
+        'host': 'iad-mongos0.objectrocket.com:12345',
         'database': 'example_db',
         'username': 'example',
         'password': 'example_pass',
@@ -359,7 +359,7 @@ Updating a document:
     from pprint import pprint
 
     settings = {
-        'host': 'iad-mongos0.objectrocket.com:15014',
+        'host': 'iad-mongos0.objectrocket.com:12345',
         'database': 'example_db',
         'username': 'example',
         'password': 'example_pass',
@@ -450,7 +450,7 @@ Deleting a document:
     from pprint import pprint
 
     settings = {
-        'host': 'iad-mongos0.objectrocket.com:15014',
+        'host': 'iad-mongos0.objectrocket.com:12345',
         'database': 'example_db',
         'username': 'example',
         'password': 'example_pass',

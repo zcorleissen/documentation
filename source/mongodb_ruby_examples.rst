@@ -138,7 +138,7 @@ The client has auto-discovery that will find all members of the replica set if n
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_host = ['iad-c17-1.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      replica_set: '3d62adc37bad4f628cf5e8db921ce445',
@@ -159,7 +159,7 @@ Output from above:
 .. code-block:: bash
 
    Client Connection:
-   #<Mongo::Cluster:0x70194211277920 servers=[#<Mongo::Server:0x70194203419280 address=iad-c17-0.objectrocket.com:49022>, #<Mongo::Server:0x70194203425760 address=iad-c17-1.objectrocket.com:49022>] topology=Replica Set>
+   #<Mongo::Cluster:0x70194211277920 servers=[#<Mongo::Server:0x70194203419280 address=iad-c17-0.objectrocket.com:12345>, #<Mongo::Server:0x70194203425760 address=iad-c17-1.objectrocket.com:49022>] topology=Replica Set>
    
    Collection Names:
    objectrocket.init
@@ -177,7 +177,7 @@ Connecting to a sharded instance with a write concern of 1:
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['syd-mongos0.objectrocket.com:35023']
+   client_host = ['syd-mongos0.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',
@@ -198,7 +198,7 @@ Output from above:
 .. code-block:: bash
 
   Client Connection:
-  #<Mongo::Cluster:0x70257105430280 servers=[#<Mongo::Server:0x70257105429580 address=syd-mongos0.objectrocket.com:35023>] topology=Sharded>
+  #<Mongo::Cluster:0x70257105430280 servers=[#<Mongo::Server:0x70257105429580 address=syd-mongos0.objectrocket.com:12345>] topology=Sharded>
 
   Collection Names:
   objectrocket.init
@@ -218,7 +218,7 @@ Make sure to change the port number when using an SSL connection.
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['syd-mongos0.objectrocket.com:45023']
+   client_host = ['syd-mongos0.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',
@@ -239,7 +239,7 @@ Output from above:
 .. code-block:: bash
 
    Client Connection:
-  #<Mongo::Cluster:0x70323940844040 servers=[#<Mongo::Server:0x70323945742140 address=syd-mongos0.objectrocket.com:45023>] topology=Sharded>
+  #<Mongo::Cluster:0x70323940844040 servers=[#<Mongo::Server:0x70323945742140 address=syd-mongos0.objectrocket.com:12345>] topology=Sharded>
 
   Collection Names:
   objectrocket.init
@@ -259,7 +259,7 @@ Creating and inserting a document:
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_host = ['iad-c17-1.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',
@@ -341,7 +341,7 @@ Finding documents with a specific field:
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_host = ['iad-c17-1.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',
@@ -391,7 +391,7 @@ Updating a document:
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_host = ['iad-c17-1.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',
@@ -434,7 +434,7 @@ Deleting a document:
    # Turn off debug-mode
    Mongo::Logger.logger.level = Logger::WARN
    
-   client_host = ['iad-c17-1.objectrocket.com:49022']
+   client_host = ['iad-c17-1.objectrocket.com:12345']
    client_options = {
      database: 'db1',
      user: 'example_username',

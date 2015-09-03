@@ -121,8 +121,8 @@ Connecting to a replica set:
 
     func main() {
         Host := []string{
-            "dfw-c9-0.objectrocket.com:37143",
-            "dfw-c9-1.objectrocket.com:37143",
+            "dfw-c9-0.objectrocket.com:12345",
+            "dfw-c9-1.objectrocket.com:12345",
         }
         const (
             Username = "example"
@@ -156,7 +156,7 @@ Connecting to a sharded instance:
 
     func main() {
         const (
-            Host     = "iad-mongos0.objectrocket.com:9999"
+            Host     = "iad-mongos0.objectrocket.com:12345"
             Username = "example"
             Password = "example"
             Database = "test"
@@ -191,7 +191,7 @@ Connecting to a sharded instance using SSL:
 
     func main() {
         const (
-            Host     = "iad-mongos0.objectrocket.com:19999"
+            Host     = "iad-mongos0.objectrocket.com:12345"
             Username = "example"
             Password = "example"
             Database = "test"
@@ -263,7 +263,7 @@ Creating and inserting a document:
 
     func main() {
         const (
-            Host       = "iad-mongos0.objectrocket.com:9999"
+            Host       = "iad-mongos0.objectrocket.com:12345"
             Username   = "example"
             Password   = "example"
             Database   = "Smashup"
@@ -328,7 +328,7 @@ Finding all documents with a specific field:
 
     func main() {
         const (
-            Host       = "iad-mongos0.objectrocket.com:19999"
+            Host       = "iad-mongos0.objectrocket.com:12345"
             Username   = "example"
             Password   = "example"
             Database   = "Smashup"
@@ -380,7 +380,7 @@ Updating a document:
 
     func main() {
         const (
-            Host       = "iad-mongos0.objectrocket.com:19999"
+            Host       = "iad-mongos0.objectrocket.com:12345"
             Username   = "example"
             Password   = "example"
             Database   = "Smashup"
@@ -434,7 +434,7 @@ Deleting a specific document:
 
     func main() {
         const (
-            Host       = "iad-mongos0.objectrocket.com:19999"
+            Host       = "iad-mongos0.objectrocket.com:12345"
             Username   = "example"
             Password   = "example"
             Database   = "Smashup"

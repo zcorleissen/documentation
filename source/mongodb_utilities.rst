@@ -108,7 +108,7 @@ Here's a basic example importing ``zips.json`` into the ``hkg-mongos0.objectrock
 
 .. code-block:: bash
 
-   $ mongoimport --host hkg-mongos0.objectrocket.com:31037 -d zips -c zips --file zips.json
+   $ mongoimport --host hkg-mongos0.objectrocket.com:12345 -d zips -c zips --file zips.json
 
 If the database and collection don't exist on the host you're importing to, mongoimport will create them, just as with mongorestore. 
 
