@@ -4,9 +4,8 @@ MongoDB Connection Examples
 .. toctree::
    :maxdepth: 3
 
-   csharp_examples
-   go_examples
-   node_examples
-   php_examples
-   python_examples
-   ruby_examples
+   mongodb_go_examples
+   mongodb_node_examples
+   mongodb_php_examples
+   mongodb_python_examples
+   mongodb_ruby_examples
