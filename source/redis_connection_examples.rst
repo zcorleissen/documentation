@@ -4,7 +4,6 @@ Redis Connection Examples
 .. toctree::
    :maxdepth: 2
 
-   redis_csharp_examples
    redis_go_examples
    redis_node_examples
    redis_php_examples
