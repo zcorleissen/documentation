@@ -179,7 +179,7 @@ Creating a document
 
 Creating and inserting a document:
 
-.. code-block:: python
+.. code-block:: ruby
 
 
 
@@ -194,7 +194,7 @@ Reading documents
 
 Finding a document with a specific field:
 
-.. code-block:: python
+.. code-block:: ruby
 
 
 
@@ -209,7 +209,7 @@ Updating a document
 
 Updating a document:
 
-.. code-block:: python
+.. code-block:: ruby
 
 
 
@@ -224,7 +224,7 @@ Deleting a document
 
 Deleting a document:
 
-.. code-block:: python
+.. code-block:: ruby
 
 
 
@@ -237,11 +237,11 @@ Output from above:
 Additional reading
 ------------------
 
-If you need more help with PyMongo, links to official documentation are below:
+If you need more help with the Ruby driver, links to official documentation are below:
 
-* `PyMongo Github <https://github.com/mongodb/mongo-python-driver>`_
-* `MongoDB Python Driver documentation <http://docs.mongodb.org/ecosystem/drivers/python/>`_
-* `MongoDB Python Driver Tutorial <http://api.mongodb.org/python/current/tutorial.html>`_
-* `Getting Started with MongoDB (Python Edition) <http://docs.mongodb.org/getting-started/python>`_
+* `Ruby Driver API Documentation <http://api.mongodb.org/ruby/>`_
+* `MongoDB Ruby Driver Tutorial <http://docs.mongodb.org/ecosystem/tutorial/ruby-driver-tutorial/>`_
+* `Ruby Driver Documentation <http://docs.mongodb.org/ecosystem/drivers/ruby/>`_
+* `Ruby Driver Github <https://github.com/mongodb/mongo-ruby-driver>`_
 
 As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
