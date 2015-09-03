@@ -120,206 +120,88 @@ Here's the example document we'll be using:
 Connecting
 ----------
 
+.. warning::
+  
+  When connecting using the MongoDB URI, we highly recommend avoiding usernames with an @ symbol inside. 
+  This can break things and cause failures when trying to connect this way.
+
 Connecting to a replica set:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: php
-   
- <?php
- $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:54074,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
- ?>
+The client has auto-discovery that will find all members of the replica set if not all are provided.
 
-Connecting to a sharded instance:
+.. code-block:: ruby
 
-.. code-block:: php
+   irb(main):001:0> client = Mongo::Client.new(['iad-c17-1.objectrocket.com:49022'],
+                             :database => 'db1',
+                             :replica_set => '3d62adc37bad4f628cf5e8db921ce445',
+                             :user => 'example_username',
+                             :password => 'example_password')
+   => #<Mongo::Client:0x70225022826660 cluster=iad-c17-1.objectrocket.com:49022, iad-c17-0.objectrocket.com:49022, iad-c17-a.objectrocket.com:49022>
 
- <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045");
- ?>
+   irb(main):003:0> client.cluster
+   => #<Mongo::Cluster:0x70225018290560 servers=[#<Mongo::Server:0x70225014325940 address=iad-c17-0.objectrocket.com:49022>, #<Mongo::Server:0x70225014333140 address=iad-c17-1.objectrocket.com:49022>] topology=Replica Set>
 
-Connecting to a sharded instance with SSL:
+Connecting to a sharded instance with a write concern of 1:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+.. code-block:: ruby
 
-.. code-block:: php
+   irb(main):004:0> client = Mongo::Client.new(['syd-mongos0.objectrocket.com:35023'],
+                             :database => 'db1',
+                             :user => 'example_username',
+                             :password => 'example_password',
+                             :write => { :w => 1 })
+   => #<Mongo::Client:0x70225014248860 cluster=syd-mongos0.objectrocket.com:35023>
 
- <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:15045", array("ssl" => true));
- ?>
+   irb(main):005:0> client.cluster
+   => #<Mongo::Cluster:0x70225022643340 servers=[#<Mongo::Server:0x70225022642320 address=syd-mongos0.objectrocket.com:35023>] topology=Sharded>
 
-Creating a Document
+Connecting to a sharded instance using SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make sure to change the port number if using an SSL connection.
+
+.. code-block:: ruby
+
+   irb(main):004:0> client = Mongo::Client.new(['syd-mongos0.objectrocket.com:45023'],
+                             :database => 'db1',
+                             :user => 'example_username',
+                             :password => 'example_password',
+                             :ssl => true)
+   => #<Mongo::Client:0x70225011707900 cluster=syd-mongos0.objectrocket.com:45023>
+
+   irb(main):005:0> client.cluster
+   => #<Mongo::Cluster:0x70225009741280 servers=[#<Mongo::Server:0x70225009738800 address=syd-mongos0.objectrocket.com:45023>] topology=Sharded>
+
+Creating a document
 -------------------
 
-Creating and inserting the document:
+Creating and inserting a document:
 
-.. code-block:: php
+.. code-block:: python
 
- <?php
 
- $doc = array(
-    "date" => new MongoDate(strtotime("2014-05-26 02:00:22")),
-      "winner" => "Javi",
-      "logged" => TRUE,
-      "decks" => array( "first" => array("Dinosaurs","Plants"), "second" => array("Spies","Zombies"), "third" => array("Steampunk","Wizards"), "fourth" => array("Shapeshifters", "Ninjas")),
-      "prior_winner" => "Castro",
-      "points" => array( 24, 20, 20, 18),
-      "players" => array( "first" => "Javi", "second" => "Seth", "third" => "Dave", "fourth" => "Castro")
-      );
 
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
+Output from above:
 
- $database = $connection->myDatabaseName;
+.. code-block:: bash
 
- $collection = $database->myCollectionName;
- 
- $collection->insert( $doc );
-
- ?>
-
-The resulting document seen through the MongoDB shell:
-
-.. code-block:: javascript
-
- > db.myCollectionName.find().pretty()
- {
-	"_id" : ObjectId("55b29160d5d145e1438b4567"),
-	"date" : ISODate("2014-05-26T02:00:22Z"),
-	"winner" : "Javi",
-	"logged" : true,
-	"decks" : {
-		"first" : [
-			"Dinosaurs",
-			"Plants"
-		],
-		"second" : [
-			"Spies",
-			"Zombies"
-		],
-		"third" : [
-			"Steampunk",
-			"Wizards"
-		],
-		"fourth" : [
-			"Shapeshifters",
-			"Ninjas"
-		]
-	},
-	"prior_winner" : "Castro",
-	"points" : [
-		NumberLong(24),
-		NumberLong(20),
-		NumberLong(20),
-		NumberLong(18)
-	],
-	"players" : {
-		"first" : "Javi",
-		"second" : "Seth",
-		"third" : "Dave",
-		"fourth" : "Castro"
-	}
- } 
 
 
 Reading documents
 -----------------
 
-Finding all documents with a specific field:
+Finding a document with a specific field:
 
-.. code-block:: php
+.. code-block:: python
 
- <?php
-
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
-
- $database = $connection->myDatabaseName;
-
- $collection = $database->myCollectionName;
-
-
- $query = array("winner" => "Javi");
-
- $cursor = $collection->find($query);
- foreach ($cursor as $doc) {
-    var_dump($doc);
- }
-
- ?>
 
 
 Output from above:
 
-.. code-block:: php
-   
- array(8) {
-  ["_id"]=>
-  object(MongoId)#7 (1) {
-    ["$id"]=>
-    string(24) "55b29160d5d145e1438b4567"
-  }
-  ["date"]=>
-  object(MongoDate)#8 (2) {
-    ["sec"]=>
-    int(1401069622)
-    ["usec"]=>
-    int(0)
-  }
-  ["winner"]=>
-  string(4) "Javi"
-  ["logged"]=>
-  bool(true)
-  ["decks"]=>
-  array(4) {
-    ["first"]=>
-    array(2) {
-      [0]=>
-      string(9) "Dinosaurs"
-      [1]=>
-      string(6) "Plants"
-    }
-    ["second"]=>
-    array(2) {
-      [0]=>
-      string(5) "Spies"
-      [1]=>
-      string(7) "Zombies"
-    }
-    ["third"]=>
-    array(2) {
-      [0]=>
-      string(9) "Steampunk"
-      [1]=>
-      string(7) "Wizards"
-    }
-    ["fourth"]=>
-    array(2) {
-      [0]=>
-      string(13) "Shapeshifters"
-      [1]=>
-      string(6) "Ninjas"
-    }
-  }
-  ["prior_winner"]=>
-  string(6) "Castro"
-  ["points"]=>
-  array(4) {
-    [0]=>
-    int(24)
-    [1]=>
-    int(20)
-    [2]=>
-    int(20)
-    [3]=>
-    int(18)
-  }
-  ["players"]=>
-  array(4) {
-    ["first"]=>
-    string(4) "Javi"
-    ["second"]=>
-    string(4) "Seth"
-    ["third"]=>
-    string(4) "Dave"
-    ["fourth"]=>
-    string(6) "Castro"
-  }
- }
+.. code-block:: bash
+
 
 
 Updating a document
@@ -327,69 +209,14 @@ Updating a document
 
 Updating a document:
 
-.. code-block:: php
-
- <?php
-
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
-
- $database = $connection->myDatabaseName;
-
- $collection = $database->myCollectionName;
+.. code-block:: python
 
 
- $retval = $collection->findAndModify(
-    array("winner" => "Javi", "logged" => TRUE),
-    array('$set' => array("winner" => "Castro", "logged" => FALSE, "players.first" => "Castro", "players.fourth" => "Javi")),
-    null,
-    array("new" => TRUE)
- );
 
- ?>
+Output from above:
 
+.. code-block:: bash
 
-The resulting document as seen from the MongoDB shell:
-
-.. code-block:: javascript
-
- > db.myCollectionName.find().pretty()
- {
-	"_id" : ObjectId("55b29b5ed5d145014f8b4567"),
-	"date" : ISODate("2014-05-26T02:00:22Z"),
-	"decks" : {
-		"first" : [
-			"Dinosaurs",
-			"Plants"
-		],
-		"second" : [
-			"Spies",
-			"Zombies"
-		],
-		"third" : [
-			"Steampunk",
-			"Wizards"
-		],
-		"fourth" : [
-			"Shapeshifters",
-			"Ninjas"
-		]
-	},
-	"logged" : false,
-	"players" : {
-		"first" : "Castro",
-		"fourth" : "Javi",
-		"second" : "Seth",
-		"third" : "Dave"
-	},
-	"points" : [
-		NumberLong(24),
-		NumberLong(20),
-		NumberLong(20),
-		NumberLong(18)
-	],
-	"prior_winner" : "Castro",
-	"winner" : "Castro"
- }
 
 
 Deleting a document
@@ -397,56 +224,24 @@ Deleting a document
 
 Deleting a document:
 
-.. code-block:: php
+.. code-block:: python
 
- <?php
-
- $connection = new MongoClient("mongodb://myUsername:myPassword@hkg-mongos0.objectrocket.com:31062/myDatabaseName");
-
- $database = $connection->myDatabaseName;
-
- $collection = $database->myCollectionName;
-
-
- $query = array("winner" => "Castro");
-
- $retval = $collection->remove($query);
-
- var_dump($retval);
-
- ?>
 
 
 Output from above:
 
-.. code-block:: php
+.. code-block:: bash
 
- array(6) {
-  ["singleShard"]=>
-  string(161) "0c86375ef57646f094a0a27164679c33/hkgclus1br0vz17.hkg.objectrocket.com:32728,hkgclus1br1vz17.hkg.objectrocket.com:32728,hkgclus1br2vz17.hkg.objectrocket.com:32728"
-  ["n"]=>
-  int(1)
-  ["lastOp"]=>
-  object(MongoTimestamp)#6 (2) {
-    ["sec"]=>
-    int(1437769866)
-    ["inc"]=>
-    int(1)
-  }
-  ["connectionId"]=>
-  int(64925)
-  ["err"]=>
-  NULL
-  ["ok"]=>
-  float(1)
- }
+
 
 Additional reading
 ------------------
 
-If you need more help with the Ruby driver, links to official documentation are below:
+If you need more help with PyMongo, links to official documentation are below:
 
-* `Ruby Driver API Documentation <http://api.mongodb.org/ruby/>`_
-* `MongoDB Ruby Driver Tutorial <http://docs.mongodb.org/ecosystem/tutorial/ruby-driver-tutorial/>`_
-* `Ruby Driver Documentation <http://docs.mongodb.org/ecosystem/drivers/ruby/>`_
-* `Ruby Driver Github <https://github.com/mongodb/mongo-ruby-driver>`_
+* `PyMongo Github <https://github.com/mongodb/mongo-python-driver>`_
+* `MongoDB Python Driver documentation <http://docs.mongodb.org/ecosystem/drivers/python/>`_
+* `MongoDB Python Driver Tutorial <http://api.mongodb.org/python/current/tutorial.html>`_
+* `Getting Started with MongoDB (Python Edition) <http://docs.mongodb.org/getting-started/python>`_
+
+As always, if you have any questions, please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
