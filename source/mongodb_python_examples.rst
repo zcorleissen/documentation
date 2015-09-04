@@ -186,6 +186,8 @@ Connecting to a sharded instance with a write concern of 1:
 Connecting to a sharded instance using SSL:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Make sure to change the port number when using an SSL connection.
+
 .. code-block:: python
 
   import pymongo
