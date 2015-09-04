@@ -85,7 +85,7 @@ Create a new instance
 
 .. note::
 
-   The **service** field must be one of the following: elasticsearch, mongodb, mysql, or redis.
+   The **service** field must be one of the following: elasticsearch, mongodb, or redis.
 
    **elasticsearch**:
       Plans available: 2, 4, 8, 16, 32, 64, 128, 256, and 512.
@@ -104,9 +104,6 @@ Create a new instance
       Versions available: 2.4.6, 2.6.10, and 3.0.5.
 
       Zones available: US-East-IAD3, US-West, EU-London, AP-HongKong, US-Chicago, AP-Sydney, and US-Dallas.
-
-   **mysql**:
-      ERROR
 
    **redis**:
       Plans available: 500, 1000, 2500, 5000, 10000, 20000, 50000, 75000, and 100000.
