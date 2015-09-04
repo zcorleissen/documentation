@@ -164,8 +164,10 @@ Output from above:
   $ node sharded_connect_example.js
   Connected!
 
-Connecting to a sharded instance with SSL:
+Connecting to a sharded instance using SSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Make sure to change the port number when using an SSL connection.
 
 .. code-block:: javascript
 
