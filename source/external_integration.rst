@@ -48,7 +48,7 @@ Enabling ACLSync
 By default, ACLs will automatically be created for all instances. For any service you can disable it on a per instance basis.
 
 Amazon Web Services (AWS)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Go to the `External Integration Settings`_ page.
 * Add AWS credential information.
@@ -62,7 +62,7 @@ Amazon Web Services (AWS)
 
 
 Rackspace Cloud
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 * Go to the `External Integration Settings`_ page.
 * Add Rackspace API credentials.
@@ -77,7 +77,7 @@ Disabling ACLSync
 ~~~~~~~~~~~~~~~~~
 
 Amazon Web Services (AWS)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * To disable automatic ACL creation for a particular instance:
     * Go to the settings page for that instance.
@@ -91,7 +91,7 @@ Amazon Web Services (AWS)
     * In the *Amazon* section, click the button labeled **Delete AWS Access Key**.
 
 Rackspace Cloud
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 * To disable automatic ACL creation for a particular instance:
     * Go to the settings page for that instance.
