@@ -58,19 +58,6 @@ Response:
        }
    }
 
-Record the contact form data, and notify sales
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-   POST /contact/
-
-Request/Response:
-
-.. code-block:: bash
-
-   $ ERROR
-
 Get details on an account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -104,32 +91,6 @@ Response:
            "zipcode": "78701"
        }
    }
-
-Set the CC info for the authenticated account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-   POST /accounts/<uid>/set_card/
-
-Request/Response:
-
-.. code-block:: bash
-
-   $ ERROR
-
-Get the data for an ad-hoc query request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-   POST /graphs/
-
-Request/Response:
-
-.. code-block:: bash
-
-   $ ERROR
 
 Get both the replset infrastructure and the list of stats for a host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
