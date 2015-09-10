@@ -44,11 +44,10 @@ Our Replica set instances are available in 1GB (scalable to 5GB, limited to 2.4.
    Replica set instances do not offer SSL or ServiceNet connectivity, so please keep that in mind. We recommend using Sharded plans for that access, as they have the additional infrastructure needed to support those features. Replica sets **do** offer AWS DirectConnect in our UK-London, US-East-IAD3, and US-West datacenters.
 
 .. image:: images/replset.png
-   :align: center
-   :height: 949px
-   :width: 564px
-   :scale: 60%
-   :alt: MongoDB Replica set instance
+	:align: center
+	:height: 949px
+	:width: 564px
+	:scale: 60%
+	:alt: MongoDB Replica set instance
 
 As always, if you have any questions about anything you've read here, please feel free to reach out to our `Support team <mailto:support@objectrocket.com>`_!
-
