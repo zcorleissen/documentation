@@ -1,84 +1,92 @@
-ObjectRocket for Redis FAQ
-==========================
+ObjectRocket Redis FAQ
+======================
 
-What is ObjectRocket for Redis?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What is ObjectRocket Redis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket for Redis simplifies application development by offering pre-configured, high performance, highly available Redis instances in the cloud.
+ObjectRocket Redis simplifies application development by offering pre-configured, high performance, highly available Redis instances built on the same hardware stack that makes our MongoDB offering successful. Simple provisioning and administration, along with the ability to scale on demand makes it easy for developers to integrate our Redis platform into an application stack.
 
-Simple provisioning, configuration and administration capabilities make it easy for developers to integrate Redis into their application stack
+Is ObjectRocket Redis highly available?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Is ObjectRocket for Redis highly available?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Yes it is! Our Redis instances feature seamless automatic failover of the Redis master to a slave in the event of a master node failure.
 
-Yes - Customers can instantly deploy highly available Redis Instances featuring seamless, instantaneous automatic failover of the Redis master to a slave in the event of a master node failure.
+What plans and sizes do you offer?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-What size plans do you offer?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All plans reflect useable memory:
 
-All plans are sold as useable memory.
-500MB; 1GB; 2.5GB; 5GB; 10GB; 20GB; 50GB
+* 500MB
+* 1GB
+* 2.5GB
+* 5GB
+* 10GB
+* 20GB
+* 50GB
 
-If you require a larger instance size then please contact us.
+If you require something larger, please contact our `sales team <mailto:sales@objectrocket.com>`_ and we'll be happy to discuss!
 
-Can I use a single OR Redis instance for multiple purposes (i.e. caching, session store, message queue)?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Can I use a single Redis instance for multiple purposes?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes you can use a single instance for multiple purposes, as long as the app doesn't use the same key with different data.
+Yes, of course! As long as the app doesn't use the same keys in different areas, you'll be fine. The major point here is to avoid data collision by trying to use the same key for different purposes.
 
-What kind of support should I expect from the ObjectRocket Support Team?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What kind of support should I expect?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ObjectRocket for Redis is backed by Redis Specialists 24/7/365 to proactively monitor and fix issues with customer instances or infrastructure, assist with data migrations and fine-tune Redis configurations. These specialists also provide architecture advice and data structure best practices, as well as helping integrate Redis with other services including Mongo, Sidekiq and Magento.
+ObjectRocket for Redis is backed by Fanatical Support 24/7/365 to monitor and fix issues with customer instances or infrastructure, assist with data migrations, fine-tune Redis configurations, as well as any other issues you may have while using it. Our engineers also provide architecture advice and data structure best practices if you need help figuring out how to best leverage Redis in your app.
 
-Will you help migrate my data to an ObjectRocket for Redis instance?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Will you help migrate my data?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We currently offer migration assistance to customers moving to a 20GB or larger instance, and will have instructions to self migrate soon.
+We currently offer migration assistance to customers moving to a 20GB or larger instance, but please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!
 
 What software is being used?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The offering is based on Redis 2.8.13 with Sentinel for high availability. All instances are Highly Available, and all instances persist to disk.
 
 What does the system architecture look like?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Like this!
+
+.. image:: images/redis_infra.png
+   :align: center
+
 
 * Our Redis environment utilizes 2 node clusters and 3 Sentinels. One Redis node is master, one node is a slave.
-* Every aspect of the stack has been optimized specifically for Redis.
-
-  * All services are containerized, which provides guaranteed resources (memory, CPU, disk I/O), prevents “noisy-neighbor” problems, and eliminates the performance bottlenecks of traditional hardware virtualization.
-  * The service runs on performance-optimized infrastructure to make Redis run as fast as possible.
-
+* All services are containerized, which provides guaranteed resources (memory, CPU, disk I/O), prevents “noisy-neighbor” problems, and eliminates the performance bottlenecks of traditional hardware virtualization.
+* The service runs on performance-optimized infrastructure to make Redis run as fast as possible.
 * AWS users will automatically use dedicated 10Gbit AWS Direct Connect circuits for very high throughput, low latency connectivity to ObjectRocket for Redis.
 
 What version of Redis is supported?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As of 7/28/2014 ObjectRocket supports Redis 2.8.13.  Contact support@objectrocket.com for help with other versions.
-
-What other features do you offer?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ObjectRocket for Redis also features Public IP Access & ACLs; AWS Direct Connect and Configuration Edits.
+As of 07/10/2015 ObjectRocket supports Redis 2.8.17.  Contact our `support team <mailto:support@objectrocket.com>`_ for help with other versions.
 
 Do you support Redis Cluster?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No - it’s not stable for production today.
+No, we don't feel it’s stable enough for production today, but we do have it on our roadmap!
 
 How much does ObjectRocket for Redis cost per month?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Please see our main pricing page: http://objectrocket.com/pricing#redis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please see our `pricing page <http://objectrocket.com/pricing#redis>`_ for details.
 
 How does billing work?
-^^^^^^^^^^^^^^^^^^^^^^
-Please refer to our main FAQ: http://docs.objectrocket.com/faq.html#billing
+~~~~~~~~~~~~~~~~~~~~~~
+
+Please refer to our `Billing FAQ <http://docs.objectrocket.com/billing.html>`_.
 
 How do I connect to my Redis instance?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Start the redis-cli with the hostname, port, and password:
 
 .. code-block:: bash
 
     redis-cli -h my-host -p 1234 -a mypassword
+
+If you have any other questions please don't hesitate to reach out to our `support team <mailto:support@objectrocket.com>`_!

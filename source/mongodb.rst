@@ -1,18 +1,16 @@
-MongoDB on ObjectRocket
-=======================
+MongoDB
+=======
 
 .. toctree::
    :maxdepth: 2
-
-   overview_and_concepts
-   access_and_connectivity
-   native_drivers
-   api/overview
+   
+   mongodb_overview
+   mongodb_getting_started
+   mongodb_connection_examples
    backup_and_recovery
-   faq
    features
-   settings_guide
-   sharding_and_scaling
-   tools
-   external_integration
-   onboarding_checklist
+   mongodb_settings
+   mongodb_utilities
+   mongodb_scaling
+
+   

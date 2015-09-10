@@ -9,11 +9,15 @@ Contents:
    getting_started
    mongodb
    redis
-   elastic_faq
+   elastic
+   external_integration
+   api_v2
+   billing
+   faq
+
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`search`
-

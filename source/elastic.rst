@@ -1,5 +1,5 @@
-Elasticsearch FAQ
-=================
+Elasticsearch
+=============
 
 What is Elasticsearch?
 ----------------------
