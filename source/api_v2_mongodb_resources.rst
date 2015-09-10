@@ -256,11 +256,54 @@ Create a database and user on the specified instance
 
    POST /mongodb/<instance_name>/databases/
 
-Request/Response:
+Request:
 
 .. code-block:: bash
 
-   $ ERROR
+   {
+       "name": "name_of_database",
+       "password": "example_password",
+       "username": "example_username"
+   }
+
+Response:
+
+.. code-block:: bash
+
+   {
+       "data": {
+           "avgObjSize": 69.0,
+           "dataSize": 488,
+           "fileSize": 50331648,
+           "indexSize": 16352,
+           "indexes": 2,
+           "nsSize": 16777216,
+           "numExtents": 3,
+           "objects": 7,
+           "ok": 1.0,
+           "raw": {
+               "41f59478b82ac344e8f8e229d8e080f3/iadclus22br0vz10.iad.objectrocket.com:12345,iadclus22br1vz10.iad.objectrocket.com:12345,iadclus22br2vz10.iad.objectrocket.com:12345": {
+                   "avgObjSize": 69.71428571428571,
+                   "collections": 3,
+                   "dataFileVersion": {
+                       "major": 4,
+                       "minor": 5
+                   },
+                   "dataSize": 488,
+                   "db": "name_of_database",
+                   "fileSize": 50331648,
+                   "indexSize": 16352,
+                   "indexes": 2,
+                   "nsSizeMB": 16,
+                   "numExtents": 3,
+                   "objects": 7,
+                   "ok": 1.0,
+                   "storageSize": 20480
+               }
+           },
+           "storageSize": 20480
+       }
+   }
 
 Get details on a database belonging to the given instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1166,9 +1209,127 @@ Get log details
 
    GET /mongodb/<instance_name>/logs/
 
-Request/Response:
+Response:
 
 .. code-block:: bash
 
-   $ ERROR
+   {
+       "data": {
+           "Config": [
+               [
+                   "iadcfg0-0vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [
+                               "Thu Sep 10 12:37:27.500",
+                               "[initandlisten] connection accepted from 10.57.1.13:58990 #3356139 (30 connections now open)"
+                           ],
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 10108657
+                   }
+               ],
+               [
+                   "iadcfg0-1vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 10128429
+                   }
+               ],
+               [
+                   "iadcfg0-2vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 10123552
+                   }
+               ]
+           ],
+           "MongoD": [
+               [
+                   "41f59478b82ac344e8f8e229d8e080f3",
+                   [
+                       [
+                           "iadclus22br0vz10.iad.objectrocket.com:12345",
+                           {
+                               "log": [
+                                   [ ... ]
+                               ],
+                               "ok": 1.0,
+                               "totalLinesWritten": 302115
+                           }
+                       ],
+                       [
+                           "iadclus22br1vz10.iad.objectrocket.com:12345",
+                           {
+                               "log": [
+                                   [ ... ]
+                               ],
+                               "ok": 1.0,
+                               "totalLinesWritten": 144292
+                           }
+                       ],
+                       [
+                           "iadclus22br2vz10.iad.objectrocket.com:12345",
+                           {
+                               "log": [
+                                   [ ... ]
+                               ],
+                               "ok": 1.0,
+                               "totalLinesWritten": 144605
+                           }
+                       ]
+                   ]
+               ]
+           ],
+           "MongoS": [
+               [
+                   "iadapp0-0vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 63002615
+                   }
+               ],
+               [
+                   "iadapp0-1vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 62904381
+                   }
+               ],
+               [
+                   "iadapp0-2vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 63092115
+                   }
+               ],
+               [
+                   "iadapp0-3vz14.iad.objectrocket.com:12345",
+                   {
+                       "log": [
+                           [ ... ]
+                       ],
+                       "ok": 1.0,
+                       "totalLinesWritten": 63122580
+                   }
+               ]
+           ]
+       }
+   }
 
