@@ -82,7 +82,7 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
 Rate Limiting
 ~~~~~~~~~~~~~
 
-You can make up to 100 requests per minute. You can check the HTTP response headers of any API request to see your current rate limit status:
+You can make up to 100 requests per second. You can check the HTTP response headers of any API request to see your current rate limit status:
 
 .. code-block:: bash
 
