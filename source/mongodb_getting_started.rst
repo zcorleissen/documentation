@@ -21,7 +21,9 @@ Getting Started with MongoDB
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
+- Select a backend engine, MongoDB in this case.
+
+- Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
 - Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
 
