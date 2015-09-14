@@ -123,28 +123,36 @@ Here's the example document we'll be using:
 Connecting
 ----------
 
+.. warning::
+
+    When connecting using the MongoDB URI, we highly recommend avoiding usernames or passwords with an @ symbol inside.
+    This can break the URI parsing and cause failures when trying to connect.
+
 Connecting to a replica set:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
    
  <?php
- $connection = new MongoClient("mongodb://sjc-c9-1.objectrocket.com:12345,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@sjc-c9-1.objectrocket.com:12345,sjc-c9-0.objectrocket.com:54074/?replicaSet=e0a8d0f797be1b9c4ec7052a7b7484a7");
  ?>
 
 Connecting to a sharded instance:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
  <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:12345");
+ $connection = new MongoClient("mongodb://myUsername:myPassword@iad-mongos0.objectrocket.com:12345");
  ?>
 
 Connecting to a sharded instance with SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
  <?php
- $connection = new MongoClient("mongodb://iad-mongos0.objectrocket.com:12345", array("ssl" => true));
+ $connection = new MongoClient("mongodb://myUsername:myPassword@iad-mongos0.objectrocket.com:12345", array("ssl" => true));
  ?>
 
 Creating a Document
