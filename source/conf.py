@@ -266,4 +266,4 @@ extlinks = {
 # text options: A string of 7 characters that should be used for underlining
 # sections. The first character is used for first-level headings, the second
 # for second-level headings and so on.
-text_sectionchars = ('*=-~"+`', 'text')
+text_sectionchars = ('=-~+*"`', 'text')
