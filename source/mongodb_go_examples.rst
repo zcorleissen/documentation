@@ -108,7 +108,13 @@ Here's the example document we'll be using:
 Connecting
 ----------
 
+.. warning::
+  
+    When connecting using the MongoDB URI, we highly recommend avoiding usernames or passwords with an @ symbol inside. 
+    This can break the URI parsing and cause failures when trying to connect.
+
 Connecting to a replica set:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
  
@@ -144,6 +150,7 @@ Connecting to a replica set:
     }
 
 Connecting to a sharded instance:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 
@@ -177,6 +184,7 @@ Connecting to a sharded instance:
 
 
 Connecting to a sharded instance using SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 
@@ -223,6 +231,7 @@ Creating a document
 -------------------
 
 Creating and inserting a document:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 
@@ -313,6 +322,7 @@ Reading documents
 -----------------
 
 Finding all documents with a specific field:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 
@@ -365,6 +375,7 @@ Updating a document
 -------------------
 
 Updating a document:
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 
@@ -419,6 +430,7 @@ Deleting a document
 -------------------
 
 Deleting a specific document:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: go
 

@@ -114,6 +114,11 @@ Here's the example document we'll be using:
 Connecting
 ----------
 
+.. warning::
+  
+    When connecting using the MongoDB URI, we highly recommend avoiding usernames or passwords with an @ symbol inside. 
+    This can break the URI parsing and cause failures when trying to connect.
+
 Connecting to a replica set:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
