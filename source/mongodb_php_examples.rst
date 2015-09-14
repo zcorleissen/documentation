@@ -129,6 +129,7 @@ Connecting
     This can break the URI parsing and cause failures when trying to connect.
 
 Connecting to a replica set:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
    
@@ -137,6 +138,7 @@ Connecting to a replica set:
  ?>
 
 Connecting to a sharded instance:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
@@ -145,6 +147,7 @@ Connecting to a sharded instance:
  ?>
 
 Connecting to a sharded instance with SSL:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
