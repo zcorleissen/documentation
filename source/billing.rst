@@ -22,11 +22,6 @@ Tiered pricing is a way to save money as your data grows on the platform. It’s
 
 Here's a link to our `pricing calculator <http://objectrocket.com/pricing>`_, which shows the costs for each tier.
 
-Why is ObjectRocket for MongoDB billed using a tiered model, but other ObjectRocket solutions are not?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We are working to provide tiered pricing for all of our products, but in the meantime feel free to reach out to our `sales team <mailto:sales@objectrocket.com>`_ if you’d like to learn how pricing scales as you grow.
-
 Why do I have multiple ObjectRocket charges on different dates during the month? When will I be billed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
