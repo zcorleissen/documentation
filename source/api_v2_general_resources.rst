@@ -92,6 +92,118 @@ Response:
        }
    }
 
+Get the data for an ad-hoc query request
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   POST /graphs/ad_hoc/
+
+.. note::
+
+   There are four query paramters that need to be present:
+
+   **format**:
+      This has to be zingchart for now
+
+   **granularity**:
+      Either minute or day
+
+   **start_time**:
+      A start time in the following format: "Year-Month-Day Hour:Minute:Second"
+
+   **end_time**:
+      An end time in the following format: "Year-Month-Day Hour:Minute:Second"
+
+Request:
+
+.. code-block:: bash
+
+   POST /v2/graphs/ad_hoc/?start_time=2015-09-01+00%3A01%3A01&format=zingchart&end_time=2015-09-01+03%3A01%3A01&granularity=hour HTTP/1.1
+
+   {
+       "stats": [
+           {
+               "host": "sydclus2br0vz18.syd.objectrocket.com:31134",
+               "instance": "MongoDB123",
+               "name": "mongodb.opcounters.query"
+           },
+           {
+               "host": "sydclus1br2vz10.syd.objectrocket.com:31166",
+               "instance": "MongoDB123",
+               "name": "mongodb.opcounters.query"
+           },
+           {
+               "host": "sydclus2br0vz28.syd.objectrocket.com:32795",
+               "instance": "MongoDB123",
+               "name": "mongodb.opcounters.query"
+           }
+       ]
+   }
+
+Response:
+
+.. code-block:: bash
+
+   [
+       {
+           "legend-item": {
+               "text": "sydclus2br0vz18"
+           },
+           "text": "sydclus2br0vz18",
+           "values": [
+               [
+                   1441069200000,
+                   0
+               ],
+               [
+                   1441069260000,
+                   0
+               ],
+               [
+                   "..."
+               ]
+           ]
+       },
+       {
+           "legend-item": {
+               "text": "sydclus1br2vz10"
+           },
+           "text": "sydclus1br2vz10",
+           "values": [
+               [
+                   1441069200000,
+                   0
+               ],
+               [
+                   1441069260000,
+                   0
+               ],
+               [
+                   "..."
+               ]
+           ]
+       },
+       {
+           "legend-item": {
+               "text": "sydclus2br0vz28"
+           },
+           "text": "sydclus2br0vz28",
+           "values": [
+               [
+                   1441069200000,
+                   0
+               ],
+               [
+                   1441069260000,
+                   0
+               ],
+               [
+                   "..."
+               ]
+       }
+   ]
+
 Get both the replset infrastructure and the list of stats for a host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
