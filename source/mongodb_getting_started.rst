@@ -30,7 +30,7 @@ Getting Started with MongoDB
 
 - Select a version to deploy. We offer MongoDB 2.4, 2.6, and 3.0.
 
-- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size when using a Sharded instance, but that isn't possible for a Replica Set. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
+- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size when using a Sharded instance, but that isn't possible for a Replica Set. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
 - Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
@@ -39,7 +39,7 @@ Getting Started with MongoDB
 .. image:: images/createmongo_2.png
    :align: center
 
-2. Create a database
+2. Add a database
 ~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/adddatabase.png
@@ -74,4 +74,4 @@ Provided you've added an ACL and have a database with a user you can authenticat
 	mongos>
 
 
-If see something similar after running ``show collections`` you're connected to the instance and can do anything you'd expect to against the database. If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
+If you see something similar after running ``show collections`` you're connected to the instance and can do anything you'd expect to against the database. If you run into any issues or just want some guidance please don't hesitate to reach out to our `Support team <mailto:support@objectrocket.com>`_!

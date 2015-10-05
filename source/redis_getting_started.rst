@@ -26,7 +26,7 @@ Getting Started with Redis
 
 - Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
 
-- Select a plan that suits your needs. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
+- Select a plan that suits your needs. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
 .. image:: images/createredis.png
    :align: center
