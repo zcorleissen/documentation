@@ -21,13 +21,22 @@ Getting Started with MongoDB
 
 - Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-- Select a backend engine, MongoDB in this case.
+- Select a Service, MongoDB in this case.
+
+- Select a type, either MongoDB Sharded or MongoDB Replica Set. The differences are outlined briefly below the type chosen, but more information can be found on our `MongoDB Overview <http://objectrocket.com/docs/mongodb_overview.html>`_.
+
+.. image:: images/createmongo.png
+   :align: center
+
+- Select a version to deploy. We offer MongoDB 2.4, 2.6, and 3.0.
+
+- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size when using a Sharded instance, but that isn't possible for a Replica Set. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
 
 - Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
-- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size. For more details, check out `plans and pricing <http://www.objectrocket.com/pricing>`_.
+- Select a Storage Engine. When using MongoDB 3.0 you have the option of alternate storage engines. We currently offer WiredTiger and MMAPv1 when using 3.0+.
 
-.. image:: images/createmongo.png
+.. image:: images/createmongo_2.png
    :align: center
 
 2. Create a database
@@ -43,7 +52,7 @@ Once you've added an instance you should see it under the **Instances** heading.
 
 Back to the instance details page, under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
-.. image:: images/addacl.png
+.. image:: images/addacl_mongo.png
    :align: center
 
 4. Connect!
