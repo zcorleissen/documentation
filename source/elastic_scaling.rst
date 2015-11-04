@@ -1,5 +1,5 @@
-Sharding and Scaling Guide
-==========================
+Scaling Guide
+=============
 
 How can I add a data node?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

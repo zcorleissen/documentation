@@ -1,2 +1,2 @@
-Python Driver Examples
+Python Client Examples
 ======================

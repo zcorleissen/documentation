@@ -1,2 +1,2 @@
-Ruby Driver Examples
+Ruby Client Examples
 ======================

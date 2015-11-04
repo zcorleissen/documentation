@@ -1,2 +1,2 @@
-Java Driver Examples
+Java Client Examples
 ======================

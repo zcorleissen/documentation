@@ -1,4 +1,4 @@
-REST Examples
+REST API Examples
 ======================
 
 Creating and Viewing an Index
@@ -25,6 +25,7 @@ Index sample document into customer index:
     {
         "name": "John Doe"
     }'
+
 Query document from index:
 
 .. code-block:: bash

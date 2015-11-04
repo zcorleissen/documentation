@@ -11,4 +11,4 @@ What does ObjectRocket Elasticsearch provide?
 
 Starting with many NoSQL data stores like Elasticsearch is easy, but daily administration, monitoring, backups, and scaling can add a heavy and challenging workload to already overtaxed teams. We take the operational burden off of your team with our purpose built platform and 24/7/365 Fanatical Support so you can focus on using Elasticsearch and not keeping it up and running.
 
-When you build an ObjectRocket Elasticsearch instance, you get a cluster with a total of 9 nodes. We automatically configure 4 front-end client nodes, 3 master nodes, and 2 data nodes. This robust setup is ready to handle the load and scale of your most mission critical workloads.
+When you build an ObjectRocket Elasticsearch instance, you get a cluster with a total of 11 nodes. We automatically configure 4 front-end client nodes, 2 Kibana nodes, 3 master nodes, and 2 data nodes. This robust setup is ready to handle the load and scale of your most mission critical workloads.

@@ -1,2 +1,2 @@
-PHP Driver Examples
+PHP Client Examples
 ======================
