@@ -24,4 +24,4 @@ As we offer MongoDB, Redis, and Elasticsearch, there are guides for getting star
 
 - :doc:`redis_getting_started`
 
-- :doc:`elastic`
+- :doc:`elastic_getting_started`
