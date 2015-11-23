@@ -5,15 +5,6 @@ Getting Started with Elasticsearch
 2. Add an Admin User
 3. Add an ACL
 
-
-#How do I start?
-#---------------
-#
-#If you have questions, we have data services specialists ready to assist, just contact us `here <http://objectrocket.com/contact>`_ or e-mail us at `sales@objectrocket.com <mailto:sales@objectrocket.com>`_!
-#
-#If you are ready to sign up now and don’t already have an ObjectRocket account go to our `sign up <https://app.objectrocket.com/sign_up>`_ page to create one, or `log in <https://app.objectrocket.com>`_ to get started.
-
-
 1. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -26,19 +17,21 @@ Getting Started with Elasticsearch
 
 - Select a Service, Elasticsearch in this case.
 
+- Verify information provided is correct and move on to Step 2
+
+.. image:: images/create_elastic.png
+   :align: center
+
 - Select your desired version of Elasticsearch.
 
 - Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
 - Select the best Memory and Storage size for your application. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
-.. image:: images/create_elastic.png
-   :align: center
-   :height: 631px
-   :width: 500 px
-   :scale: 70%
+- Verify your selections and click the **Confirm** button.
 
-- Confirm your selections and click the **Create** button.
+.. image:: images/create_elastic_2.png
+   :align: center
 
 You'll now be routed back to the **Instances** page, where you can see the build status of your instance. Yellow means it's in the build process, and green means it's ready to use. Click the name of your new instance to continue.
 
@@ -60,5 +53,5 @@ You'll now be routed back to the **Instances** page, where you can see the build
 
 - The **My IP** and **Any IP** buttons offer convenient shortcuts to add either your current IP address or to allow all IP addresses access to your instance.
 
-.. image:: images/addacl.png
+.. image:: images/addacl_elastic.png
    :align: center

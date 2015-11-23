@@ -28,7 +28,7 @@ Getting Started with Redis
 
 - Select a plan that suits your needs. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
-.. image:: images/createredis.png
+.. image:: images/createredis_2.png
    :align: center
 
 3. Add an ACL
