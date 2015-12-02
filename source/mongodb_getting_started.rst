@@ -30,7 +30,7 @@ Step 2
 
 #. Select a version to deploy. 
 
-    We offer MongoDB 2.4, 2.6, and 3.0 (early access). If you select 3.0, you can also select a storage engine (see below).
+    We offer the latest version of MongoDB 2.4, 2.6, and 3.0 (early access). If you select 3.0, you can also select a storage engine (see below).
 
 #. Select a plan that suits your needs. 
 
@@ -38,9 +38,7 @@ Step 2
 
 #. Select a zone that suits your needs. 
 
-    Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
-
-    Instances created in Virginia (IAD) 
+    Zones are Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
 
 #. Select a storage engine (v3.0 only).
 
@@ -96,4 +94,4 @@ After you've created a database with user authentication and added an ACL, you'r
 
 If you see something similar after running ``show collections``, you're connected to the instance and can perform database operations. Success!
 
-If you encounter any issues or just want some guidance, please reach out to our `Support team <mailto:support@objectrocket.com>`_!
+If you encounter any issues or just want some guidance, please reach out to our `support team <mailto:support@objectrocket.com>`_!
