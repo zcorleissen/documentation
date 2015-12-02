@@ -2,49 +2,60 @@ Getting Started with Redis
 ==========================
 
 1. Create an instance
-2. Add an ACL
-3. Connect!
-
-1. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
-- Click the 'Add Instance' button.
+Step 1
+------
 
-.. image:: images/addinstance.png
-   :align: center
+#. Click the Instance heading, then click on *Add Instance*.
 
-- Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
+#. Enter a name for your instance. 
 
-- Select a Service, Redis in this case.
+    This can be almost anything, as any alpha numeric string is valid.
 
-- There is only one type of Redis offered at the moment, defaulting to HA Redis.
+#. Select Redis for the service.
 
-.. image:: images/createredis.png
-   :align: center
+   ObjectRocket offers HA Redis as a service.
 
-- Select a version to deploy. We offer 2.8.22 and 3.0.4 as a beta.
+Click on *Step 2* to continue.
 
-- Select a zone that suits your needs. Zones are either Rackspace or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
+Step 2
+------
 
-- Select a plan that suits your needs. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
+#. Select a version to deploy.
+   
+   ObjectRocket offers versions 2.8 and 3.0 (beta access).
 
-.. image:: images/createredis_2.png
-   :align: center
+#. Select a zone.
 
-3. Add an ACL
-~~~~~~~~~~~~~
+    Zones are Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
 
-Under the heading `Security`, you have the option to `Add ACL`. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: `IP Address` and `Description`. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
+#. Select a plan that suits your needs. 
 
-.. image:: images/addacl_mongo.png
-   :align: center
+   For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
+
+Step 3
+------
+
+Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
+
+2. Add an Access Control List (ACL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Access Control Lists (ACL) limit who connects to your instance. ObjectRocket denies access by default.
+
+#. In the Security section of the instance details page, click *Add ACL*. 
+
+#. Enter an IP address/CIDR block and a description.
+
+    Only the IP address is mandatory, but descriptions can help when maintaining larger lists.
+
+#. Click *Add ACL Entry*.
 
 3. Connect!
 ~~~~~~~~~~~
 
-Provided you've added an ACL, you can test basic connectivity from your terminal of choice with redis-cli:
-
-.. code-block:: bash
+After you've created a database with user authentication and added an ACL, you're ready to test basic connectivity in a terminal session with redis-cli::
 
    $ redis-cli -h '<hostname>' -p '<port>' -a '<password>'
    hostname:port> set my_key my_value
@@ -52,9 +63,7 @@ Provided you've added an ACL, you can test basic connectivity from your terminal
    hostname:port> get my_key
    "my_value"
 
-Or you can use netcat/telnet as well:
-
-.. code-block:: bash
+You can also connect with netcat/telnet::
 
    $ nc '<hostname>' '<port>'
    auth <password>
@@ -65,4 +74,6 @@ Or you can use netcat/telnet as well:
    $8
    my_value
 
-If you see something similar to the example above, you're good to use the instance as you normally would any other redis implementation! If you run into any issues or just want some guidance please don't hesitate to reach out to us at `support@objectrocket.com <mailto:support@objectrocket.com>`_!
+If you see similar results, you're connected to the instance and can perform database operations. Success!
+
+If you encounter any issues or just want some guidance, please reach out to our `support team <mailto:support@objectrocket.com>`_!
