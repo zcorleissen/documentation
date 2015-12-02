@@ -53,7 +53,7 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
 .. code-block:: bash
 
    $ curl 'https://sjc-api.objectrocket.com/v2/instances/' --header 'X-Auth-Token: xLQiuUySDpyDjgGlaBiLbQmrdPYlKJETEIHLisZVxXcFDCsXKNQdohbsdErLsTKBWAmdYCgLKDjhNxYfE'
-   {"data": [{"service": "mongodb", "connect_string": "syd-mongos0.objectrocket.com:35023", "name": "MongoDB123", "zone": "AP-Sydney", "created": "2015-04-29 09:53:18", "ssl_connect_string": "syd-mongos0.objectrocket.com:45023", "encrypted": false, "storage_engine": "mmapv1", "ssl_service_net_connect_string": "syd-sn-mongos0.objectrocket.com:45023", "service_net_connect_string": "syd-sn-mongos0.objectrocket.com:35023", "compressor": "none", "version": "2.4.6", "plan": 5, "caster": null, "api_key": "4aa8a323d92d4253bd02c0992d621560", "type": "mongodb_sharded", "id": "55410c7f5b335278490a5be8"}]}
+   {"data": [{"service": "mongodb", "connect_string": "syd-mongos0.objectrocket.com:35023", "name": "MongoDB123", "zone": "AP-Sydney", "created": "2015-04-29 09:53:18", "ssl_connect_string": "syd-mongos0.objectrocket.com:45023", "encrypted": false, "storage_engine": "mmapv1", "ssl_service_net_connect_string": "syd-sn-mongos0.objectrocket.com:45023", "service_net_connect_string": "syd-sn-mongos0.objectrocket.com:35023", "compressor": "none", "version": "2.4.6", "plan": 5, "caster": null, "api_key": "88397705831449996672175456043915", "type": "mongodb_sharded", "id": "55410c7f5b335278490a5be8"}]}
 
 .. code-block:: bash
 
@@ -74,7 +74,7 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
    {
        "data": [
            {
-               "api_key": "4aa8a323d92d4253bd02c0992d621560",
+               "api_key": "88397705831449996672175456043915",
                "caster": null,
                "compressor": "none",
                "connect_string": "syd-mongos0.objectrocket.com:35023",
