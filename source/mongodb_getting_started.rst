@@ -30,7 +30,7 @@ Step 2
 
 #. Select a version to deploy. 
 
-    We offer MongoDB 2.4.6, 2.6.10, and 3.0.6 (early access). If you select 3.0.6, you can also select a storage engine (see below).
+    We offer MongoDB 2.4, 2.6, and 3.0 (early access). If you select 3.0, you can also select a storage engine (see below).
 
 #. Select a plan that suits your needs. 
 
@@ -42,13 +42,13 @@ Step 2
 
     Instances created in Virginia (IAD) 
 
-#. Select a storage engine (v3.0.6 only).
+#. Select a storage engine (v3.0 only).
 
     You can select WiredTiger or MMAPv1 for your storage engine when deploying MongoDB 3.0.
 
 #. Select encryption.
 
-    You can choose to encrypt MongoDB 2.6.10 or 3.0.6 instances provisioned in Virginia (IAD). Encryption for v3.0.6 requires WiredTiger for the storage engine and a plan minimum of 20GB.
+    You can choose to encrypt MongoDB 2.6 or 3.0 instances provisioned in Virginia (IAD). Encryption for v3.0 requires WiredTiger for the storage engine and a plan minimum of 20GB.
 
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
