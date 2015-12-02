@@ -13,32 +13,37 @@ All data is sent and received as JSON. API access is accessed from the following
 Authentication
 ~~~~~~~~~~~~~~
 
-Authentication to the API occurs via `HTTP Basic Auth <https://en.wikipedia.org/wiki/Basic_access_authentication>`_. You'll need to authenticate with the API before you can do anything else (this would be the same username and password used when logging into the ObjectRocket Customer Portal). The server will respond with a **token** and **uid**. The token will expire after 24 hours. Here is an example on how to do so using cURL and HTTPie:
+Authentication to the API occurs via `HTTP Basic Auth <https://en.wikipedia.org/wiki/Basic_access_authentication>`_. You'll need to authenticate with the API before you can do anything else (this would be the same username and password used when logging into the ObjectRocket Customer Portal).
+
+If you linked your Rackspace cloud account with your ObjectRocket account, you will need to setup a password before you can use the API. Login, and click "Account Settings" at the top-right. Under the "Login Details" section, there will be a link to create a password for the account.
+
+The server will respond with a **token** and **uid**. The token will expire after 24 hours. Here is an example on how to do so using cURL and `HTTPie <https://github.com/jkbrzt/httpie>`_:
 
 .. code-block:: bash
 
-   $ curl --user 'donovan@heydonovan.io' 'https://sjc-api.objectrocket.com/v2/tokens/'
+   $ curl 'https://sjc-api.objectrocket.com/v2/tokens/' --user 'donovan@heydonovan.io'
    Enter host password for user 'donovan@heydonovan.io':
-   {"data": {"token": "IjA3MmQ5NGMwODUzOTRiMTE4ZWU0MzM2MGJlOTRiMzNhIg.CFoJ0A.4NWcNoAf-j3sEfTZzgKWtN1vdrg", "login": "donovan@heydonovan.io", "uid": "553fe69f5b335278436fa19b"}}
+   {"data": {"token": "xLQiuUySDpyDjgGlaBiLbQmrdPYlKJETEIHLisZVxXcFDCsXKNQdohbsdErLsTKBWAmdYCgLKDjhNxYfE", "login": "donovan@heydonovan.io", "uid": "553fe69f5b335278436fa19b"}}
 
 .. code-block:: bash
 
-   $ http --auth 'donovan@heydonovan.io' 'https://sjc-api.objectrocket.com/v2/tokens/'
+   $ http 'https://sjc-api.objectrocket.com/v2/tokens/' --auth 'donovan@heydonovan.io'
    http: password for donovan@heydonovan.io@sjc-api.objectrocket.com:
    HTTP/1.1 200 OK
    Connection: keep-alive
    Content-Length: 173
    Content-Type: application/json
-   Date: Wed, 10 Jun 2015 15:25:01 GMT
-   Server: nginx/1.6.0
+   Date: Wed, 02 Dec 2015 19:10:37 GMT
+   Server: nginx/1.8.0
    X-RateLimit-Limit: 1
    X-RateLimit-Remaining: 1
    X-RateLimit-Reset: -1
-
+   X-Request-Id: 5b6d548382ff4494978120c72397a4f4
+   
    {
        "data": {
            "login": "donovan@heydonovan.io",
-           "token": "IjU2OTExN2VkYTY3ODQ5Y2JhNThkNTZlOWY2NmE4OTQ4Ig.CFnoTQ.mllZEOLgf7wLZIpcMzDVgMnSmpo",
+           "token": "xLQiuUySDpyDjgGlaBiLbQmrdPYlKJETEIHLisZVxXcFDCsXKNQdohbsdErLsTKBWAmdYCgLKDjhNxYfE",
            "uid": "553fe69f5b335278436fa19b"
        }
    }
@@ -47,37 +52,48 @@ One important note. The **token** is what will be used for the **X-Auth-Token** 
 
 .. code-block:: bash
 
-    $ http --auth 'donovan@heydonovan.io' 'https://sjc-api.objectrocket.com/v2/instances/' \
-      X-Auth-Token:Ijg2NjM3M2RlYzI4YzQ5YzlhODJjZmZhY2UwZGRkYzlkIg.CJQ-xQ.BEOGqqZuwAkp-dbnKv67rqfbQkY
-    http: password for donovan@heydonovan.io@sjc-api.objectrocket.com:
-    HTTP/1.1 200 OK
-    Connection: keep-alive
-    Content-Length: 1013
-    Content-Type: application/json
-    Date: Fri, 24 Jul 2015 21:26:35 GMT
-    Server: nginx/1.8.0
-    X-RateLimit-Limit: 100
-    X-RateLimit-Remaining: 99
-    X-RateLimit-Reset: 1437773196
+   $ curl 'https://sjc-api.objectrocket.com/v2/instances/' --header 'X-Auth-Token: xLQiuUySDpyDjgGlaBiLbQmrdPYlKJETEIHLisZVxXcFDCsXKNQdohbsdErLsTKBWAmdYCgLKDjhNxYfE'
+   {"data": [{"service": "mongodb", "connect_string": "syd-mongos0.objectrocket.com:35023", "name": "MongoDB123", "zone": "AP-Sydney", "created": "2015-04-29 09:53:18", "ssl_connect_string": "syd-mongos0.objectrocket.com:45023", "encrypted": false, "storage_engine": "mmapv1", "ssl_service_net_connect_string": "syd-sn-mongos0.objectrocket.com:45023", "service_net_connect_string": "syd-sn-mongos0.objectrocket.com:35023", "compressor": "none", "version": "2.4.6", "plan": 5, "caster": null, "api_key": "4aa8a323d92d4253bd02c0992d621560", "type": "mongodb_sharded", "id": "55410c7f5b335278490a5be8"}]}
 
-    {
-        "data": [
-            {
-                "api_key": "12345",
-                "caster": null,
-                "connect_string": "syd-mongos0.objectrocket.com:12345",
-                "created": "2015-04-29 09:53:18",
-                "id": "55410c7f5b335278490a5be8",
-                "name": "test123",
-                "plan": 5,
-                "service": "mongodb",
-                "ssl_connect_string": "syd-mongos0.objectrocket.com:45023",
-                "type": "mongodb_sharded",
-                "version": "2.4.6",
-                "zone": "AP-Sydney"
-            }
-        ]
-    }
+.. code-block:: bash
+
+   $ http 'https://sjc-api.objectrocket.com/v2/instances/' 'X-Auth-Token: xLQiuUySDpyDjgGlaBiLbQmrdPYlKJETEIHLisZVxXcFDCsXKNQdohbsdErLsTKBWAmdYCgLKDjhNxYfE'
+   HTTP/1.1 200 OK
+   Connection: keep-alive
+   Content-Encoding: gzip
+   Content-Type: application/json
+   Date: Wed, 02 Dec 2015 19:14:05 GMT
+   Server: nginx/1.8.0
+   Transfer-Encoding: chunked
+   Vary: Accept-Encoding
+   X-RateLimit-Limit: 100
+   X-RateLimit-Remaining: 99
+   X-RateLimit-Reset: 1449083646
+   X-Request-Id: a07dbb8ac2aa4dee91f1825e69ab6a5d
+   
+   {
+       "data": [
+           {
+               "api_key": "4aa8a323d92d4253bd02c0992d621560",
+               "caster": null,
+               "compressor": "none",
+               "connect_string": "syd-mongos0.objectrocket.com:35023",
+               "created": "2015-04-29 09:53:18",
+               "encrypted": false,
+               "id": "55410c7f5b335278490a5be8",
+               "name": "MongoDB123",
+               "plan": 5,
+               "service": "mongodb",
+               "service_net_connect_string": "syd-sn-mongos0.objectrocket.com:35023",
+               "ssl_connect_string": "syd-mongos0.objectrocket.com:45023",
+               "ssl_service_net_connect_string": "syd-sn-mongos0.objectrocket.com:45023",
+               "storage_engine": "mmapv1",
+               "type": "mongodb_sharded",
+               "version": "2.4.6",
+               "zone": "AP-Sydney"
+           }
+       ]
+   }
 
 Rate Limiting
 ~~~~~~~~~~~~~
