@@ -40,7 +40,7 @@ Step 2
 
     Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
-    Instances created in Houston (IAD) 
+    Instances created in Virginia (IAD) 
 
 #. Select a storage engine (v3.0.6 only).
 
@@ -48,7 +48,7 @@ Step 2
 
 #. Select encryption.
 
-    You can choose to encrypt MongoDB 2.6.10 or 3.0.6 instances provisioned in Houston (IAD). Encryption for v3.0.6 requires WiredTiger for the storage engine and a plan minimum of 20GB.
+    You can choose to encrypt MongoDB 2.6.10 or 3.0.6 instances provisioned in Virginia (IAD). Encryption for v3.0.6 requires WiredTiger for the storage engine and a plan minimum of 20GB.
 
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
