@@ -23,6 +23,9 @@ Step 1
 
     Choose either MongoDB Sharded or MongoDB Replica Set. Each selection includes a brief description, and more information can be found on our `MongoDB Overview <http://objectrocket.com/docs/mongodb_overview.html>`_.
 
+.. image:: images/createmongo.png
+   :align: center
+
 Click on *Step 2* to continue.
 
 Step 2
@@ -30,7 +33,7 @@ Step 2
 
 #. Select a version to deploy. 
 
-    We offer the latest version of MongoDB 2.4, 2.6, and 3.0 (early access). If you select 3.0, you can also select a storage engine (see below).
+    We offer the latest version of MongoDB 2.4, 2.6, and 3.0. If you select 3.0, you can also select a storage engine (see below).
 
 #. Select a plan that suits your needs. 
 
@@ -48,25 +51,33 @@ Step 2
 
     You can choose to encrypt MongoDB 2.6 or 3.0 instances provisioned in Virginia (IAD). Encryption for v3.0 requires WiredTiger for the storage engine and a plan minimum of 20GB.
 
+.. image:: images/createmongo_2.png
+   :align: center
+
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
 2. Add a database
 ~~~~~~~~~~~~~~~~~~~~
 
-Instances you create appear under the Instances heading. Click the instance name to view its details and available operations. Many operations are available; to begin, let's create a database. 
-
-The Instances heading contains several different sections. The Databases section contains two options: *Add Database* and *Copy Remote Database*. 
+Instances you create appear under the Instances heading. Click the instance name to view its details and available operations. Many operations are available; to begin, let's create a database. After selecting the desired instance, scrolldown to the Databases section.
 
 #. Click on *Add Database*. 
 
     Enter a name, username, and password, then click *Add Database* to confirm.
 
-    You can also add collections or more users with this interface, as well as with the ObjectRocket API or MongoDB shell.
+    You can also add collections or more users with this interface by selecting the database name, as well as by using the ObjectRocket API or MongoDB shell.
+
+.. image:: images/adddatabase.png
+   :align: center
 
 3. Add an Access Control List (ACL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Access Control Lists (ACL) limit who connects to your instance. ObjectRocket denies access by default.
+Access Control Lists (ACL) limit who connects to your instance. 
+
+.. note::
+
+	ObjectRocket denies access by default so you need to add any appropriate ACL's for servers that are connecting to ObjectRocket.
 
 #. In the Security section of the instance details page, click *Add ACL*. 
 
@@ -75,6 +86,9 @@ Access Control Lists (ACL) limit who connects to your instance. ObjectRocket den
     Only the IP address is mandatory, but descriptions can help when maintaining larger lists.
 
 #. Click *Add ACL Entry*.
+
+.. image:: images/addacl_mongo.png
+   :align: center
 
 4. Connect!
 ~~~~~~~~~~~
