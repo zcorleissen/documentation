@@ -13,9 +13,10 @@ Step 1
 
     This can be almost anything, as any alpha numeric string is valid.
 
-#. Select Redis for the service.
+#. Select Redis for the service and the type defaults to HA Redis.
 
-   ObjectRocket offers HA Redis as a service.
+.. image:: images/createredis.png
+   :align: center
 
 Click on *Step 2* to continue.
 
@@ -23,8 +24,8 @@ Step 2
 ------
 
 #. Select a version to deploy.
-   
-   ObjectRocket offers versions 2.8 and 3.0 (beta access).
+
+    ObjectRocket offers versions 2.8 and 3.0.
 
 #. Select a zone.
 
@@ -32,17 +33,21 @@ Step 2
 
 #. Select a plan that suits your needs. 
 
-   For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
+    For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
-Step 3
-------
+.. image:: images/createredis_2.png
+   :align: center
 
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
 2. Add an Access Control List (ACL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Access Control Lists (ACL) limit who connects to your instance. ObjectRocket denies access by default.
+Access Control Lists (ACL) limit who connects to your instance.
+
+.. note::
+
+        ObjectRocket denies access by default so you need to add any appropriate ACL's for servers that are connecting to ObjectRocket.
 
 #. In the Security section of the instance details page, click *Add ACL*. 
 
@@ -51,6 +56,9 @@ Access Control Lists (ACL) limit who connects to your instance. ObjectRocket den
     Only the IP address is mandatory, but descriptions can help when maintaining larger lists.
 
 #. Click *Add ACL Entry*.
+
+.. image:: images/addacl_mongo.png
+   :align: center
 
 3. Connect!
 ~~~~~~~~~~~
