@@ -20,7 +20,7 @@ Click *Add Credit Card* on the `default landing page <https://app.objectrocket.c
 3. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you need help creating your first instance, please reference our getting started guides:
+If you need help creating your first instance, check out our getting started guides:
 
 - :doc:`mongodb_getting_started` 
 

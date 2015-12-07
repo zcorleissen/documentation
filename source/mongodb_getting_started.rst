@@ -35,6 +35,10 @@ Step 2
 
     We offer the latest versions of MongoDB 2.4, 2.6, and 3.0. If you select 3.0, you can also select a storage engine (see below).
 
+#. Select a plan that suits your needs. 
+
+    Sharded instances grow by adding shards according to your plan size. The size of a replica set is fixed, determined by your plan's size limit. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
+
 #. Select a zone that suits your needs. 
 
     Zones are Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
@@ -54,11 +58,15 @@ Step 2
 .. image:: images/createmongo_2.png
    :align: center
 
+.. image:: images/createmongo_2.png
+   :align: center
+
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
 2. Add a database
 ~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< HEAD
 #. Click the instance name to view its details and available operations. 
 
     Instances you create appear under the *Instances* heading. 
@@ -110,6 +118,9 @@ After you've created a database with user authentication and added an ACL, you'r
 
 	mongos>
 
-If you see something similar after running ``show collections``, you're connected to the instance and can perform database operations. Success!
+If you see something similar after running `show collections`, you're connected to the instance and can perform database operations. Success!
+
+Support
+~~~~~~~
 
 If you have any issues or just need guidance, contact our `support team <mailto:support@objectrocket.com>`_.

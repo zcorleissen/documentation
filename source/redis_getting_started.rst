@@ -13,9 +13,7 @@ Step 1
 
     This can be almost anything, as any alpha numeric string is valid.
 
-#. Select Redis for the service.
-
-    The type defaults to HA Redis.
+#. Select Redis for the service. The type defaults to HA Redis.
 
 .. image:: images/createredis.png
    :align: center
@@ -85,5 +83,8 @@ You can also connect with netcat/telnet::
    my_value
 
 If you see similar results, you're connected to the instance and can perform database operations. Success!
+
+Support
+~~~~~~~
 
 If you have any issues or just need guidance, contact our `support team <mailto:support@objectrocket.com>`_.
