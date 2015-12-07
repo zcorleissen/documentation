@@ -27,7 +27,7 @@ Step 2
 
 #. Select a version to deploy.
 
-    ObjectRocket offers versions 2.8 and 3.0.
+    ObjectRocket offers Redis versions 2.8 and 3.0.
 
 #. Select a zone.
 
