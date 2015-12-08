@@ -2,102 +2,55 @@ Getting Started with MongoDB
 ============================
 
 1. Create an instance
+2. Create a database
+3. Add an ACL
+4. Connect!
+
+1. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
    If you need help deciding what kind of instance to create, take a look at our :doc:`mongodb_overview`!
 
-Step 1
-------
+	
+- Click the **Add Instance** button.
 
-#. Click the Instance heading, then click on *Add Instance*.
+.. image:: images/addinstance.png
+   :align: center
 
-#. Enter a name for your instance. 
+- Select a name for your instance. This can be almost anything, as any alpha numeric string is valid.
 
-    This can be almost anything, as any alpha numeric string is valid.
+- Select a Service, MongoDB in this case.
 
-#. Select MongoDB for the service.
-
-#. Select a database type.
-
-    Choose either MongoDB Sharded or MongoDB Replica Set. Each selection includes a brief description, and more information can be found on our `MongoDB Overview <http://objectrocket.com/docs/mongodb_overview.html>`_.
+- Select a type, either MongoDB Sharded or MongoDB Replica Set. The differences are outlined briefly below the type chosen, but more information can be found on our `MongoDB Overview <http://objectrocket.com/docs/mongodb_overview.html>`_.
 
 .. image:: images/createmongo.png
    :align: center
 
-Click on *Step 2* to continue.
+- Select a version to deploy. We offer MongoDB 2.4, 2.6, and 3.0.
 
-Step 2
-------
+- Select a plan that suits your needs. Consider that as you grow you always add shards in your plan size when using a Sharded instance, but that isn't possible for a Replica Set. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
 
-#. Select a version to deploy. 
+- Select a zone that suits your needs. Zones are either Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_.
 
-    We offer the latest versions of MongoDB 2.4, 2.6, and 3.0. If you select 3.0, you can also select a storage engine (see below).
-
-#. Select a plan that suits your needs. 
-
-    Sharded instances grow by adding shards according to your plan size. The size of a replica set is fixed, determined by your plan's size limit. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
-
-#. Select a zone that suits your needs. 
-
-    Zones are Rackspace and/or AWS Direct Connect zones, labeled by airport codes in that region. Check out the `zone map <http://objectrocket.com/features>`_ for more details.
-
-#. Select a plan that suits your needs. 
-
-    Consider that as you grow you always add shards in your plan size when using a Sharded instance, but that isn't possible for a Replica Set. For more details, check out `plans and pricing <http://objectrocket.com/pricing>`_.
-
-#. Select a storage engine (3.0 only).
-
-    You can select WiredTiger or MMAPv1 for your storage engine when deploying MongoDB 3.0.
-
-#. Select encryption.
-
-    You can choose to encrypt MongoDB 2.6 or 3.0 instances provisioned in Virginia (IAD). Encryption for 3.0 requires WiredTiger for the storage engine and a plan minimum of 20GB.
+- Select a Storage Engine. When using MongoDB 3.0 you have the option of alternate storage engines. We currently offer WiredTiger and MMAPv1 when using 3.0+.
 
 .. image:: images/createmongo_2.png
    :align: center
-
-.. image:: images/createmongo_2.png
-   :align: center
-
-Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
 2. Add a database
 ~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
-#. Click the instance name to view its details and available operations. 
-
-    Instances you create appear under the *Instances* heading. 
-
-#. Select the desired instance and scroll down to *Databases*.
-
-#. Click on *Add Database*. 
-
-    Enter a name, username, and password, then click *Add Database* to confirm.
-
-    Click on a database name to add collections or more users. You can also add collections and users with the ObjectRocket API or MongoDB shell.
-
 .. image:: images/adddatabase.png
    :align: center
 
-3. Add an Access Control List (ACL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once you've added an instance you should see it under the **Instances** heading. Click the name of your instance to view details about it and once on the details page, you can do several different things, but we'll focus on creating a database for the time being. Scrolling down the page you can see several different headers. Underneath Databases, there are two options: **Add Database** and **Copy Remote Database**. For now, click **Add Database**. This opens a popover with 3 fields, **Database Name**, **Username**, and **Password**. Simply fill in each and click the **Add Database** button to finish the process. Once this is done you can also go further and add collections or more users, but you can also do that via code or through the mongo shell now that you have a way to authenticate.
 
-Access Control Lists (ACL) limit who connects to your instance. 
+3. Add an ACL
+~~~~~~~~~~~~~
 
-.. note::
-
-	ObjectRocket denies access by default. Add an ACL for any server that connects to the instance.
-
-#. In the Security section of the instance details page, click *Add ACL*. 
-
-#. Enter an IP address/CIDR block and a description.
-
-    Only the IP address is mandatory, but descriptions can help when maintaining larger lists.
-
-#. Click *Add ACL Entry*.
+Back to the instance details page, under the heading **Security**, you have the option to **Add ACL**. This is necessary as we don't allow any access by default so you need to add any appropriate ACL's for your servers connecting to ObjectRocket. There are two fields: **IP Address** and **Description**. Only IP is mandatory, but a description can certainly help if you plan to have more than a few.
 
 .. image:: images/addacl_mongo.png
    :align: center
@@ -105,7 +58,9 @@ Access Control Lists (ACL) limit who connects to your instance.
 4. Connect!
 ~~~~~~~~~~~
 
-After you've created a database with user authentication and added an ACL, you're ready to test basic connectivity in a terminal session with the MongoDB shell::
+Provided you've added an ACL and have a database with a user you can authenticate with, you can test basic connectivity from your terminal of choice with the Mongo shell:
+
+::
 
 	$ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
 	MongoDB shell version: 2.4.6
@@ -118,9 +73,5 @@ After you've created a database with user authentication and added an ACL, you'r
 
 	mongos>
 
-If you see something similar after running `show collections`, you're connected to the instance and can perform database operations. Success!
 
-Support
-~~~~~~~
-
-If you have any issues or just need guidance, contact our `support team <mailto:support@objectrocket.com>`_.
+If you see something similar after running ``show collections`` you're connected to the instance and can do anything you'd expect to against the database. If you run into any issues or just want some guidance please don't hesitate to reach out to our `Support team <mailto:support@objectrocket.com>`_!

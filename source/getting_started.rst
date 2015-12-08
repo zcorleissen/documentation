@@ -1,26 +1,24 @@
 Getting Started Guide
 =====================
 
-This guide helps you get started quickly and easily on the ObjectRocket platform. Follow along on the `Sign Up <https://app.objectrocket.com/sign_up>`_ page!
+This guide is designed to get you setup with an ObjectRocket account and on your way to creating instances with us! There are just a few steps necessary, and they're outlined below. Follow along by using our `Sign Up <https://app.objectrocket.com/sign_up>`_ page!
 
 1. Create an account
 ~~~~~~~~~~~~~~~~~~~~
 
-`Sign up for ObjectRocket here <https://app.objectrocket.com/sign_up>`_. Enter your account information (all fields required) and click *Launch my account*.
+Obtaining an ObjectRocket account is as simple as `signing up here <https://app.objectrocket.com/sign_up>`_ and completing the forms listed. Enter your account information, all fields are required. ObjectRocket utilizes a single login for now, but we're working on adding functionality for sub-accounts. For now we recommend using a mailing list if you need access for multiple people, eg. devops\@mycompany.com.
 
-ObjectRocket utilizes a single login for now, but we're working on adding functionality for sub-accounts. For now we recommend entering a mailing list address if you need access for multiple people. For example: `devops@mycompany.com`.
+Once filled in, click *Launch my account*.
 
-Click *Launch my account* to continue.
+2. Add billing info
+~~~~~~~~~~~~~~~~~~~
 
-2. Add billing information
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Click *Add Credit Card* on the `default landing page <https://app.objectrocket.com/instances/>`_, or click your username on the upper right, click *Billing Information*, then click *Set Credit Card*.
+Before you can create an instance, you'll need to add your billing information. You can do so from the default landing page by clicking *add a credit card to your account*, or by clicking your username on the upper right, clicking *Billing Information*, then clicking the *Set Credit Card* button on the left side.
 
 3. Create an instance
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you need help creating your first instance, check out our getting started guides:
+As we offer MongoDB, Redis, and Elasticsearch, there are guides for getting started with each: 
 
 - :doc:`mongodb_getting_started` 
 
