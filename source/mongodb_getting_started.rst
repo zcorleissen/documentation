@@ -58,15 +58,11 @@ Step 2
 .. image:: images/createmongo_2.png
    :align: center
 
-.. image:: images/createmongo_2.png
-   :align: center
-
 Click on *Confirm* to review your entries, then click *Create*. Your new instance is ready!
 
 2. Add a database
 ~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
 #. Click the instance name to view its details and available operations. 
 
     Instances you create appear under the *Instances* heading. 
@@ -89,7 +85,7 @@ Access Control Lists (ACL) limit who connects to your instance.
 
 .. note::
 
-	ObjectRocket denies access by default. Add an ACL for any server that connects to the instance.
+  ObjectRocket denies access by default. Add an ACL for any server that connects to the instance.
 
 #. In the Security section of the instance details page, click *Add ACL*. 
 
@@ -107,16 +103,16 @@ Access Control Lists (ACL) limit who connects to your instance.
 
 After you've created a database with user authentication and added an ACL, you're ready to test basic connectivity in a terminal session with the MongoDB shell::
 
-	$ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
-	MongoDB shell version: 2.4.6
-	connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
+  $ mongo iad-mongos0.objectrocket.com:<PORT>/<DATABASE> -u <USER> -p <PASSWORD>
+  MongoDB shell version: 2.4.6
+  connecting to: iad-mongos0.objectrocket.com:<PORT>/<DATABASE>
 
-	mongos> show collections
-	example_collection
-	system.indexes
-	system.users
+  mongos> show collections
+  example_collection
+  system.indexes
+  system.users
 
-	mongos>
+  mongos>
 
 If you see something similar after running `show collections`, you're connected to the instance and can perform database operations. Success!
 
