@@ -1,10 +1,18 @@
 Scaling Guide
 =============
 
-How can I add a data node?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I add a data node?
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new instance comes with two data nodes and more can be easily added after the initial instance creation. To add more nodes go to the Elasticsearch instance in the Control Panel and simply click the **Data Nodes** heading, then the  **Add Data Node** button and follow the prompts. Additional charges apply, so take a look at our `pricing <http://objectrocket.com/pricing>`_ page for details.
+New Elasticsearch instances include two data nodes. To add more nodes to an instance:
+
+#. Click the Instances heading in the ObjectRocket Control Panel.
+
+    Click on the instance name.
+
+#. Open the *Data Nodes* section for the instance, then click *Add Data Node* and follow the prompts. 
+
+    Additional charges apply. See our `pricing <http://objectrocket.com/pricing>`_ page for details.
 
 .. image:: images/add_datanode.png
    :align: center

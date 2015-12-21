@@ -57,6 +57,8 @@ Click on *Confirm* to review your entries, then click *Create*. Your new instanc
 .. image:: images/add_user_elastic.png
    :align: center
 
+.. _elastic_acl:
+
 3. Add an Access Control List (ACL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

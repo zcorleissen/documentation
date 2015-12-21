@@ -1,9 +1,12 @@
 REST API Examples
-======================
+=================
 
-Creating and Viewing an Index
-------------------------------
-Creating the index:
+Elasticsearch provides a `complete reference <https://www.elastic.co/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html#_restful_api_with_json_over_http>`_ to its RESTful API.
+
+Create and View an Index
+------------------------
+
+Create an index:
 
 .. code-block:: bash
 
@@ -16,8 +19,9 @@ View all indexes:
   curl -u user:password -XGET 'http://iad1-10140-0.es.objectrocket.com:10140/_cat/indices?v'
 
 Index and Query a Document
----------------------------
-Index sample document into customer index:
+--------------------------
+
+Index a sample document into a customer index:
 
 .. code-block:: bash
 
@@ -26,15 +30,16 @@ Index sample document into customer index:
         "name": "John Doe"
     }'
 
-Query document from index:
+Query a document from an index:
 
 .. code-block:: bash
 
   curl -u user:password -XGET 'http://iad1-10140-0.es.objectrocket.com:10140/customer/external/1?pretty'
 
-Update Document
----------------
-Adding the age field to the user John Doe:
+Update a Document
+-----------------
+
+Add an "age" field to the user "John Doe":
 
 .. code-block:: bash
 
@@ -43,15 +48,16 @@ Adding the age field to the user John Doe:
       "doc": { "name": "John Doe", "age": 20 }
     }'
 
-Delete Document or Index
------------------------------
-Removing a document:
+Delete a Document or Index
+--------------------------
+
+Delete a document:
 
 .. code-block:: bash
 
   curl -u user:password -XDELETE 'http://iad1-10140-0.es.objectrocket.com:10140/customer/external/1?pretty'
 
-Removing an index:
+Delete an index:
 
 .. code-block:: bash
 
