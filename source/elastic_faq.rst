@@ -39,7 +39,7 @@ ObjectRocket Elasticsearch instances include a cluster with a total of 11 nodes.
 How much does ObjectRocket Elasticsearch cost per month?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prices for ObjectRocket Elasticsearch instances are based on the plan size of the data nodes and the number of data nodes in the cluster.  Client, Kibana, and master nodes are included at no additional charge. Visit `plans and pricing <http://www.objectrocket.com/pricing>`_ and click on **Elasticsearch** for more information.
+Monthly prices for ObjectRocket Elasticsearch instances are based on the plan size of the data nodes and the number of data nodes in the cluster.  Client, Kibana, and master nodes are included at no additional charge. Visit `plans and pricing <http://www.objectrocket.com/pricing>`_ and click on **Elasticsearch** for more information.
 
 What plugins are available by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
