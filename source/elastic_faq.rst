@@ -56,6 +56,6 @@ We automatically back up your data every 24 hours using Elasticsearch snapshots.
 What are the default numbers of shards and replicas per index?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-New indexes have 5 primary shards, each with 1 replica shard, for a total of 10 shards for any new index. (ObjectRocket Elasticsearch instances use Elasticsearch default settings of ``number_of_shards = 5`` and ``number_of_replicas = 1``.) 
+ObjectRocket Elasticsearch instances are configured with the standard Elasticsearch default settings of ``number_of_shards = 5`` and ``number_of_replicas = 1``. Any newly created index will have 5 primary shards, each with 1 replica shard (for a total of 10 shards for any new index). 
 
 You can specify a different number of primary shards for new indexes, as described in the `Elasticsearch Create Index API <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_. If you would like to change these defaults for your ObjectRocket Elasticsearch instance, please contact `support@objectrocket.com <mailto:support@objectrocket.com>`_.

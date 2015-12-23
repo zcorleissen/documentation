@@ -16,7 +16,7 @@ Step 1
 
     This can be almost anything, as any alpha numeric string is valid.
 
-#. Select Redis for the service. The type defaults to HA Redis.
+#. Select Elasticsearch for the service.
 
 .. image:: images/create_elastic.png
    :align: center

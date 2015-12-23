@@ -4,12 +4,12 @@ Elasticsearch Utilities
 elasticstat
 -----------
 
-`Elasticstat <https://github.com/objectrocket/elasticstat>`_ monitors real-time performance of an Elasticsearch cluster from the command line, similar to the Unix utilities `iostat <http://linux.die.net/man/1/iostat>`_ or `vmstat <http://linux.die.net/man/8/vmstat>`_. For more information about Elasticsearch performance metrics, check out `Cluster Health <https://www.elastic.co/guide/en/elasticsearch/guide/current/_cluster_health.html>`_ and `Monitoring Individual Nodes <https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html>`_ from the Elasticsearch Definitive Guide.
+`Elasticstat <https://github.com/objectrocket/elasticstat>`_ is a utility for real-time performance monitoring of an Elasticsearch cluster from the command line,, similar to the Unix utilities `iostat <http://linux.die.net/man/1/iostat>`_ or `vmstat <http://linux.die.net/man/8/vmstat>`_. For more information about Elasticsearch performance metrics, check out `Cluster Health <https://www.elastic.co/guide/en/elasticsearch/guide/current/_cluster_health.html>`_ and `Monitoring Individual Nodes <https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html>`_ from the Elasticsearch Definitive Guide.
 
 .. note::
     Make sure to set up :ref:`access control lists <elastic-acl>` in order to connect to your instance.
 
-    You can control the frequency of ``elasticstat`` updates with the ``delayinterval`` optional parameter, which specifies a delay in seconds between updates.
+    The optional parameter ``DELAYINTERVAL`` controls update frequency by specifying a delay in seconds after each update.
 
 Here's what basic, non-SSL usage looks like:
 

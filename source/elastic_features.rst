@@ -6,7 +6,7 @@ Kibana
 
 ObjectRocket includes a `Kibana <https://www.elastic.co/products/kibana/>`_ instance automatically configured to connect to your Elasticsearch cluster. Kibana builds rich visualizations of your Elasticseach data with charts and graphs.
 
-Under Instances > Instance Details, the *Connect* heading displays URLs for Kibana connections in plain text and SSL (transport).
+Under Instances > Instance Details, the *Connect* heading displays URLs for Kibana connections in plain text and SSL.
 
 .. note::
     Access to Kibana requires a Kibana-specific :ref:`access control list <elastic-access-control>` (ACL). 
